@@ -1,0 +1,4002 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحة متابعة فرق العمل الداخلية — أجندة اللامركزية 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2137;--navy2:#123152;--ink:#0f2035;--muted:#6b7f96;--gold:#c8a24a;--gold-soft:#f3e9d2;
+--bg:#f4f6f9;--card:#fff;--line:#e2e8f0;--run:#0f9d76;--run-bg:#e6f6f1;--stuck:#d64550;--stuck-bg:#fdeaec;--upd:#e08c00;--upd-bg:#fdf3e0;--frz:#64748b;--frz-bg:#eef2f6;--dfr:#9a6b3f;--dfr-bg:#f7efe6;--obs:#94a3b8;--obs-bg:#f1f5f9;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding-bottom:60px}
+.wrap{max-width:1300px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:26px 0 22px;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset-inline-start:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:rgba(200,162,74,.1)}
+.brand{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+.seal{width:48px;height:48px;border-radius:12px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:12px;text-align:center;line-height:1.25;flex-shrink:0}
+h1{font-size:21px;font-weight:700}
+.sub{font-size:13px;color:#a9c2da;font-weight:300}
+.hdr-meta{margin-top:15px;display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:1}
+.chip-meta{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);padding:4px 12px;border-radius:20px;font-size:12px;color:#dce8f2}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:14px;margin-top:-26px;position:relative;z-index:3}
+.kpi{background:var(--card);border-radius:14px;padding:16px 18px;border:1px solid var(--line);box-shadow:0 4px 18px rgba(13,33,55,.07);cursor:pointer;transition:.18s;border-top:3px solid transparent}
+.kpi:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,33,55,.13)}
+.kpi.active{border-top-color:var(--gold);background:#fffdf7}
+.kpi .n{font-size:31px;font-weight:700;line-height:1.1}
+.kpi .l{font-size:13px;color:var(--muted);margin-top:2px}
+.kpi .bar{height:5px;border-radius:4px;background:var(--line);margin-top:10px;overflow:hidden}
+.kpi .bar i{display:block;height:100%;border-radius:4px}
+.k-all .n{color:var(--navy)}.k-run .n{color:var(--run)}.k-stuck .n{color:var(--stuck)}.k-upd .n{color:var(--upd)}
+.notice{margin-top:16px;background:linear-gradient(90deg,#fff9ec,#fff);border:1px solid #eddfba;border-inline-start:4px solid var(--gold);border-radius:12px;padding:12px 16px;display:flex;gap:12px;align-items:flex-start;font-size:13px}
+.notice b{color:#8a6c1d}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:22px 0 16px}
+.tabs{display:flex;background:#e8edf3;border-radius:11px;padding:4px;gap:3px;flex-wrap:wrap}
+.tab{border:0;background:transparent;font-family:inherit;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 15px;border-radius:8px;cursor:pointer;transition:.15s}
+.tab.active{background:#fff;color:var(--navy);box-shadow:0 2px 6px rgba(13,33,55,.1)}
+.search{flex:1;min-width:190px;position:relative}
+.search input{width:100%;padding:10px 40px 10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;background:#fff;outline:none}
+.search input:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft)}
+.search span{position:absolute;inset-inline-end:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px}
+.reset{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 15px;font-family:inherit;font-size:13px;color:var(--muted);cursor:pointer}
+.reset:hover{border-color:var(--gold);color:var(--navy)}
+.deptsel{position:relative}
+.deptsel select{appearance:none;padding:10px 34px 10px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:13.5px;background:#fff;color:var(--ink);cursor:pointer;outline:none;max-width:290px}
+.deptsel.on select{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
+.deptsel::after{content:"▾";position:absolute;inset-inline-end:13px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:11px;color:var(--muted)}
+.deptsel.on::after{color:#fff}
+.activefilters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.afchip{display:inline-flex;align-items:center;gap:7px;background:var(--gold-soft);border:1px solid #e4d3a6;color:#7d6118;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600}
+.afchip button{border:0;background:#00000014;border-radius:50%;width:17px;height:17px;line-height:1;cursor:pointer;font-size:11px;color:#7d6118;font-family:inherit}
+.sec-h{display:flex;align-items:center;gap:10px;margin:24px 0 13px;flex-wrap:wrap}
+.sec-h h2{font-size:16.5px;font-weight:700;color:var(--navy)}
+.sec-h .rule{flex:1;height:1px;background:var(--line);min-width:20px}
+.sec-h .hint{font-size:12px;color:var(--muted);font-weight:400}
+/* team cards */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px 17px;cursor:pointer;transition:.18s;position:relative;border-top:4px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,33,55,.12);border-color:var(--gold)}
+.tcard.s-run{border-top-color:var(--run)}.tcard.s-stuck{border-top-color:var(--stuck)}.tcard.s-upd{border-top-color:var(--upd)}
+.tcard.k-national{background:linear-gradient(180deg,#f6f9fc,#fff)}
+.tcard.k-unassigned{border-style:dashed;background:#fbfcfd}
+.tc-top{display:flex;align-items:flex-start;gap:10px}
+.tnum{background:var(--navy);color:#fff;border-radius:10px;min-width:34px;height:34px;display:grid;place-items:center;font-weight:700;font-size:14px;flex-shrink:0}
+.tcard.k-national .tnum,.tcard.k-unassigned .tnum{background:#7d8ea3;font-size:15px}
+.tc-title{font-size:14px;font-weight:600;line-height:1.55;flex:1}
+.tc-ids{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.oid{display:inline-flex;align-items:center;background:var(--gold);color:var(--navy);border-radius:6px;padding:0 7px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.pill{font-size:11px;font-weight:600;padding:3px 11px;border-radius:20px;white-space:nowrap;display:inline-block}
+.p-run{background:var(--run-bg);color:var(--run)}.p-stuck{background:var(--stuck-bg);color:var(--stuck)}.p-upd{background:var(--upd-bg);color:var(--upd)}
+.who2{display:flex;flex-direction:column;gap:5px;font-size:12px}
+.who2 .r{display:flex;gap:7px;align-items:flex-start}
+.who2 .rb{background:var(--navy);color:#fff;border-radius:5px;font-size:10px;padding:1px 7px;flex-shrink:0;font-weight:600;margin-top:2px}
+.who2 .rb.co{background:var(--gold-soft);color:#8a6c1d}
+.who2 .rb.pend{background:var(--stuck-bg);color:var(--stuck)}
+.tc-foot{display:flex;flex-wrap:wrap;gap:5px;align-items:center;border-top:1px dashed var(--line);padding-top:9px;margin-top:auto}
+.tag{font-size:10.5px;padding:2px 8px;border-radius:6px;background:#eef2f7;color:#4a627c;font-weight:500}
+.tag.chair{background:var(--navy);color:#fff}.tag.coord{background:var(--gold-soft);color:#8a6c1d}
+.dchip{font-size:10px;padding:1px 7px;border-radius:6px;background:#eaf0f6;color:#4a627c;font-weight:500}
+.tgt{font-size:11.5px;color:#41566d;background:#f7fafc;border-radius:9px;padding:8px 10px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tgt b{color:var(--muted);font-size:10.5px;display:block}
+/* rows / kanban */
+.acts{display:flex;flex-direction:column;gap:9px}
+.act{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;cursor:pointer;transition:.15s;display:flex;gap:12px;align-items:flex-start;border-inline-start:4px solid var(--line)}
+.act:hover{border-color:var(--gold);transform:translateX(-3px);box-shadow:0 5px 16px rgba(13,33,55,.08)}
+.act.s-run{border-inline-start-color:var(--run)}.act.s-stuck{border-inline-start-color:var(--stuck)}.act.s-upd{border-inline-start-color:var(--upd)}
+.anum{background:#eef2f7;color:var(--navy);font-weight:700;font-size:12px;border-radius:8px;min-width:30px;height:28px;display:grid;place-items:center;flex-shrink:0}
+.abody{flex:1;min-width:0}.atitle{font-size:14px;font-weight:600;line-height:1.5}
+.asub{font-size:11.5px;color:var(--muted);margin-top:3px;display:flex;flex-wrap:wrap;gap:3px 11px}
+.aside{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.arrow{color:#c3cedb;font-size:16px}
+.kb{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.col{background:#eaeff5;border-radius:14px;padding:13px}
+.col h3{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:11px}
+.col h3 .dot{width:9px;height:9px;border-radius:50%}
+.col h3 .cnt{margin-inline-start:auto;background:#fff;border-radius:20px;padding:1px 10px;font-size:12px;color:var(--muted)}
+.col .acts{gap:8px}.col .act{padding:11px 13px}
+/* people & depts */
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:14px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;cursor:pointer;transition:.18s;position:relative;overflow:hidden}
+.pcard:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 22px rgba(13,33,55,.1)}
+.ptop{display:flex;align-items:center;gap:11px;margin-bottom:11px}
+.av{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-weight:700;font-size:15px;color:#fff;flex-shrink:0;background:var(--navy2)}
+.av.unit{background:#7d8ea3;font-size:17px}
+.pname{font-size:14.5px;font-weight:600;line-height:1.35}.prole{font-size:11.5px;color:var(--muted);line-height:1.4}
+.ptot{margin-inline-start:auto;text-align:center;flex-shrink:0}
+.ptot b{display:block;font-size:21px;font-weight:700;color:var(--navy);line-height:1}.ptot i{font-size:10px;color:var(--muted);font-style:normal}
+.pbar{display:flex;height:7px;border-radius:5px;overflow:hidden;background:var(--line);margin-bottom:9px}.pbar i{display:block;height:100%}
+.pmeta{display:flex;flex-wrap:wrap;gap:5px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:10px}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;cursor:pointer;transition:.16s;display:flex;align-items:center;gap:10px}
+.dcard:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,33,55,.09)}
+.dcard.on{border-color:var(--navy);background:#f7fafd;box-shadow:0 5px 16px rgba(13,33,55,.13)}
+.dcard .ic{width:34px;height:34px;border-radius:9px;background:#eaf0f6;display:grid;place-items:center;font-size:15px;flex-shrink:0}
+.dcard .dn{font-size:12.5px;font-weight:600;line-height:1.4}
+.dcard .dbar{display:flex;height:5px;border-radius:4px;overflow:hidden;background:var(--line);margin-top:5px}.dcard .dbar i{display:block;height:100%}
+.dcard .dc{font-size:18px;font-weight:700;color:var(--navy);flex-shrink:0}
+/* linkage */
+.alk{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.alk .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;text-align:center}
+.alk .box b{display:block;font-size:24px;font-weight:700;line-height:1.15}
+.alk .box small{font-size:11.5px;color:var(--muted);display:block;margin-top:1px}
+.alk .box .ring{height:5px;border-radius:4px;background:var(--line);margin-top:9px;overflow:hidden}.alk .box .ring i{display:block;height:100%;border-radius:4px}
+.flowwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 20px;position:relative;overflow:hidden}
+.flowbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;font-size:12px;color:var(--muted)}
+.flowbar .lg{display:inline-flex;align-items:center;gap:5px}.flowbar .lg i{width:16px;height:4px;border-radius:3px;display:inline-block}
+.flow{position:relative;display:grid;grid-template-columns:.9fr 1.5fr .9fr;gap:26px;align-items:start}
+.flow svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.fcol{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px}
+.fcol.side{justify-content:center;padding:26px 0}
+.fcol>h4{font-size:12px;font-weight:700;color:var(--muted);text-align:center;padding-bottom:7px;border-bottom:2px solid var(--line);margin-bottom:3px}
+.node{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 11px;font-size:12.5px;line-height:1.5;cursor:pointer;transition:.16s;position:relative}
+.node:hover{border-color:var(--gold);box-shadow:0 4px 14px rgba(13,33,55,.1)}
+.node .nm{font-weight:600;display:block}.node .ns{font-size:10.5px;color:var(--muted)}
+.node .cnt{position:absolute;top:8px;inset-inline-end:9px;background:#eef2f7;border-radius:20px;font-size:10.5px;padding:0 7px;color:var(--muted);font-weight:600}
+.node.prog{background:linear-gradient(180deg,#f3f7fb,#fff);border-inline-start:4px solid var(--navy2)}
+.node.ind{background:linear-gradient(180deg,#f7f4ec,#fff);border-inline-start:4px solid var(--gold)}
+.node.act{border-inline-start:4px solid var(--line);padding-inline-end:34px}
+.node.act.s-run{border-inline-start-color:var(--run)}.node.act.s-stuck{border-inline-start-color:var(--stuck)}.node.act.s-upd{border-inline-start-color:var(--upd)}
+.node.none{border-style:dashed;color:var(--muted);background:#fafbfc}
+.node .gapdot{position:absolute;top:9px;inset-inline-end:10px;width:8px;height:8px;border-radius:50%}
+.flow.focused .node{opacity:.24;filter:grayscale(.6)}
+.flow.focused .node.hi{opacity:1;filter:none;border-color:var(--gold);box-shadow:0 5px 16px rgba(200,162,74,.25)}
+.flow.focused .node.pick{opacity:1;filter:none;border-color:var(--navy);box-shadow:0 6px 20px rgba(13,33,55,.22);transform:scale(1.02)}
+.trace{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:auto}
+table.tr{width:100%;border-collapse:collapse;font-size:12.5px;min-width:960px}
+table.tr th{background:var(--navy);color:#fff;font-weight:600;font-size:11.5px;padding:10px 11px;text-align:right;position:sticky;top:0;vertical-align:bottom;line-height:1.45}
+table.tr th.k{background:var(--navy2)}
+table.tr td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+table.tr tr:hover td{background:#fffdf5;cursor:pointer}
+.code{display:inline-block;background:#eef2f7;color:var(--navy);border-radius:6px;padding:1px 8px;font-weight:700;font-size:11.5px;white-space:nowrap;cursor:pointer}
+.code.g{background:var(--gold-soft);color:#8a6c1d}.code.x{background:#f1f3f5;color:#9aa7b4;font-weight:500}.code.act{background:var(--navy);color:#fff}
+.gapbadge{font-size:10.5px;font-weight:600;padding:2px 9px;border-radius:20px;white-space:nowrap}
+.g-ok{background:var(--run-bg);color:var(--run)}.g-no{background:var(--upd-bg);color:var(--upd)}
+.cellclip{max-width:250px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:#41566d}
+.mini{font-size:11px;color:var(--muted)}
+.linkfilters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.fchip{border:1px solid var(--line);background:#fff;border-radius:20px;padding:5px 13px;font-size:12px;font-family:inherit;cursor:pointer;color:#43586e;transition:.15s}
+.fchip:hover{border-color:var(--gold)}.fchip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(11,26,43,.6);backdrop-filter:blur(3px);display:none;z-index:50;padding:20px;overflow-y:auto}
+.ov.show{display:block}
+.modal{max-width:880px;margin:32px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 26px 70px rgba(0,0,0,.34);animation:pop .22s ease}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.mhead{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:22px 26px;position:relative}
+.mhead .badge{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);font-size:11.5px;padding:2px 11px;border-radius:20px;margin-bottom:9px}
+.mhead h2{font-size:18.5px;font-weight:700;line-height:1.6;padding-inline-end:40px}
+.mhead .mst{margin-top:11px;display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;background:#fff;padding:4px 13px;border-radius:20px}
+.close{position:absolute;top:18px;inset-inline-end:20px;background:rgba(255,255,255,.14);border:0;color:#fff;width:32px;height:32px;border-radius:9px;font-size:19px;cursor:pointer;line-height:1}
+.close:hover{background:rgba(255,255,255,.26)}
+.mbody{padding:22px 26px 26px}
+.callout{background:var(--gold-soft);border-inline-start:4px solid var(--gold);border-radius:0 10px 10px 0;padding:13px 16px;margin-bottom:16px}
+.callout b{display:block;font-size:11.5px;color:#8a6c1d;margin-bottom:4px;font-weight:700}
+.callout p{font-size:14px;white-space:pre-line}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.fld{background:#f8fafc;border:1px solid var(--line);border-radius:11px;padding:12px 14px}
+.fld.full{grid-column:1/-1}
+.fld b{display:block;font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:5px}
+.fld p{font-size:13.5px;line-height:1.75}
+.tasklist{list-style:none;counter-reset:tk;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.tasklist li{counter-increment:tk;font-size:13.5px;line-height:1.8;padding-inline-start:32px;position:relative}
+.tasklist li::before{content:counter(tk);position:absolute;inset-inline-start:0;top:3px;width:22px;height:22px;border-radius:7px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.complist{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:5px}
+.complist li{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.6}
+.complist .rb{border-radius:6px;font-size:10px;padding:2px 8px;flex-shrink:0;font-weight:700;margin-top:3px;background:#eef2f7;color:#4a627c}
+.complist .rb.ch{background:var(--navy);color:#fff}.complist .rb.co{background:var(--gold-soft);color:#8a6c1d}
+.complist .rb.nt{background:var(--upd-bg);color:var(--upd)}
+.empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:14px;background:#fff;border:1px dashed var(--line);border-radius:14px}
+.prov{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:6px}
+.prov .ph{padding:13px 17px;display:flex;align-items:center;gap:11px;cursor:pointer;background:linear-gradient(90deg,#f8fafc,#fff)}
+.prov .ph h3{font-size:14.5px;font-weight:700;flex:1}
+.prov .pb{padding:0 18px 16px;display:none}
+.prov.open .pb{display:block}.prov.open .caret{transform:rotate(90deg)}
+.caret{color:var(--muted);transition:.2s;display:inline-block;font-size:12px}
+.tgroup{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.thead{padding:13px 17px;display:flex;align-items:center;gap:11px;cursor:pointer;background:linear-gradient(90deg,#f8fafc,#fff)}
+.thead h3{font-size:14.5px;font-weight:700;flex:1}
+.tmini{display:flex;gap:4px}.tmini i{width:22px;height:5px;border-radius:3px;display:block}
+.tbody{padding:0 15px 14px;display:none}.tgroup.open .tbody{display:block}.tgroup.open .caret{transform:rotate(90deg)}
+footer{text-align:center;font-size:11.5px;color:var(--muted);margin-top:32px;padding-top:16px;border-top:1px solid var(--line);line-height:2}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}h1{font-size:17px}.kpi .n{font-size:26px}}
+
+.k-dec .n{color:var(--run)}.k-pend .n{color:var(--stuck)}
+.dbadge{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap;display:inline-flex;gap:5px;align-items:center}
+.d-yes{background:var(--run-bg);color:var(--run);border:1px solid #bde5d8}
+.d-no{background:var(--stuck-bg);color:var(--stuck);border:1px solid #f5c9ce}
+.d-out{background:#fbe9df;color:#9c4a10;border:1px solid #f0cbb2}
+.d-part{background:var(--upd-bg);color:var(--upd);border:1px solid #f0d9a8}
+.tcard.k-outside{background:linear-gradient(180deg,#fdf3ee,#fff);border-top-color:#c2703a}
+.decbox{border:1px solid var(--line);border-radius:13px;padding:14px 16px;margin:0 0 16px;background:#fbfdff}
+.decbox.yes{background:var(--run-bg);border-color:#bde5d8}
+.decbox.no{background:var(--stuck-bg);border-color:#f5c9ce}
+.decbox.out{background:#fbe9df;border-color:#f0cbb2}
+.decbox .dh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.decbox .dh b{font-size:14px;color:var(--navy)}
+.decbox p{font-size:13px}
+.decgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:9px;margin-top:11px}
+.decgrid .c{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.decgrid .c b{display:block;font-size:10.5px;color:var(--muted);font-weight:600;margin-bottom:3px}
+.decgrid .c span{font-size:12.5px;line-height:1.6}
+.decbox ol,.decbox ul{margin:8px 14px 0}
+.decbox li{font-size:12.5px;margin-bottom:4px}
+.decnote{margin-top:10px;background:#fff;border-inline-start:3px solid var(--gold);border-radius:8px;padding:8px 11px;font-size:12px;color:#5b4a1f}
+
+.k-frz .n{color:var(--frz)}
+.tcard.s-frz{border-top-color:var(--frz);opacity:.86}
+.act.s-frz{border-inline-start-color:var(--frz)}
+.p-frz{background:var(--frz-bg);color:var(--frz)}
+.upfeed{display:flex;flex-direction:column;gap:10px}
+.upitem{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 16px;display:flex;gap:13px;cursor:pointer;transition:.16s}
+.upitem[data-id]{cursor:pointer}
+.upitem:not([data-id]){cursor:default}
+.upitem:hover{border-color:var(--gold);transform:translateX(-3px);box-shadow:0 6px 18px rgba(13,33,55,.09)}
+.upitem .ud{flex-shrink:0;text-align:center;min-width:74px;background:#f2f6fa;border-radius:10px;padding:7px 6px}
+.upitem .ud b{display:block;font-size:12.5px;color:var(--navy);font-weight:700;line-height:1.4}
+.upitem .ub{min-width:0;flex:1}
+.upitem .ut{font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:3px}
+.upitem .ux{font-size:12.5px;color:#41566e}
+.ukind{font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap}
+.u-قرار{background:var(--gold-soft);color:#8a6c1d}
+.u-مراسلة{background:#e8eef6;color:var(--navy2)}
+.u-متابعة{background:var(--run-bg);color:var(--run)}
+.u-اجتماع{background:#ede9fe;color:#5b3fb5}
+.u-تجميد{background:var(--frz-bg);color:var(--frz)}
+.lastup{background:#f7fafd;border:1px solid var(--line);border-inline-start:3px solid var(--navy2);border-radius:9px;padding:7px 10px;font-size:11.5px;color:#41566e;line-height:1.6}
+.lastup b{color:var(--navy);font-size:11px;display:block;margin-bottom:2px}
+.trail{margin-top:11px;border-inline-start:2px solid var(--line);padding-inline-start:14px}
+.trail .ti{position:relative;margin-bottom:12px}
+.trail .ti::before{content:"";position:absolute;inset-inline-start:-19px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.trail .td{font-size:11.5px;font-weight:700;color:var(--navy)}
+.trail .tr2{font-size:11px;color:var(--muted);margin-bottom:2px}
+.trail .tx{font-size:12.5px}
+
+.k-prior .n{color:var(--navy2)}
+.tcard.s-dfr{border-top-color:var(--dfr);opacity:.9}.act.s-dfr{border-inline-start-color:var(--dfr)}
+.p-dfr{background:var(--dfr-bg);color:var(--dfr)}
+.tcard.s-obs{border-top-color:var(--obs);opacity:.75}.act.s-obs{border-inline-start-color:var(--obs)}
+.p-obs{background:var(--obs-bg);color:var(--obs)}
+.d-prior{background:#e8eef6;color:var(--navy2);border:1px solid #c9d8e8}
+.d-dfr{background:var(--dfr-bg);color:var(--dfr);border:1px solid #e4cdb4}
+.d-obs{background:var(--obs-bg);color:var(--obs);border:1px solid #d5dee6}
+.firstbadge{background:linear-gradient(135deg,var(--gold),#e0c274);color:var(--navy);font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.revbox{background:var(--dfr-bg);border:1px solid #e4cdb4;border-inline-start:4px solid var(--dfr);border-radius:11px;padding:12px 15px;margin:0 0 14px;font-size:12.5px;white-space:pre-line;line-height:1.75;color:#6d4a26}
+.revbox.obs{background:var(--obs-bg);border-color:#d5dee6;border-inline-start-color:var(--obs);color:#4a5a6b}
+.u-مراجعة{background:var(--dfr-bg);color:var(--dfr)}
+
+.u-تصحيح{background:var(--run-bg);color:var(--run)}
+
+.d-req{background:#ede9fe;color:#5b3fb5;border:1px solid #d6cdf5}
+.reqbox{background:#f6f3ff;border:1px solid #d6cdf5;border-inline-start:4px solid #5b3fb5;border-radius:12px;padding:13px 16px;margin:0 0 14px}
+.reqbox .rh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:7px}
+.reqbox .rh b{font-size:13.5px;color:#43308a}
+.reqbox p{font-size:12.5px}
+.reqbox ol,.reqbox ul{margin:7px 14px 0}
+.reqbox li{font-size:12.5px;margin-bottom:4px}
+
+.code.prop{background:#ede9fe !important;color:#5b3fb5 !important;border:1px dashed #b9a7ef}
+
+.planbox{background:#f3f9f6;border:1px solid #bfe3d4;border-inline-start:4px solid var(--run);border-radius:12px;padding:14px 16px;margin:0 0 14px}
+.planbox .rh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:7px}
+.planbox .rh b{font-size:13.5px;color:#0b6b52}
+.planbox p{font-size:12.5px}
+.planbox .ph2{display:block;margin-top:12px;margin-bottom:5px;font-size:12.5px;color:var(--navy)}
+.planbox ol,.planbox ul{margin:5px 14px 0}
+.planbox li{font-size:12.5px;margin-bottom:4px}
+.d-plan{background:var(--run-bg);color:var(--run);border:1px solid #bde5d8}
+.phases{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.phase{display:flex;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.phase .pn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--run);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+.phase .pt{font-weight:700;font-size:12.5px;color:var(--navy);margin-bottom:3px}
+.phase .po,.phase .ps{font-size:12px;color:#41566e;line-height:1.6}
+.phase .ps{color:#6b4a0f}
+.dbadge.d-plan{white-space:normal}
+
+.clickbox{cursor:pointer;transition:.16s}
+.clickbox:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(13,33,55,.1);border-color:var(--gold)}
+.clickbox.on{border-color:var(--gold);background:#fffdf7}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="seal">وزارة<br>الحكم<br>المحلي</div>
+      <div>
+        <h1>فرق العمل الداخلية لتنفيذ أجندة اللامركزية 2026</h1>
+        <div class="sub">قرار تشكيل فرق العمل الداخلية (مسودة 3) · مرتبط بخطة عمل الإصلاح 2025-2026 والاستراتيجية القطاعية 2025-2027</div>
+      </div>
+    </div>
+    <div class="hdr-meta">
+      <span class="chip-meta">📋 <span id="hm-teams"></span> فريق عمل داخلي</span>
+      <span class="chip-meta">✅ <span id="hm-tasks"></span> مهمة ومسؤولية</span>
+      <span class="chip-meta">👥 <span id="hm-people"></span> مكلّف بالاسم</span>
+      <span class="chip-meta">🏛 <span id="hm-depts"></span> إدارة/دائرة</span>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="kpis">
+    <div class="kpi k-all active" data-st="الكل"><div class="n" id="k-all">0</div><div class="l">إجمالي الملفات</div><div class="bar"><i style="width:100%;background:var(--navy)"></i></div></div>
+    <div class="kpi k-run" data-st="قيد التنفيذ"><div class="n" id="k-run">0</div><div class="l">قيد التنفيذ</div><div class="bar"><i id="b-run" style="background:var(--run)"></i></div></div>
+    <div class="kpi k-stuck" data-st="عالق"><div class="n" id="k-stuck">0</div><div class="l">عالق — يتطلب قراراً</div><div class="bar"><i id="b-stuck" style="background:var(--stuck)"></i></div></div>
+    <div class="kpi k-frz" data-st="مجمّد"><div class="n" id="k-frz">0</div><div class="l">مجمّد</div><div class="bar"><i id="b-frz" style="background:var(--frz)"></i></div></div>
+    <div class="kpi k-dec" data-dec="صدر"><div class="n" id="k-dec">0</div><div class="l">صدر قرار تكليف رسمي</div><div class="bar"><i id="b-dec" style="background:var(--run)"></i></div></div>
+    <div class="kpi k-prior" data-dec="لايلزم"><div class="n" id="k-prior">0</div><div class="l">لا يلزم قرار جديد</div><div class="bar"><i id="b-prior" style="background:var(--navy2)"></i></div></div>
+    <div class="kpi k-pend" data-dec="بانتظار"><div class="n" id="k-pend">0</div><div class="l">لم يصدر قرار بعد</div><div class="bar"><i id="b-pend" style="background:var(--stuck)"></i></div></div>
+    <div class="kpi k-upd" data-st="يحتاج تحديث"><div class="n" id="k-upd">0</div><div class="l">يحتاج تحديث</div><div class="bar"><i id="b-upd" style="background:var(--upd)"></i></div></div>
+  </div>
+  <div class="controls">
+    <div class="tabs">
+      <button class="tab active" data-v="teams">📋 فرق العمل</button>
+      <button class="tab" data-v="people">👤 حسب المكلّف</button>
+      <button class="tab" data-v="status">📊 حسب الحالة</button>
+      <button class="tab" data-v="theme">🗂 حسب القضية</button>
+      <button class="tab" data-v="news">🆕 آخر المستجدات</button>
+      <button class="tab" data-v="dec">📜 قرارات التكليف</button>
+      <button class="tab" data-v="link">🔗 الربط والمواءمة</button>
+    </div>
+    <div class="search"><input id="q" placeholder="ابحث في الفرق، المهام، الأسماء، الإدارات، المعرّفات…"><span>🔍</span></div>
+    <div class="deptsel" id="dwrap"><select id="dept"></select></div>
+    <button class="reset" id="reset">↺ إعادة تعيين</button>
+  </div>
+  <div id="filterbar"></div>
+  <div id="view"></div>
+  <footer>
+    المصدر: قرار تشكيل فرق العمل الداخلية لتنفيذ أجندة اللامركزية 2026 (مسودة 3) · جدول تعيينات اللامركزية · خطة عمل الإصلاح 2025-2026 · الاستراتيجية القطاعية 2025-2027<br>
+    <span id="efftext"></span>
+  </footer>
+</div>
+<div class="ov" id="ov"><div class="modal" id="modal"></div></div>
+
+<script>
+const DATA = {
+ "teams": [
+  {
+   "id": 15,
+   "kind": "team",
+   "title": "الفريق الوطني لمراجعة وتحديث نظام تصنيف الهيئات المحلية",
+   "short": "مراجعة وتحديث نظام تصنيف الهيئات المحلية",
+   "origIds": [
+    "3",
+    "19"
+   ],
+   "planNums": [
+    "6",
+    "—"
+   ],
+   "theme": "هيكلة وتصنيف قطاع الحكم المحلي",
+   "problem": "عدد كبير ممن الهيئات المحلية وغياب نظام تصنيفات للهيئات المحلية | آلية تصنيف الهيئات المحلية غير متناسب مع معطيات الواقع السكاني والخدماتي والمالي والجيوسياسي",
+   "activities": [
+    "إعادة هيكلة قطاع الحكم المحلي ليكون اكثر حداثة وقادرا, (عدد كبير من الهيئات المحلية وغياب نظام تصنيفات للهيئات المحلية)",
+    "تطوير نظام وظيفي لتصنيف الهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "رائد مقبل – وكيل وزارة الحكم المحلي — رئيساً",
+     "body": "رائد مقبل – وكيل وزارة الحكم المحلي",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "رائد مقبل"
+     ],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "شادي بدارين – مدير عام الإدارة العامة للتشكيلات والانتخابات — مقرراً ومنسّقاً للفريق",
+     "body": "شادي بدارين – مدير عام الإدارة العامة للتشكيلات والانتخابات",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [
+      "شادي بدارين"
+     ],
+     "depts": [
+      "الإدارة العامة للتشكيلات والانتخابات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "خالد اشتية – الوكيل المساعد لشؤون الهيئات المحلية — عضواً",
+     "body": "خالد اشتية – الوكيل المساعد لشؤون الهيئات المحلية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "خالد اشتيه"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "إسلام أبو زياد – الوكيل المساعد والمستشار القانوني للوزارة — عضواً",
+     "body": "إسلام أبو زياد – الوكيل المساعد والمستشار القانوني للوزارة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "إسلام أبو زياد"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد للشؤون والإدارات المساندة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "رشيد عوض – الوكيل المساعد للشؤون الهندسية — عضواً",
+     "body": "رشيد عوض – الوكيل المساعد للشؤون الهندسية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "رشيد عوض"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع"
+     ],
+     "note": false
+    },
+    {
+     "raw": "محمد الرمحي – مدير عام صندوق تطوير وإقراض الهيئات المحلية — عضواً",
+     "body": "محمد الرمحي – مدير عام صندوق تطوير وإقراض الهيئات المحلية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "محمد الرمحي"
+     ],
+     "depts": [
+      "صندوق تطوير وإقراض الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن اتحاد الهيئات المحلية — عضواً",
+     "body": "ممثل عن اتحاد الهيئات المحلية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "اتحاد الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "بشير البرغوثي – مستشار الوزير للسياسات والتخطيط — عضواً",
+     "body": "بشير البرغوثي – مستشار الوزير للسياسات والتخطيط",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "بشير البرغوثي"
+     ],
+     "depts": [
+      "مكتب مستشار الوزير للسياسات والتخطيط"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "وضع السياسات العامة للنظام بما يعزز عملية هيكلة عصرية للهيئات المحلية.",
+    "وضع معايير مهنية للتصنيف تعتمد على الأداء والخدمات وجودتها والاستدامة المالية والإدارة الحديثة.",
+    "إلزامية التخطيط المشترك للمناطق المتجاورة.",
+    "تحديد حد أدنى للخدمات الإجبارية التي تقدمها الهيئة باستثناء الماء والكهرباء.",
+    "وضع سياسات تعزز التعاون المشترك وتقليل عدد الهيئات المحلية لضمان الاستدامة.",
+    "وضع سياسات لمفهوم البلديات الكبرى والعلاقة بين مركز المحافظة والتجمعات المحيطة والمتداخلة.",
+    "وضع خطة للتشاور والنقاش مع كل الفاعلين بالقطاع من خبراء وأكاديميين ووزراء سابقين.",
+    "وضع شروط مرجعية للمستشارين والشركات الاستشارية المكلفة بالدراسات."
+   ],
+   "target": "إنجاز المسودة الأولى لنظام التصنيف قبل نهاية عام ٢٠٢٦.",
+   "partners": "اتحاد الهيئات المحلية · صندوق تطوير وإقراض الهيئات المحلية · خبراء وأكاديميون ووزراء سابقون.",
+   "orgs": "الوزارة، اتحاد البلديات، صتدوق البلديات بالتعاون مع خبراء | وزارة الحكم المحلي واتحاد الهيئات المحلية وصندوق تطوير واقراض الهيئات المحلية بالتعاون من خلال التعاقد مع شركة استشارية",
+   "funding": "البنك الدولي من خلال صندوق البلديات | —",
+   "update": "عُقد الاجتماع الدوري الثاني يوم الخميس ٢٤/٩/٢٠٢٦؛ والمطلوب تحضير محضر الاجتماع من قِبل شادي بدارين.",
+   "status": "قيد التنفيذ",
+   "statusRaw": "قيد التنفيذ",
+   "roles": {
+    "رائد مقبل": [
+     "رئيس"
+    ],
+    "شادي بدارين": [
+     "مقرر"
+    ],
+    "خالد اشتيه": [
+     "عضو"
+    ],
+    "إسلام أبو زياد": [
+     "عضو"
+    ],
+    "رشيد عوض": [
+     "عضو"
+    ],
+    "محمد الرمحي": [
+     "عضو"
+    ],
+    "بشير البرغوثي": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "مكتب وكيل الوزارة": [
+     "رئيس"
+    ],
+    "الإدارة العامة للتشكيلات والانتخابات": [
+     "مقرر"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهيئات المحلية": [
+     "عضو"
+    ],
+    "مكتب الوكيل المساعد للشؤون والإدارات المساندة": [
+     "عضو"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع": [
+     "عضو"
+    ],
+    "صندوق تطوير وإقراض الهيئات المحلية": [
+     "عضو"
+    ],
+    "اتحاد الهيئات المحلية": [
+     "عضو"
+    ],
+    "مكتب مستشار الوزير للسياسات والتخطيط": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "3.1"
+    ],
+    "intervs": [
+     "2.6"
+    ],
+    "intervText": "مراجعة و تطوير هيكلية قطاع الحكم المحلي\n \n ملاحظة: الرقم 2.6 مستخدم مرتين في تقرير المبادرة (لنشاطين مختلفين)؛ هذا هو أول ورود له.",
+    "indicatorText": "النتيجة 3.1: منظومة قانونية عصرية ومستجيبة لاحتياجات قطاع الحكم المحلي\n مثال على المؤشرات: عدد القوانين التي تم إصدارها والمصادقة عليها؛ عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة | نظام تصنيف الهيئات المحلية لا يقابله مؤشر مستقل في جدول مؤشرات الاستراتيجية (رغم ارتباطه الوظيفي بالنتيجة 1.1).",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true,
+    "review": "◇ مراجعة الارتباط: صُنِّف بلا مؤشر، ومخرجه نظام تصنيف وظيفي يُقرّ رسمياً — وينطبق عليه مؤشر النتيجة (٣.١)، كما يخدم النتيجة (١.١) وظيفياً بوصفه مرجعية النظام المالي ونظام الموظفين. التوصية: ربطه بالنتيجة (٣.١) مع إشارة وظيفية إلى (١.١).",
+    "proposed": {
+     "progs": [],
+     "intervs": [],
+     "inds": []
+    }
+   },
+   "decision": {
+    "issued": true,
+    "title": "القرار رقم (٢٣٢٤) بتاريخ ١٥/٠٤/٢٠٢٦: تشكيل فريق وطني لمراجعة وتحديث نظام تصنيف الهيئات المحلية",
+    "source": "القرار الأصلي + حزمة الفريق الوطني (٥٦ صفحة)",
+    "date": "١٥/٠٤/٢٠٢٦",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "رائد مقبل – وكيل الوزارة – رئيساً",
+    "rapporteur": "شادي بدارين – مدير عام الإدارة العامة للتشكيلات والانتخابات — مقرراً ومنسّقاً للفريق",
+    "members": "خالد اشتيه؛ إسلام أبو زياد؛ رشيد عوض؛ محمد الرمحي (مدير عام صندوق تطوير وإقراض الهيئات المحلية)؛ ممثل عن اتحاد الهيئات المحلية؛ بشير البرغوثي – مستشار الوزير للسياسات والتخطيط. ويشارك في أعمال الفريق أيضاً: هيثم عكليك، جهاد مشاقي، شروق جابر، منى كيوان، وحازم القواسمي وعن الاتحاد أ. العناتي.",
+    "tasks": [
+     "• وضع السياسات العامة للنظام بما يعزز عملية هيكلة عصرية للهيئات المحلية.",
+     "• وضع معايير مهنية للتصنيف تعتمد على الأداء والخدمات وجودتها والاستدامة المالية والإدارة الحديثة.",
+     "• إلزامية التخطيط المشترك للمناطق المتجاورة.",
+     "• تحديد حد أدنى للخدمات الإجبارية التي تقدمها الهيئة باستثناء الماء والكهرباء.",
+     "• وضع سياسات تعزز التعاون المشترك وتقليل عدد الهيئات المحلية لضمان الاستدامة.",
+     "• وضع سياسات لمفهوم البلديات الكبرى والعلاقة بين مركز المحافظة والتجمعات المحيطة والمتداخلة.",
+     "• وضع خطة للتشاور والنقاش مع كل الفاعلين بالقطاع من خبراء وأكاديميين ووزراء سابقين.",
+     "• وضع شروط مرجعية للمستشارين والشركات الاستشارية المكلفة بالدراسات."
+    ],
+    "deadline": "إنجاز المسودة الأولى قبل نهاية عام ٢٠٢٦ (وفق ما هو مسجَّل في متابعة الملف).",
+    "reporting": "اجتماعات دورية للفريق؛ عُقد الاجتماع الثاني وأُقرّت فيه الورقة المفاهيمية المقدَّمة من اتحاد الهيئات المحلية.",
+    "next": [
+     "تحضير محضر الاجتماع الدوري الثاني من قِبل شادي بدارين وتعميمه على الفريق.",
+     "استكمال النقاش في معايير البلدية الكبرى / الأمانة / المتروبوليتان.",
+     "إقرار أوزان مؤشرات التصنيف — لا تزال استرشادية لحين إقرارها من اللجنة المختصة."
+    ],
+    "note": "أول فريق صدر بشأنه قرار تكليف رسمي ضمن أجندة اللامركزية — القرار رقم (٢٣٢٤) بتاريخ ١٤/٠٤/٢٠٢٦. التحدي المسجَّل: أكثر من ٤٦٠ هيئة محلية. النظام المعمول به يقتصر على حجم السكان. الملف مرتبط بفريقَي النظام المالي ونظام الموظفين اللذين يبنيان على التصنيف الوظيفي. تولّى شادي بدارين مهام مقرّر الفريق بصفته المعيَّن الجديد على الإدارة العامة للتشكيلات والانتخابات.",
+    "linkage": "خارطة طريق اللامركزية ٢٠٢٦: البندان (٦) و(١٩) | خطة الإصلاح ٢٠٢٥–٢٠٢٦: النشاط ٢.٦ | الاستراتيجية القطاعية: النتيجة ٣.١",
+    "scope": "full",
+    "coordinator": "شادي بدارين – الإدارة العامة للتشكيلات والانتخابات",
+    "number": "٢٣٢٤",
+    "mode": "issued",
+    "first": true
+   },
+   "outside": false
+  },
+  {
+   "id": 1,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لاستكمال نقل صلاحية تخمين وجباية ضريبة الأملاك ورخص المهن إلى الهيئات المحلية",
+   "short": "استكمال نقل صلاحية تخمين وجباية ضريبة الأملاك ورخص المهن إلى الهيئات المحلية",
+   "origIds": [
+    "9",
+    "10"
+   ],
+   "planNums": [
+    "1",
+    "—"
+   ],
+   "theme": "المركز المالي للهيئات المحلية",
+   "problem": "ضعف المركز المالي بما يضعف قدرتها على تقديم الخدمات وتطوبرها",
+   "activities": [
+    "نقل جباية ضريبة الأملاك الى الهيئات المحلية",
+    "نقل صلاحية جباية رخص المهن للهيئات المحلية ودمجها مع رسوم الحرف والصناعات"
+   ],
+   "composition": [
+    {
+     "raw": "ممثل عن الإدارة العامة لضريبة الأملاك — مقرراً",
+     "body": "ممثل عن الإدارة العامة لضريبة الأملاك",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة لضريبة الأملاك (وزارة المالية)"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل ثانٍ عن الإدارة العامة لضريبة الأملاك – دائرة المهن — عضواً",
+     "body": "ممثل ثانٍ عن الإدارة العامة لضريبة الأملاك – دائرة المهن",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة لضريبة الأملاك (وزارة المالية)"
+     ],
+     "note": false
+    },
+    {
+     "raw": "جهاد مشاقي – الإدارة العامة للرقابة والتوجيه — عضواً",
+     "body": "جهاد مشاقي – الإدارة العامة للرقابة والتوجيه",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "جهاد مشاقي"
+     ],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "سهى الشيخ – الإدارة العامة للشؤون المالية — عضواً",
+     "body": "سهى الشيخ – الإدارة العامة للشؤون المالية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "سهى الشيخ"
+     ],
+     "depts": [
+      "الإدارة العامة للشؤون المالية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "جهاد عابد – الإدارة العامة للشؤون القانونية — عضواً",
+     "body": "جهاد عابد – الإدارة العامة للشؤون القانونية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "جهاد عابد"
+     ],
+     "depts": [
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "رامي العلام – وحدة التخطيط والسياسات — عضواً",
+     "body": "رامي العلام – وحدة التخطيط والسياسات",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "رامي العلام"
+     ],
+     "depts": [
+      "وحدة التخطيط والسياسات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "لم يُسمَّ رئيس للفريق في القرار.",
+     "body": "لم يُسمَّ رئيس للفريق في القرار.",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "وضع خطة مشتركة لنقل جباية ضريبة الأملاك إلى كافة البلديات المخمّنة، والبالغ عددها (٨٨) بلدية.",
+    "وضع خطة مشتركة لتوسيع عملية التخمين في البلديات غير المخمّنة، ضمن سقف زمني واضح.",
+    "تحديد الإجراءات المطلوبة للبدء بالنقل التجريبي لجباية ضريبة المهن إلى البلديات، على غرار ضريبة الأملاك.",
+    "وضع توصيات تُرفع إلى المستوى القيادي في وزارتي المالية والحكم المحلي لمعالجة التحديات القائمة.",
+    "تقديم تقرير شهري حول تقدم العمل إلى كل من وزيري المالية والحكم المحلي، أو من ينوب عنهما."
+   ],
+   "target": "نقل جباية ضريبة الأملاك إلى كافة البلديات المخمّنة والبالغ عددها (٨٨) بلدية، والبدء بالنقل التجريبي لجباية ضريبة المهن.",
+   "partners": "وزارة المالية والتخطيط — الإدارة العامة لضريبة الأملاك.",
+   "orgs": "الحكم المحلي ووزارة المالية",
+   "funding": "اتحاد البلديات الهولندية وبرنامج الأمم المتحدة الانمائي",
+   "update": "صدر قرار الفريق الداخلي، ورُفع بتاريخ ١٩/١٠/٢٠٢٦ مقترح تشكيل فريق وطني مشترك مع وزارة المالية والتخطيط (كتاب رقم ٦٦٥٤-٢٠٢٦-١) — بانتظار موافقة الوزارة وتسمية ممثليها.",
+   "status": "قيد التنفيذ",
+   "statusRaw": "قيد التنفيذ",
+   "roles": {
+    "جهاد مشاقي": [
+     "عضو"
+    ],
+    "سهى الشيخ": [
+     "عضو"
+    ],
+    "جهاد عابد": [
+     "عضو"
+    ],
+    "رامي العلام": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة لضريبة الأملاك (وزارة المالية)": [
+     "مقرر",
+     "عضو"
+    ],
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ],
+    "الإدارة العامة للشؤون المالية": [
+     "عضو"
+    ],
+    "الإدارة العامة للشؤون القانونية": [
+     "عضو"
+    ],
+    "وحدة التخطيط والسياسات": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "1.1"
+    ],
+    "intervs": [
+     "2.2"
+    ],
+    "intervText": "النقل الكامل لصلاحية التخمين و الجباية لضريبة الأملاك إلى الهيئات المحلية بما يضمن العائد الكامل لها",
+    "indicatorText": "النتيجة 1.1: تحسن الإدارة المالية في الهيئات المحلية والمجالس المشتركة\n مثال على المؤشرات: معدل نسبة زيادة الإيرادات السنوية؛ عدد الهيئات المحلية التي تقوم بجباية ضريبة الأملاك؛ معدل نسبة دقة البيانات المالية للهيئات المحلية.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "قرار: تشكيل فريق مشترك مع الإدارة العامة لضريبة الأملاك",
+    "source": "قرارات تشكيل الفرق – ص٢",
+    "date": "غير مؤرَّخ في النسخة المتاحة (خانتا الرقم والتاريخ فارغتان)",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "لم يُسمَّ رئيس للفريق في القرار",
+    "rapporteur": "ممثل عن الإدارة العامة لضريبة الأملاك — مقرراً (حسب القرار)",
+    "members": "ممثل ثانٍ عن الإدارة العامة لضريبة الأملاك / دائرة المهن – عضواً؛ جهاد مشاقي – الإدارة العامة للرقابة والتوجيه – عضواً؛ سهى الشيخ – الإدارة العامة للشؤون المالية – عضواً؛ جهاد عابد – الإدارة العامة للشؤون القانونية – عضواً؛ رامي العلام – وحدة التخطيط والسياسات – عضواً",
+    "tasks": [
+     "١. وضع خطة مشتركة لنقل جباية ضريبة الأملاك إلى كافة البلديات المخمّنة والبالغ عددها (٨٨) بلدية.",
+     "٢. وضع خطة مشتركة لتوسيع عملية التخمين في البلديات غير المخمّنة، ضمن سقف زمني واضح.",
+     "٣. تحديد الإجراءات المطلوبة للبدء بالنقل التجريبي لجباية ضريبة المهن إلى البلديات، على غرار ضريبة الأملاك.",
+     "٤. وضع توصيات تُرفع إلى المستوى القيادي في وزارتي المالية والحكم المحلي لمعالجة التحديات القائمة.",
+     "٥. تقديم تقرير شهري حول تقدم العمل إلى كل من وزيري المالية والحكم المحلي أو من ينوب عنهما."
+    ],
+    "deadline": "لم يُحدَّد موعد نهائي؛ الالتزام قائم بتقرير شهري مشترك.",
+    "reporting": "تقرير شهري إلى وزيري المالية والحكم المحلي أو من ينوب عنهما.",
+    "next": [
+     "١. الحصول على الموافقة الخطية من وزارة المالية والتخطيط؛ الموافقة الشفهية حاصلة قبل مخاطبة مجلس الوزراء (مذكرة داخلية ٣٤٧١٢٠ بتاريخ ١٧/٩/٢٠٢٦، متابعة يومية من جهاد مشاقي).",
+     "٢. متابعة كتاب الأمانة العامة لمجلس الوزراء رقم ١٨٣٩/٢٠٢٦ تاريخ ١٥/٩/٢٠٢٦ الموجَّه لوزير المالية بشأن منح صلاحيات التحصيل لبلديات ميثلون والطيبة وبتير ويعبد (وارد الوزارة رقم ١٨٧٧ تاريخ ١٥/٩/٢٠٢٦).",
+     "٣. تسمية ممثلي الإدارة العامة لضريبة الأملاك (المقرر والعضو) لتفعيل الفريق."
+    ],
+    "note": "القرار يشكّل فريقاً «وطنياً مشتركاً» مع الإدارة العامة لضريبة الأملاك — بما يطابق التوصية الواردة في المذكرة. لم يُسمَّ رئيس للفريق. دُمج ملف رخص المهن ضمن هذا البند وبالقرار ذاته: البند (٣) من القرار يكلّف الفريق بتحديد الإجراءات المطلوبة للبدء بالنقل التجريبي لجباية ضريبة المهن إلى البلديات على غرار ضريبة الأملاك.",
+    "linkage": "خارطة طريق اللامركزية ٢٠٢٦: البند (١) نقل جباية ضريبة الأملاك، ويلامس البند (٢) رخص المهن | خطة الإصلاح ٢٠٢٥–٢٠٢٦: النشاط ٢.٢ | الاستراتيجية القطاعية: النتيجة ١.١",
+    "scope": "full",
+    "coordinator": "جهاد مشاقي — الإدارة العامة للرقابة والتوجيه (منسّق الملف في الوزارة)",
+    "trail": [
+     {
+      "date": "٠٩/٠٩/٢٠٢٦",
+      "ref": "كتاب الوزارة رقم (٦٦٨)",
+      "text": "كتاب معالي وزير الحكم المحلي إلى أمين عام مجلس الوزراء لإدراج بند على جدول أعمال جلسة مجلس الوزراء بشأن منح صلاحيات تحصيل ضريبة الأملاك وغرامات التخلف عنها — استناداً إلى القانون رقم (١٢) لسنة ٢٠١٨ بتعديل قانون ضريبة الأبنية والأراضي والمادة (٢) منه، وبالتنسيق مع وزارة المالية. وارد الأمانة العامة لمجلس الوزراء بتاريخ ٠٩/٠٩/٢٠٢٦."
+     },
+     {
+      "date": "١٥/٠٩/٢٠٢٦",
+      "ref": "كتاب الأمانة العامة رقم ١٨٣٩/٢٠٢٦",
+      "text": "أحالت الأمانة العامة لمجلس الوزراء الكتاب إلى معالي وزير المالية والتخطيط لدراسة الموضوع وإفادتها بالخصوص تمهيداً لاتخاذ المقتضى (نسخة: دولة رئيس الوزراء، ومعالي وزير الحكم المحلي). وارد الوزارة رقم (١٨٧٧) بتاريخ ١٥/٠٩/٢٠٢٦."
+     },
+     {
+      "date": "١٧/٠٩/٢٠٢٦",
+      "ref": "مذكرة داخلية ٣٤٧١٢٠ — تسلسل ٤٥٩٥٥/٢٠٢٦",
+      "text": "قُيّدت المعاملة بحالة «تحت الإجراء» دون تحديد وقت لإنجاز العمل."
+     },
+     {
+      "date": "١٩/٠٩/٢٠٢٦",
+      "ref": "متابعة الإدارة العامة للرقابة والتوجيه",
+      "text": "أفاد جهاد مشاقي بأن موضوع ضريبة الأملاك يُتابع يومياً مع جميع الجهات ذات العلاقة، وأنه سيتم الإسراع بصدور موافقة وزارة المالية، حيث حصلت الوزارة على الموافقة الشفهية قبل مخاطبة مجلس الوزراء."
+     },
+     {
+      "date": "١٩/١٠/٢٠٢٦",
+      "ref": "كتاب الوزارة رقم (٦٦٥٤-٢٠٢٦-١)",
+      "text": "كتاب معالي وزير الحكم المحلي إلى معالي وزير المالية والتخطيط بمقترح تشكيل فريق وطني مشترك بين الوزارتين برئاسة الإدارة العامة لضريبة الأملاك، مع تسمية أربعة ممثلين عن وزارة الحكم المحلي وطلب تسمية ممثلي وزارة المالية تمهيداً لمباشرة الفريق أعماله."
+     }
+    ],
+    "scopeNote": "نسب توزيع التحصيلات المطلوب إقرارها: بلديتا ميثلون والطيبة ٨٤٪ للبلدية و١٦٪ للحكومة/وزارة المالية؛ وبلديتا بتير ويعبد ٥٠٪ للبلدية و١٦٪ للحكومة و٣٤٪ بدل سداد من مديونية البلدية — استناداً إلى قرار مجلس الوزراء رقم (٠٧/٢٣/١٩/م.و/ر.م) لعام ٢٠٢٤. وقد سبق للوزارة مخاطبة الأمانة العامة بطلب تعديل النسب إلى ٩٠٪/١٠٪ للبلديات غير المديونة و٥٦٪/١٠٪/٣٤٪ للمديونة. ويتضمن الطلب أن يشمل قرار مجلس الوزراء حق سحب التفويض من الهيئات المحلية عند الحاجة وفقاً لتوصيات وزارة الحكم المحلي.",
+    "mode": "issued",
+    "nationalRequest": {
+     "ref": "كتاب الوزارة رقم (٦٦٥٤-٢٠٢٦-١)",
+     "date": "١٩/١٠/٢٠٢٦",
+     "to": "معالي د. اسطيفان سلامة — وزير المالية والتخطيط",
+     "from": "د.م. سامي حجاوي — وزير الحكم المحلي",
+     "state": "بانتظار موافقة وزارة المالية وتسمية ممثليها",
+     "host": "يُشكَّل الفريق برئاسة الإدارة العامة لضريبة الأملاك وعضوية ممثلين عن الوزارتين.",
+     "objectives": [
+      "توسيع جباية ضريبة الأملاك إلى الهيئات المحلية من خلال خطة مشتركة لاستكمال النقل إلى البلديات المخمّنة وفق أولويات وجدول زمني محدد.",
+      "تسريع وتوسيع عمليات تخمين العقارات في الهيئات المحلية غير المخمّنة وفق خطة تنفيذية بمراحل زمنية واضحة، بما يعزز القاعدة الضريبية والإيرادات المحلية.",
+      "وضع الآليات اللازمة لنقل جباية ضريبة الحرف والصناعات (المهن) إلى الهيئات المحلية، بما يشمل المتطلبات الفنية والإدارية والقانونية، والبدء بالتطبيق التجريبي تمهيداً للتوسع التدريجي.",
+      "تنظيم التنسيق والمتابعة بين الوزارتين، ومعالجة التحديات والمعيقات ورفع التوصيات اللازمة للمستويات القيادية.",
+      "إعداد خطط عمل وتقارير متابعة دورية حول مستوى الإنجاز والتحديات والتوصيات، ورفعها إلى معالي الوزيرين."
+     ],
+     "molgMembers": [
+      "جهاد مشاقي — الإدارة العامة للرقابة والتوجيه",
+      "سهى الشيخ — الإدارة العامة للشؤون المالية",
+      "جهاد عابد — الإدارة العامة للشؤون القانونية",
+      "رامي العلام — وحدة التخطيط والسياسات"
+     ],
+     "ask": "الموافقة على المقترح وتسمية ممثلي وزارة المالية والتخطيط تمهيداً لمباشرة الفريق أعماله."
+    }
+   },
+   "outside": false
+  },
+  {
+   "id": 2,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتوحيد قانوني الحرف والصناعات",
+   "short": "توحيد قانوني الحرف والصناعات",
+   "origIds": [
+    "1"
+   ],
+   "planNums": [
+    "2"
+   ],
+   "theme": "المركز المالي للهيئات المحلية",
+   "problem": "ضعف المركز المالي بما يضعف قدرتها على تقديم الخدمات وتطوبرها",
+   "activities": [
+    "تعديل قانون الحرف والصناعات وتوحيده مع قانون رخص المهن مع نقل الصلاحية للهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "إسلام أبو زياد – الوكيل المساعد للشؤون والإدارات المساندة – رئيساً",
+     "body": "إسلام أبو زياد – الوكيل المساعد للشؤون والإدارات المساندة",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "إسلام أبو زياد"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد للشؤون والإدارات المساندة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للموازنات – مقرراً",
+     "body": "ممثل عن الإدارة العامة للموازنات",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للتخطيط والتنظيم العمراني (مقترح ربى ميزار)– عضواً",
+     "body": "ممثل عن الإدارة العامة للتخطيط والتنظيم العمراني (مقترح ربى ميزار)",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "ربى ميزار"
+     ],
+     "depts": [
+      "الإدارة العامة للتخطيط والتنظيم العمراني"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للرقابة والتوجيه – عضواً",
+     "body": "ممثل عن الإدارة العامة للرقابة والتوجيه",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "استصدار موافقة وزارة المالية والتخطيط على البدء بالمراجعة والتعديل، باعتبارها الشرط المسبق الذي يقف خلف تعثّر هذا الملف حتى تاريخه.",
+    "إجراء المراجعة القانونية وإلغاء التعارض بين قوانين الوزارات المختلفة ذات الصلة.",
+    "مراجعة قانوني الحرف والصناعات وإزالة التعارض بينهما وبين تشريعات الوزارات ذات العلاقة.",
+    "التنسيق مع اللجنة القائمة التي تنظر في قانوني الحرف والصناعات والمهن، والبناء على دراستها الفنية المفصّلة وعلى نظام ترخيص المنشآت الصناعية المُقرّ، تفادياً لازدواجية العمل.",
+    "إعداد المذكرة التفسيرية ومبررات التعديل ورفعها إلى الجهات المعنية تمهيداً لمصادقة مجلس الوزراء.",
+    "إعداد خطة النقل التدريجي لصلاحية جباية رخص المهن ودمجها مع رسوم الحرف والصناعات، بدءاً بعشر هيئات محلية.",
+    "مأسسة الإجراء داخل الوزارة بعد النقل، باعتباره الخطوة التالية المسجّلة على هذا الملف.",
+    "التنسيق مع الوزارات المعنية لتشكيل فريق مشترك يتولى مراجعة التعارض التشريعي وإقرار صيغة التعديل."
+   ],
+   "target": "إنجاز المذكرة التفسيرية ومبررات التعديل، والبدء بنقل صلاحية جباية رخص المهن إلى الهيئات المحلية.",
+   "partners": "وزارة المالية والتخطيط، وزارة الاقتصاد الوطني، وزارة الصناعة، وزارة السياحة والآثار، وزارة الأوقاف والشؤون الدينية، وزارة الصحة، اتحاد الهيئات المحلية.",
+   "orgs": "الحكم المحلي والمالية ووزارة الاقتصاد والسياحة والاوقاف والصحة، وزارة الصناعة | وزارة الحكم المحلي ووزارة المالية والتخطيط ووزارة الصحة",
+   "funding": "التعاون الألماني",
+   "update": "جرت مراجعة جوهرية على نطاق الملف: نُقل شقّ رخص المهن إلى ملف ضريبة الأملاك وبالقرار ذاته، وخُفِّضت أولوية توحيد قانوني الحرف والصناعات فلن يُنفَّذ خلال العام الحالي.",
+   "status": "مؤجّل",
+   "statusRaw": "مؤجّل — خُفِّضت أولويته لهذا العام",
+   "roles": {
+    "إسلام أبو زياد": [
+     "رئيس"
+    ],
+    "ربى ميزار": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "مكتب الوكيل المساعد للشؤون والإدارات المساندة": [
+     "رئيس"
+    ],
+    "الإدارة العامة للموازنات": [
+     "مقرر"
+    ],
+    "الإدارة العامة للتخطيط والتنظيم العمراني": [
+     "عضو"
+    ],
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "1 - تنفيذ سياسات الحكومة في تصفية صافي الإقراض",
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "1.1"
+    ],
+    "intervs": [
+     "2.4"
+    ],
+    "intervText": "توحيد قانوني الحرف والصناعات ونقل صلاحية جباية رسوم الحرف والمهن والصناعات الى الهيئة المحلية بشكل كامل",
+    "indicatorText": "النتيجة 1.1: تحسن الإدارة المالية في الهيئات المحلية والمجالس المشتركة\n مثال على المؤشرات: معدل نسبة زيادة الإيرادات السنوية؛ عدد الهيئات المحلية التي تقوم بجباية ضريبة الأملاك؛ معدل نسبة دقة البيانات المالية للهيئات المحلية.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": false,
+    "title": "",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "يُعاد النظر في الملف ضمن أولويات عام ٢٠٢٧.",
+     "متابعة أعمال اللجنة القائمة التي تنظر في قانوني الحرف والصناعات والمهن."
+    ],
+    "note": "البند (٣) من قرار فريق ضريبة الأملاك يغطي النقل التجريبي لجباية ضريبة المهن فقط.",
+    "linkage": "",
+    "scope": "",
+    "mode": "deprioritised",
+    "revision": "⤓ مراجعة جوهرية على نطاق الملف — أُعيد تعريفه وخُفِّضت أولويته.\n• نُقل شقّ «نقل صلاحية جباية رخص المهن» إلى ملف ضريبة الأملاك ويُنفَّذ بموجب القرار الصادر بشأنه.\n• بقي في هذا الملف شقّ «توحيد قانوني الحرف والصناعات» وحده، وقد خُفِّضت أولويته ولن يُنفَّذ خلال العام الحالي.\n• الشرط المسبق قائم كما هو: موافقة وزارة المالية والتخطيط على البدء بالمراجعة والتعديل."
+   },
+   "outside": false
+  },
+  {
+   "id": 3,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتطوير نظام التحويلات المالية الحكومية للهيئات المحلية",
+   "short": "تطوير نظام التحويلات المالية الحكومية للهيئات المحلية",
+   "origIds": [
+    "8"
+   ],
+   "planNums": [
+    "3"
+   ],
+   "theme": "العلاقة المالية مع وزارة المالية",
+   "problem": "عدم انتظام التحزبلات والمستحقات مما يعبق التخطيط للخدمات",
+   "activities": [
+    "تطوير نظام واضح وشفاف للتحويلات الحكومية للهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "بشير البرغوثي – مستشار الوزير للسياسات والتخطيط – رئيساً ومقرراً",
+     "body": "بشير البرغوثي – مستشار الوزير للسياسات والتخطيط",
+     "roles": [
+      "رئيس",
+      "مقرر"
+     ],
+     "people": [
+      "بشير البرغوثي"
+     ],
+     "depts": [
+      "مكتب مستشار الوزير",
+      "وحدة التخطيط والسياسات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "مكتب الوكيل",
+     "body": "مكتب الوكيل",
+     "roles": [],
+     "people": [],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "استكمال معالجة القضايا القانونية العالقة في مسودة النظام المُعدّة من مستشار صندوق تطوير وإقراض الهيئات المحلية، وإنهاء الإطار القانوني قبل نهاية عام ٢٠٢٦.",
+    "التحضير لورشة إقرار النظام بحضور وزيري الحكم المحلي والمالية والتخطيط.",
+    "رفع النظام لمصادقة مجلس الوزراء وإعداد خطة البدء بخطوات التنفيذ مطلع عام ٢٠٢٧.",
+    "ضمان اتساق النظام مع آلية التقاص وأرصدة مديونية الهيئات المحلية، بما يمنع عودة تراكم صافي الإقراض.",
+    "التنسيق مع وزارة المالية والتخطيط وصندوق تطوير وإقراض الهيئات المحلية لتفعيل الفريق المشترك المكلّف بهذا الملف."
+   ],
+   "target": "مصادقة مجلس الوزراء على النظام، والبدء بخطوات التنفيذ مطلع عام ٢٠٢٧.",
+   "partners": "وزارة المالية والتخطيط، صندوق تطوير وإقراض الهيئات المحلية، اتحاد الهيئات المحلية، البنك الدولي.",
+   "orgs": "وزارة المالية والحكم المحلي واتحاد البلديات وصندوق البلديات",
+   "funding": "البنك الدولي من خلال صندوق البلديات",
+   "update": "يوجد قضايا قانونية عالقة،الخطة هي انهاء الاطار القانوني بآخر ال٢٠٢٦",
+   "status": "عالق",
+   "statusRaw": "عالق",
+   "roles": {
+    "بشير البرغوثي": [
+     "رئيس",
+     "مقرر"
+    ]
+   },
+   "depts": {
+    "مكتب مستشار الوزير": [
+     "رئيس",
+     "مقرر"
+    ],
+    "وحدة التخطيط والسياسات": [
+     "رئيس",
+     "مقرر"
+    ],
+    "مكتب وكيل الوزارة": [
+     "مشارك"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "1.1"
+    ],
+    "intervs": [
+     "2.1"
+    ],
+    "intervText": "تطوير و إقرار نظام واضح وشفاف للتحويلات الحكومية للهيئات المحلية",
+    "indicatorText": "النتيجة 1.1: تحسن الإدارة المالية في الهيئات المحلية والمجالس المشتركة\n مثال على المؤشرات: معدل نسبة زيادة الإيرادات السنوية؛ عدد الهيئات المحلية التي تقوم بجباية ضريبة الأملاك؛ معدل نسبة دقة البيانات المالية للهيئات المحلية.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "تكليف سابق بقرار رسمي",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "استكمال معالجة القضايا القانونية العالقة وإنهاء الإطار القانوني قبل نهاية ٢٠٢٦.",
+     "التحضير لورشة الإقرار بحضور وزيري المالية والتخطيط والحكم المحلي."
+    ],
+    "note": "",
+    "linkage": "",
+    "scope": "",
+    "mode": "prior",
+    "priorNote": "كُلِّف هذا الملف سابقاً بقرار رسمي؛ ولا يلزم إصدار قرار تكليف جديد. المتابعة قائمة مع وزارة المالية والتخطيط وصندوق تطوير وإقراض الهيئات المحلية لاستكمال الإطار القانوني."
+   },
+   "outside": false
+  },
+  {
+   "id": 4,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لمراجعة نظام التشكيلات وموظفي الهيئات المحلية",
+   "short": "مراجعة نظام التشكيلات وموظفي الهيئات المحلية",
+   "origIds": [
+    "15"
+   ],
+   "planNums": [
+    "7"
+   ],
+   "theme": "الإدارة المحلية",
+   "problem": "نظام التشكيلات وموظفي الهيئات المحلية تظام مركزي ولا يتناسب مع القانون ويرهق الوضع المالي للهيئات المحلية",
+   "activities": [
+    "مراجعة نظام التشكيلات وموظفي الهيئات المحلية مع سلم الرواتب وتطوير نظام جديد"
+   ],
+   "composition": [
+    {
+     "raw": "سنابل بريك – الإدارة العامة للشؤون القانونية — مقرراً",
+     "body": "سنابل بريك – الإدارة العامة للشؤون القانونية",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [
+      "سنابل بريك"
+     ],
+     "depts": [
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ضحى عاكف – الإدارة العامة للرقابة والتوجيه — عضواً",
+     "body": "ضحى عاكف – الإدارة العامة للرقابة والتوجيه",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "ضحى عاكف"
+     ],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "محمود زبيدي – الإدارة العامة للموازنات — عضواً",
+     "body": "محمود زبيدي – الإدارة العامة للموازنات",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "محمود زبيدي"
+     ],
+     "depts": [
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن اتحاد الهيئات المحلية — عضواً",
+     "body": "ممثل عن اتحاد الهيئات المحلية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "اتحاد الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "يعمل الفريق تحت إشراف وكيل الوزارة؛ ولم يُسمَّ رئيس له في القرار.",
+     "body": "يعمل الفريق تحت إشراف وكيل الوزارة؛ ولم يُسمَّ رئيس له في القرار.",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "مراجعة شاملة لأحكام نظام موظفي الهيئات المحلية وتشخيص القصور أو الخلل فيه، ووضع السياسات والحلول لمعالجتها بما يعزز الاستدامة المالية للهيئات المحلية.",
+    "دراسة إمكانية صياغة ضوابط تمنح الهيئات المحلية صلاحيات أوسع في إعادة هيكلة الوظائف والكادر البشري وسلم الرواتب وفق متطلبات كل هيئة.",
+    "تحديد سقف أعلى لنسبة الرواتب من الموازنة التشغيلية كمعيار أساسي للحوكمة المالية.",
+    "اقتراح معايير تقييم علمية تربط الأمان الوظيفي بمستوى الأداء والالتزام.",
+    "التشاور مع الأطراف ذات العلاقة والفاعلين في القطاع، والتواصل مع التعاون الألماني عبر منسق البرنامج لتوفير الدعم المالي اللازم.",
+    "تقديم تقرير شهري إلى عطوفة وكيل الوزارة حول سير العمل والتقدم المحرز."
+   ],
+   "target": "إنجاز المسودة الأولى بموعد أقصاه نهاية عام ٢٠٢٦.",
+   "partners": "اتحاد الهيئات المحلية · نقابة العاملين في الهيئات المحلية · وزارة العمل.",
+   "orgs": "وزارة الحكم المحلي واتجاد البلديات ونقابة العاملين بالهيئات المحلية ووزارةا العمل",
+   "funding": "التعاون الألماني",
+   "update": "مطلوب فريق وطني خاص مع استشارة الدائرة القانونية، من الوكيل والوزير. \nووضع خطة، والمهام المطلوبة بداية ٢٠٢٧",
+   "status": "عالق",
+   "statusRaw": "عالق",
+   "roles": {
+    "سنابل بريك": [
+     "مقرر"
+    ],
+    "ضحى عاكف": [
+     "عضو"
+    ],
+    "محمود زبيدي": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للشؤون القانونية": [
+     "مقرر"
+    ],
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ],
+    "الإدارة العامة للموازنات": [
+     "عضو"
+    ],
+    "اتحاد الهيئات المحلية": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "3.1"
+    ],
+    "intervs": [
+     "2.11"
+    ],
+    "intervText": "استمرار العمل على تطوير مشاريع انظمة عامة و خاصة\n \n ملاحظة: نشاط عام غير مخصص لموضوع نظام الموظفين تحديداً، لكن \"الإنجاز حتى حينه\" المسجل تحته في التقرير هو: \"تم تشكيل فريق وطني لمراجعة و تطوير نظام موظفي الهيئات المحلية\" — وهو ما يربطه مباشرة بهذه القضية.",
+    "indicatorText": "النتيجة 3.1: منظومة قانونية عصرية ومستجيبة لاحتياجات قطاع الحكم المحلي\n مثال على المؤشرات: عدد القوانين التي تم إصدارها والمصادقة عليها؛ عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها.",
+    "gap": "مراجعة نظام موظفي الهيئات المحلية لا يقابلها مؤشر مخصص في جدول مؤشرات الاستراتيجية.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true,
+    "review": "◇ مراجعة الارتباط: صُنِّف بلا مؤشر، ومخرجه نظام مُحدَّث يُقرّ من مجلس الوزراء — وهو ما يقيسه مؤشر النتيجة (٣.١) «عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها». التوصية: ربطه بالنتيجة (٣.١).",
+    "proposed": {
+     "progs": [],
+     "intervs": [],
+     "inds": [
+      "3.1"
+     ]
+    }
+   },
+   "decision": {
+    "issued": true,
+    "title": "قرار بشأن تشكيل فريق لمراجعة وتطوير نظام موظفي الهيئات المحلية",
+    "source": "قرارات تشكيل الفرق – ص٥ و٦",
+    "date": "غير مؤرَّخ في النسخة المتاحة",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "لم يُسمَّ رئيس؛ يعمل الفريق تحت إشراف وكيل الوزارة",
+    "rapporteur": "سنابل بريك – الإدارة العامة للشؤون القانونية – مقرراً",
+    "members": "ضحى عاكف – الإدارة العامة للرقابة والتوجيه – عضواً؛ محمود زبيدي – الإدارة العامة للموازنات – عضواً؛ ممثل عن اتحاد الهيئات المحلية – عضواً",
+    "tasks": [
+     "أولاً: مراجعة شاملة لأحكام نظام موظفي الهيئات المحلية، وتشخيص القصور أو الخلل في أحكام النظام، ووضع السياسات والحلول لمعالجتها بما يعزز الاستدامة المالية للهيئات المحلية، بما يشمل:",
+     "١. دراسة إمكانية صياغة ضوابط تمنح الهيئات المحلية صلاحيات أوسع في إعادة هيكلة الوظائف والكادر البشري وسلم الرواتب وفق متطلبات كل هيئة.",
+     "٢. تحديد سقف أعلى لنسبة الرواتب من الموازنة التشغيلية كمعيار أساسي للحوكمة المالية.",
+     "٣. اقتراح معايير تقييم علمية تربط الأمان الوظيفي بمستوى الأداء والالتزام.",
+     "ثانياً: للفريق صلاحية التشاور مع الأطراف ذات العلاقة والفاعلين في القطاع، والتواصل مع التعاون الألماني من خلال منسق البرنامج بالوزارة لتوفير أي دعم مالي لازم لتنفيذ خطة المراجعة والتطوير."
+    ],
+    "deadline": "إنجاز المسودة الأولى بموعد أقصاه نهاية عام ٢٠٢٦.",
+    "reporting": "تقرير شهري إلى عطوفة وكيل الوزارة حول سير العمل والتقدم المحرز.",
+    "next": [
+     "١. تسمية ممثل اتحاد الهيئات المحلية (العضوية الوحيدة غير المسمّاة).",
+     "٢. عقد الاجتماع الأول وإقرار خطة المراجعة وجدولها الزمني بما يضمن إنجاز المسودة قبل نهاية ٢٠٢٦.",
+     "٣. التواصل مع منسق برنامج التعاون الألماني بالوزارة لتأمين الدعم المالي للمراجعة، وفق ما أجازه البند «ثانياً»."
+    ],
+    "note": "نسخة القرار موجَّهة إلى: الوكيل، الرقابة والتوجيه، الموازنات، الشؤون القانونية، والاتحاد الفلسطيني للهيئات المحلية. التشكيل يختلف عن المذكرة: لا رئيس مسمّى، والمقرر من الشؤون القانونية لا من التشكيلات والانتخابات.",
+    "linkage": "خارطة طريق اللامركزية ٢٠٢٦: البند (٧) نظام التشكيلات والموظفين | خطة الإصلاح ٢٠٢٥–٢٠٢٦: النشاط ٢.١١ | الاستراتيجية القطاعية: لا يوجد مؤشر مخصّص",
+    "scope": "full",
+    "coordinator": "سنابل بريك – الإدارة العامة للشؤون القانونية",
+    "mode": "issued"
+   },
+   "outside": false
+  },
+  {
+   "id": 5,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتعديل نظام رؤساء وأعضاء مجالس الهيئات المحلية",
+   "short": "تعديل نظام رؤساء وأعضاء مجالس الهيئات المحلية",
+   "origIds": [
+    "16"
+   ],
+   "planNums": [
+    "10"
+   ],
+   "theme": "المركزية الإدارية",
+   "problem": "مركزية نظام رؤساء وأعضاء مجالس الهيئات المحلية",
+   "activities": [
+    "مركزية نظام رؤساء وأعضاء مجالس الهيئات المحلية: نظام لا يتفق وقانون الانتخابات"
+   ],
+   "composition": [
+    {
+     "raw": "رائد مقبل – وكيل وزارة الحكم المحلي – رئيساً",
+     "body": "رائد مقبل – وكيل وزارة الحكم المحلي",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "رائد مقبل"
+     ],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "خالد اشتيه – الوكيل المساعد لشؤون الهيئات المحلية – مقرراً",
+     "body": "خالد اشتيه – الوكيل المساعد لشؤون الهيئات المحلية",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [
+      "خالد اشتيه"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "رشيد عوض – الوكيل المساعد لشؤون الهندسة والمشاريع – عضواً",
+     "body": "رشيد عوض – الوكيل المساعد لشؤون الهندسة والمشاريع",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "رشيد عوض"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع"
+     ],
+     "note": false
+    },
+    {
+     "raw": "إسلام أبو زياد – الوكيل المساعد للشؤون والإدارات المساندة – عضواً",
+     "body": "إسلام أبو زياد – الوكيل المساعد للشؤون والإدارات المساندة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "إسلام أبو زياد"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد للشؤون والإدارات المساندة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "وبمشاركة معالي وزير الحكم المحلي سامي حجاوي، وبالاستشارة مع الإدارة العامة للشؤون القانونية",
+     "body": "وبمشاركة معالي وزير الحكم المحلي سامي حجاوي، وبالاستشارة مع الإدارة العامة للشؤون القانونية",
+     "roles": [],
+     "people": [
+      "سامي حجاوي"
+     ],
+     "depts": [
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "تحديد الفجوات بين النظام النافذ وقانون انتخاب مجالس الهيئات المحلية، ومواءمة النظام معه.",
+    "تحديد صلاحيات رئيس الهيئة المحلية وحدود العلاقة بينه وبين المجلس وبين الوزارة.",
+    "مراجعة أسس المكافآت ضمن معايير عامة تراعي العدالة وقدرات الهيئات المحلية وفق تصنيفاتها.",
+    "التنسيق مع اتحاد الهيئات المحلية وخبراء القطاع لتشكيل وتفعيل الفريق الوطني الخاص بمراجعة النظام.",
+    "صياغة التعديلات ورفع النظام إلى مجلس الوزراء."
+   ],
+   "target": "رفع النظام المعدّل إلى مجلس الوزراء.",
+   "partners": "اتحاد الهيئات المحلية، الإدارة العامة للشؤون القانونية، خبراء القطاع.",
+   "orgs": "الحكم المحلي بالتعاون اتحاد البلديات",
+   "funding": "التعاون الألماني",
+   "update": "يجب تشكيل فريق وطني، وزارة الحكم المحلي، اتحاد البلديات، خبراء، تحديد الفجوات. تحديد صلاحيات رئيس البلدية",
+   "status": "عالق",
+   "statusRaw": "عالق",
+   "roles": {
+    "رائد مقبل": [
+     "رئيس"
+    ],
+    "خالد اشتيه": [
+     "مقرر"
+    ],
+    "رشيد عوض": [
+     "عضو"
+    ],
+    "إسلام أبو زياد": [
+     "عضو"
+    ],
+    "سامي حجاوي": [
+     "مشارك"
+    ]
+   },
+   "depts": {
+    "مكتب وكيل الوزارة": [
+     "رئيس"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهيئات المحلية": [
+     "مقرر"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع": [
+     "عضو"
+    ],
+    "مكتب الوكيل المساعد للشؤون والإدارات المساندة": [
+     "عضو"
+    ],
+    "مكتب الوزير": [
+     "مشارك"
+    ],
+    "الإدارة العامة للشؤون القانونية": [
+     "مشارك"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "3.1"
+    ],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "النتيجة 3.1: منظومة قانونية عصرية ومستجيبة لاحتياجات قطاع الحكم المحلي\n مثال على المؤشرات: عدد القوانين التي تم إصدارها والمصادقة عليها؛ عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها.",
+    "gap": "تحديث نظام مكافآت رؤساء وأعضاء المجالس لا يقابله مؤشر محدد في الاستراتيجية.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": false,
+    "hasInd": true,
+    "review": "◇ مراجعة الارتباط: صُنِّف بلا مؤشر، ومخرجه نظام معدَّل يُرفع إلى مجلس الوزراء — وينطبق عليه مؤشر النتيجة (٣.١). التوصية: ربطه بالنتيجة (٣.١).",
+    "proposed": {
+     "progs": [],
+     "intervs": [],
+     "inds": [
+      "3.1"
+     ]
+    }
+   },
+   "decision": {
+    "issued": false,
+    "title": "",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "إصدار قرار التشكيل.",
+     "تحديد الفجوات بين النظام النافذ وقانون انتخاب مجالس الهيئات المحلية."
+    ],
+    "note": "",
+    "linkage": "",
+    "scope": "",
+    "mode": "pending"
+   },
+   "outside": false
+  },
+  {
+   "id": 6,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لوضع معايير وتعليمات مصادقة الوزير على قرارات الهيئات المحلية (الإقالة وتسيير الأعمال والتعيينات)",
+   "short": "وضع معايير وتعليمات مصادقة الوزير على قرارات الهيئات المحلية (الإقالة وتسيير الأعمال والتعيينات)",
+   "origIds": [
+    "4"
+   ],
+   "planNums": [
+    "8.1"
+   ],
+   "theme": "اللامركزية لقطاع الحكم المحلي",
+   "problem": "عدم وجود معايير وتعليمات واضحة لمصادقة الوزير على قرارات الهيئات المحلية حسب القانون",
+   "activities": [
+    "تطوير المعايير والتعليمات ويشمل معايير الإقالة وتسيير الاعمال والتعيينات"
+   ],
+   "composition": [
+    {
+     "raw": "يصدر تكليف رئيس الفريق ومقرره بكتاب من معالي الوزير",
+     "body": "يصدر تكليف رئيس الفريق ومقرره بكتاب من معالي الوزير",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للتوجيه والرقابة – عضواً",
+     "body": "ممثل عن الإدارة العامة للتوجيه والرقابة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للموازنات – عضواً",
+     "body": "ممثل عن الإدارة العامة للموازنات",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للشؤون القانونية – عضواً",
+     "body": "ممثل عن الإدارة العامة للشؤون القانونية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "وضع معايير موضوعية وشفافة لمصادقة الوزير على قرارات الهيئات المحلية في مجالات الإقالة وتسيير الأعمال والتعيينات، بما ينقل الممارسة من التقدير إلى المعيار.",
+    "إعداد التعليمات والإجراءات التنفيذية المرافقة وتحديد المدد الزمنية للبت في الطلبات.",
+    "مواءمة المعايير مع مخرجات فريق مراجعة وإلغاء التعليمات غير المستندة إلى أساس قانوني، تفادياً لإعادة إنتاج إجراءات بلا سند.",
+    "إعداد التعليمات والإجراءات التنفيذية المرافقة، وتحديد مدد زمنية مُلزِمة للبتّ في الطلبات تقليلاً للبيروقراطية.",
+    "مواءمة المعايير مع مخرجات فريق إعادة النظر في التعليمات الصادرة عن الوزارة، تفادياً لإعادة إنتاج إجراءات بلا سند.",
+    "رفع التعليمات لوزير الحكم المحلي لإقرارها، وتعميمها على مديريات الوزارة في المحافظات وعلى الهيئات المحلية."
+   ],
+   "target": "إقرار التعليمات وتعميمها.",
+   "partners": "اتحاد الهيئات المحلية، مديريات الوزارة في المحافظات",
+   "orgs": "وزارة الحكم المحلي واتحاد البلديات",
+   "funding": "التعاون الألماني",
+   "update": "تفعيل الفريق وعمل التعليمات واجراءات المعايير",
+   "status": "عالق",
+   "statusRaw": "عالق",
+   "roles": {},
+   "depts": {
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ],
+    "الإدارة العامة للموازنات": [
+     "عضو"
+    ],
+    "الإدارة العامة للشؤون القانونية": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "3.1"
+    ],
+    "intervs": [
+     "2.5"
+    ],
+    "intervText": "مراجعة العلاقة الإدارية والاجرائية بين الوزارة ومديرياتها من جانب والهيئات المحلية من جانب آخر بهدف تقليل البيروقراطية وإعطاء مزيدا من الصلاحيات للهيئات المحلية فيما يتعلق بأعمالها ومسؤولياتها\n \n ملاحظة: الرقم 2.5 مستخدم مرتين في تقرير المبادرة؛ هذا هو أول ورود له.",
+    "indicatorText": "النتيجة 3.1: منظومة قانونية عصرية ومستجيبة لاحتياجات قطاع الحكم المحلي\n مثال على المؤشرات: عدد القوانين التي تم إصدارها والمصادقة عليها؛ عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": false,
+    "title": "",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "إصدار قرار تشكيل يغطي «تسيير الأعمال والتعيينات ومعايير المصادقة»."
+    ],
+    "note": "قرار لجنة حل مجالس الهيئات المحلية لا يغطي هذا الملف؛ فهو ينظّم سلطة تدخّل مركزية بينما يخصّ هذا الفريق الحدّ من سلطة المصادقة على قرارات الهيئات المحلية. الملف لا يزال بلا تكليف.",
+    "linkage": "",
+    "scope": "",
+    "mode": "pending"
+   },
+   "outside": false
+  },
+  {
+   "id": 7,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لوضع معايير المصادقة على الاقتراض والتسهيلات المصرفية والتصرف بأملاك الهيئات المحلية وإعداد دليل الاقتراض",
+   "short": "وضع معايير المصادقة على الاقتراض والتسهيلات المصرفية والتصرف بأملاك الهيئات المحلية وإعداد دليل الاقتراض",
+   "origIds": [
+    "4",
+    "14"
+   ],
+   "planNums": [
+    "8.2",
+    "—"
+   ],
+   "theme": "اللامركزية لقطاع الحكم المحلي",
+   "problem": "عدم وجود معايير وتعليمات واضحة لمصادقة الوزير على قرارات الهيئات المحلية حسب القانون | عوائق اقتراض الهيئات المحلية من المؤسسات المالية",
+   "activities": [
+    "تطوير المعايير والتعليمات ويشمل المصادقة على الاقتراض والتسهيلات البنكية والتصرف باملاك الهيئة المحلية",
+    "اعداد دليل اقتراض الهيئات المحلية من المؤسسات المالية"
+   ],
+   "composition": [
+    {
+     "raw": "سلوى شبيطة – مدير عام الإدارة العامة للتنمية والاستثمار — المكلَّفة",
+     "body": "سلوى شبيطة – مدير عام الإدارة العامة للتنمية والاستثمار",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "سلوى شبيطة"
+     ],
+     "depts": [
+      "الإدارة العامة للتنمية والاستثمار"
+     ],
+     "note": false
+    },
+    {
+     "raw": "القرار تكليف فردي ولم يُشكَّل فريق؛ والبند «خامساً» يُلزم جميع الإدارات العامة والدوائر بالتعاون وتزويد المكلَّفة بما يلزم.",
+     "body": "القرار تكليف فردي ولم يُشكَّل فريق؛ والبند «خامساً» يُلزم جميع الإدارات العامة والدوائر بالتعاون وتزويد المكلَّفة بما يلزم.",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "تطوير تعليمات تصدر عن الوزير تحدد إجراءات ومعايير مصادقته على طلب الهيئات المحلية الحصول على تسهيلات مصرفية، بما يفسّر المادة ذات العلاقة في قانون الهيئات المحلية.",
+    "تطوير تعليمات تحدد الإجراءات والمعايير لمصادقة الوزير على تأجير أملاك الهيئات المحلية لأكثر من ثلاث سنوات، وفق ما ورد في القانون.",
+    "تطوير معايير وتعليمات دليل اقتراض الهيئات المحلية من المؤسسات المالية، والإشراف على إعداده من خلال الاستشاري المكلّف ومراجعة مخرجاته.",
+    "التواصل مع كافة الإدارات ذات العلاقة، وبالذات الإدارة العامة للشؤون القانونية، لإنجاز المسودات المطلوبة.",
+    "استكمال رفع المسودات إلى معالي الوزير دون تأخير إضافي، علماً بأن الموعد المحدد لذلك كان نهاية حزيران ٢٠٢٦.",
+    "المواءمة مع نظام الشراكة مع القطاع الخاص، بحيث تشكّل هذه الملفات منظومة واحدة لتمويل واستثمار الهيئات المحلية لا مرجعيات متوازية."
+   ],
+   "target": "إقرار التعليمات، واستلام دليل الاقتراض والمصادقة عليه من وزير الحكم المحلي ونفاذه .",
+   "partners": "صندوق تطوير وإقراض الهيئات المحلية، اتحاد الهيئات المحلية",
+   "orgs": "وزارة الحكم المحلي واتحاد البلديات | وزارة الحكم المحلي واتحاد الهيئات المحلية وصندوق تطوير واقراض الهيئات المحلية",
+   "funding": "التعاون الألماني | —",
+   "update": "رُفع التصور الأولي وخطة العمل التنفيذية إلى عطوفة الوكيل بتاريخ ١٤/١٠/٢٠٢٦ — خمس مراحل تنفيذية، أُنجزت الاجتماعات التنسيقية مع الشؤون القانونية والتوجيه والرقابة والموازنات، والمرحلة الأولى جارية بانتظار رد الموازنات.",
+   "status": "قيد التنفيذ",
+   "statusRaw": "قيد التنفيذ — صدر قرار التكليف",
+   "roles": {
+    "سلوى شبيطة": [
+     "رئيس"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للتنمية والاستثمار": [
+     "رئيس"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي",
+     "1 - تنفيذ سياسات الحكومة في تصفية صافي الإقراض"
+    ],
+    "indicators": [
+     "3.1",
+     "1.3"
+    ],
+    "intervs": [
+     "2.5"
+    ],
+    "intervText": "مراجعة العلاقة الإدارية والاجرائية بين الوزارة ومديرياتها من جانب والهيئات المحلية من جانب آخر بهدف تقليل البيروقراطية وإعطاء مزيدا من الصلاحيات للهيئات المحلية فيما يتعلق بأعمالها ومسؤولياتها\n \n ملاحظة: الرقم 2.5 مستخدم مرتين في تقرير المبادرة؛ هذا هو أول ورود له.",
+    "indicatorText": "النتيجة 3.1: منظومة قانونية عصرية ومستجيبة لاحتياجات قطاع الحكم المحلي\n مثال على المؤشرات: عدد القوانين التي تم إصدارها والمصادقة عليها؛ عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها. | النتيجة 1.3: بيئة ممكنة تشجع الاستثمارات في قطاع الحكم المحلي\n مثال على المؤشرات: عدد مشاريع الشراكة بين الهيئات المحلية والقطاع الخاص؛ عدد اتفاقيات المشاريع الاستثمارية الموقعة.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "قرار: تكليف مدير عام الإدارة العامة للتنمية والاستثمار — تطوير تعليمات وزارية بشأن التسهيلات البنكية والمصادقة على تأجير أملاك الهيئات المحلية لمدة تزيد على ثلاث سنوات",
+    "source": "قرارات تشكيل الفرق – ص١",
+    "date": "غير مؤرَّخ في النسخة المتاحة",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "سلوى شبيطة – مدير عام الإدارة العامة للتنمية والاستثمار – المكلَّفة",
+    "rapporteur": "سلوى شبيطة – الإدارة العامة للتنمية والاستثمار – منسقةً للملف",
+    "members": "لم يُشكَّل فريق؛ القرار تكليف فردي مع إلزام جميع الإدارات بالتعاون",
+    "tasks": [
+     "أولاً: إعداد وتطوير مشروع تعليمات تحدد الإجراءات والمعايير والضوابط اللازمة لمصادقة الوزير على طلبات الهيئات المحلية للحصول على تسهيلات بنكية، بما يوضح وينظم آليات تطبيق الأحكام القانونية ذات الصلة الواردة في قانون الهيئات المحلية، ويضمن سلامة الإجراءات وحماية الوضع المالي للهيئات المحلية واستدامته.",
+     "ثانياً: إعداد وتطوير مشروع تعليمات وزارية تحدد الإجراءات والمعايير والضوابط اللازمة لمصادقة الوزير على تأجير أملاك الهيئات المحلية لمدة تزيد على ثلاث سنوات وفقاً لأحكام القانون، وبما يضمن حسن إدارة واستثمار أملاك الهيئات المحلية والمحافظة على حقوقها ومصالحها.",
+     "ثالثاً: التنسيق والتشاور مع جميع الإدارات العامة والدوائر والوحدات التنظيمية ذات العلاقة في الوزارة لضمان سلامة مشاريع التعليمات من الناحيتين القانونية والإجرائية وتكاملها مع الأنظمة والتعليمات والسياسات المعمول بها.",
+     "تطوير معايير وتعليمات دليل اقتراض الهيئات المحلية من المؤسسات المالية، والإشراف على إعداده ومراجعة مخرجاته ضمن المنظومة ذاتها."
+    ],
+    "deadline": "رفع مشاريع التعليمات بصيغتها النهائية، مرفقة بأية ملاحظات أو توصيات، إلى معالي الوزير بموعد أقصاه ٣١/١٢/٢٠٢٦.",
+    "reporting": "لم تُحدَّد آلية تقارير دورية في القرار.",
+    "next": [
+     "إعداد مشروعَي التعليمات: التسهيلات المصرفية، وتأجير أملاك الهيئات المحلية لمدة تزيد على ثلاث سنوات.",
+     "تطوير معايير وتعليمات دليل الاقتراض والإشراف على إعداده.",
+     "التنسيق مع الإدارة العامة للشؤون القانونية وسائر الإدارات ذات العلاقة وفق البند «ثالثاً».",
+     "رفع المشاريع بصيغتها النهائية إلى معالي الوزير بموعد أقصاه ٣١/١٢/٢٠٢٦."
+    ],
+    "note": "القرار تكليف لمدير عام الإدارة العامة للتنمية والاستثمار؛ والبند «خامساً» يُلزم جميع الإدارات العامة والدوائر والوحدات التنظيمية بالتعاون معها وتزويدها بما يلزم من معلومات ووثائق وآراء فنية وقانونية.",
+    "linkage": "خارطة طريق اللامركزية ٢٠٢٦: البند (٨.٢) | خطة الإصلاح ٢٠٢٥–٢٠٢٦: النشاط ٢.٧ | الاستراتيجية القطاعية: النتيجة ٣.١",
+    "scope": "full",
+    "coordinator": "سلوى شبيطة – الإدارة العامة للتنمية والاستثمار",
+    "mode": "issued",
+    "plan": {
+     "title": "التصور الأولي وخطة العمل التنفيذية المقترحة لتطوير تعليمات وزارية بشأن الحصول على التسهيلات البنكية والمصادقة على تأجير أملاك الهيئات المحلية لمدة تزيد على ثلاث سنوات",
+     "date": "١٤/١٠/٢٠٢٦",
+     "from": "سلوى شبيطة — مدير عام التنمية والاستثمار",
+     "to": "عطوفة الأخ رائد مقبل — وكيل الوزارة",
+     "axes": [
+      "الإطار القانوني والمؤسسي: مراجعة التشريعات والتعليمات ذات العلاقة وتحديد الصلاحيات والموافقات المطلوبة ومسار الإجراءات، بالتنسيق مع الإدارة العامة للشؤون القانونية.",
+      "معايير دراسة طلبات الاقتراض والتسهيلات البنكية: الوضع المالي للهيئة، والجدوى الاستثمارية للمشروع، وشروط التمويل، والقدرة على السداد، والمخاطر المالية المحتملة.",
+      "معايير دراسة طلبات تأجير أملاك الهيئات المحلية لمدة تزيد على ثلاث سنوات: الوضع القانوني للعقار، والجدوى الاقتصادية، وبدل الإيجار، ومدة العقد وشروطه، وضمان حماية حقوق الهيئة وأصولها.",
+      "تنظيم الإجراءات والأدوار والمسؤوليات: تحديد مسؤوليات الجهات المعنية ونقاط التنسيق والإحالة، وتطوير النماذج وقوائم التحقق ومصفوفات التقييم ومخططات سير الإجراءات."
+     ],
+     "done": [
+      "الخميس ٨/١٠/٢٠٢٦ — اجتماع أولي مع ممثل الإدارة العامة للشؤون القانونية.",
+      "الأحد ١١/١٠/٢٠٢٦ — اجتماع مع ممثل الإدارة العامة للتوجيه والرقابة.",
+      "الثلاثاء ١٣/١٠/٢٠٢٦ — اجتماع مع مدير عام الإدارة العامة للموازنات.",
+      "استُلمت ردود وملاحظات الشؤون القانونية والتوجيه والرقابة ويجري تحليلها؛ ولا يزال رد الإدارة العامة للموازنات قيد الانتظار."
+     ],
+     "phases": [
+      {
+       "n": "المرحلة الأولى",
+       "t": "استكمال التنسيق الداخلي ودراسة الملاحظات",
+       "out": "مصفوفة موحدة بالملاحظات الواردة تتضمن موضوع كل ملاحظة والإجراء المقترح بشأنها.",
+       "st": "جارٍ العمل — بانتظار رد الإدارة العامة للموازنات."
+      },
+      {
+       "n": "المرحلة الثانية",
+       "t": "استكمال المراجعة القانونية وتحديد الصلاحيات",
+       "out": "تصور أولي موثق للصلاحيات ومسار الإجراءات، يتضمن المسائل التي حُسمت وتلك التي تحتاج استكمال المراجعة القانونية.",
+       "st": "مرحلة لاحقة لاستكمال دراسة الملاحظات الواردة."
+      },
+      {
+       "n": "المرحلة الثالثة",
+       "t": "مراجعة الحالات العملية والتجارب السابقة",
+       "out": "ملخص موثق للحالات المدروسة يتضمن أبرز الملاحظات والدروس المستخلصة والتوصيات ذات الصلة.",
+       "st": "مرحلة مقترحة لم يبدأ استكمالها بعد."
+      },
+      {
+       "n": "المرحلة الرابعة",
+       "t": "تطوير المعايير والأدوات الإجرائية",
+       "out": "حزمة أولية من المعايير والنماذج وقوائم التحقق ومصفوفات التقييم ومخططات الإجراءات، قابلة للمراجعة والتعديل.",
+       "st": "مرحلة تعتمد على نتائج المراحل السابقة."
+      },
+      {
+       "n": "المرحلة الخامسة",
+       "t": "إعداد مسودة التعليمات ومراجعتها",
+       "out": "مسودة تعليمات وزارية مكتملة ومرفقاتها الإجرائية، مهيأة للرفع إلى الجهات المختصة.",
+       "st": "مرحلة لاحقة لم يتم الوصول إليها بعد."
+      }
+     ],
+     "needs": [
+      "المدخلات القانونية: تزويد فريق العمل بالسند القانوني للإجراءات والصلاحيات والموافقات المطلوبة والمرجعيات التشريعية.",
+      "المدخلات المالية والرقابية: استكمال الملاحظات والبيانات اللازمة من الإدارات العامة المعنية.",
+      "البيانات والحالات العملية: توفير ما يُتاح من معلومات ووثائق بشأن حالات الاقتراض وتأجير الأملاك السابقة.",
+      "التنسيق مع الجهات ذات العلاقة: تسهيل التواصل مع المديريات والصندوق والاتحاد والهيئة المحلية التي سيجري اختيارها لدراسة حالة عملية.",
+      "المراجعة المشتركة: تحديد نقاط اتصال لدى الإدارات المعنية لمراجعة المقترحات وتنسيق الملاحظات قبل إعداد المسودة النهائية."
+     ],
+     "risks": [
+      "تداخل الاختصاصات — يُعالَج بتحديد الأدوار والمسؤوليات والصلاحيات استناداً إلى السند القانوني.",
+      "تفاوت القدرات المالية والإدارية للهيئات المحلية — يُراعى عند تطوير المعايير بما يتناسب مع حجم الهيئة وطبيعة المعاملة.",
+      "نقص البيانات المتعلقة بالحالات السابقة — يُعالَج بالتنسيق مع المديريات والجهات ذات العلاقة.",
+      "اختلاف طبيعة الأصول العقارية وصعوبة تقدير قيمتها السوقية — بوضع آلية تقييم مناسبة لكل حالة.",
+      "تفاوت مستوى دراسات الجدوى ووجود التزامات أو حقوق قائمة — بتحديد حد أدنى من المعلومات والدراسات المطلوبة."
+     ],
+     "outputs": [
+      "مسودة تعليمات وزارية تنظم إجراءات دراسة طلبات الاقتراض والتسهيلات البنكية وطلبات تأجير أملاك الهيئات المحلية لمدة تزيد على ثلاث سنوات.",
+      "مصفوفة للصلاحيات والمسؤوليات توضح دور كل جهة ومسار المعاملة.",
+      "حزمة أدوات إجرائية تشمل المعايير وقوائم التحقق والنماذج ومخططات سير الإجراءات.",
+      "ملخص للحالات العملية المدروسة يتضمن الدروس المستفادة والتوصيات."
+     ],
+     "expand": [
+      "المديريات التي سبق أن تابعت حالات اقتراض للهيئات المحلية.",
+      "صندوق تطوير وإقراض الهيئات المحلية — بحث جوانب التمويل وإمكانية تفعيل خاصية الإقراض.",
+      "اتحاد الهيئات المحلية الفلسطينية — الاستفادة من خبرته في القضايا المشتركة.",
+      "إحدى الهيئات المحلية التي سبق لها الاقتراض — لدراسة تجربة عملية.",
+      "أي جهات أخرى تستدعيها طبيعة الموضوعات، يُحدَّد لاحقاً ويُطلع عليها عطوفة الوكيل."
+     ]
+    }
+   },
+   "outside": false
+  },
+  {
+   "id": 8,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لمراجعة قانون ونظام الشراء العام فيما يتعلق بالهيئات المحلية",
+   "short": "مراجعة قانون ونظام الشراء العام فيما يتعلق بالهيئات المحلية",
+   "origIds": [
+    "5"
+   ],
+   "planNums": [
+    "9"
+   ],
+   "theme": "المركزية الإدارية",
+   "problem": "نظام الشراء العام وشموله الهيئات المحلية",
+   "activities": [
+    "يشكل قانون ونظام الشراء العام عبئا بيروقراطيا على الهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "م. مؤيد شحادة – مدير عام الإدارة العامة للمشاريع، ممثل الوزارة في المجلس الأعلى لسياسات الشراء العام — المكلَّف",
+     "body": "م. مؤيد شحادة – مدير عام الإدارة العامة للمشاريع، ممثل الوزارة في المجلس الأعلى لسياسات الشراء العام",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "مؤيد شحادة"
+     ],
+     "depts": [
+      "الإدارة العامة للمشاريع"
+     ],
+     "note": false
+    },
+    {
+     "raw": "القرار تكليف فردي ولم يُشكَّل فريق؛ وتُناقش الورقة مع جهات الاختصاص بالوزارة ومع الاتحاد الفلسطيني للهيئات المحلية قبل رفعها.",
+     "body": "القرار تكليف فردي ولم يُشكَّل فريق؛ وتُناقش الورقة مع جهات الاختصاص بالوزارة ومع الاتحاد الفلسطيني للهيئات المحلية قبل رفعها.",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "تقديم ورقة عمل تحدد التعديلات اللازمة على التشريعات السارية بشأن الشراء العام بحيث تعطي مساحة ومرونة أوسع لصالح الهيئات المحلية.",
+    "أن تُشكّل الورقة، بعد نقاشها مع جهات الاختصاص بالوزارة والاتحاد الفلسطيني للهيئات المحلية، موقفاً واضحاً للوزارة يُرفع إلى الجهات المعنية.",
+    "أن توضح الورقة أي تعارضات بين القوانين والأنظمة الخاصة بالوزارة وتلك الخاصة بقانون الشراء.",
+    "أن تُرفع الورقة إلى عطوفة الوكيل خلال شهر من تاريخه."
+   ],
+   "target": "رفع التوصيات والمذكرة التفسيرية إلى المجلس الأعلى لسياسات الشراء العام.",
+   "partners": "المجلس الأعلى لسياسات الشراء العام، ديوان الرقابة المالية والإدارية، اتحاد الهيئات المحلية.",
+   "orgs": "الحكم المحلي والمجلس الأعلى للشراء واتحاد البلديات وديوان الرقابة",
+   "funding": "التعاون الألماني او البنك الدولي من خلال صندوق البلديات",
+   "update": "مهمة الوزارة ارسال مقترحات لهيئة الشراء العام. \nمقترح التطوير: منح الهيئات المحلية صلاحية اكبر بادارة عمليات الشراء وادارة العقود بعيدا عن المراجعات المسبقة من قبل الوزارة، والاعتماد على المراجعات الاحقة وربط الصلاحيات باسقف على مستوى الهيئات المحلية. لا داعي لاستحدات نظام خاص في الهيئات المحلية كون قانون الشراء ونظامه شاملان لكافة اجراءات الشراء العام، اضافة مجلس سياسات الشراء يطور في مراحله النهائية نظام شراء الكتروني تم بناؤه بموجب القانون ونظامه.. استحداث نظام منفصل غير مجدي ابدا حيث سيسلخ الهيئات المحلية عن هذا النظام، ولن يتماهي من افضل التشريعات الدولية التي تفرض اجراءات تنظيمية شاملة لعمليات الشراء.",
+   "status": "عالق",
+   "statusRaw": "عالق",
+   "roles": {
+    "مؤيد شحادة": [
+     "رئيس"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للمشاريع": [
+     "رئيس"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "3.1"
+    ],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "النتيجة 3.1: منظومة قانونية عصرية ومستجيبة لاحتياجات قطاع الحكم المحلي\n مثال على المؤشرات: عدد القوانين التي تم إصدارها والمصادقة عليها؛ عدد الأنظمة العامة/الخاصة التي تم تحديثها أو استحداثها.",
+    "gap": "لا يوجد نشاط مطابق صراحة في خطة العمل 2025-2026 لتعديل نظام الشراء العام، رغم ارتباطه العام بالنتيجة 3.1.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": false,
+    "hasInd": true,
+    "review": "◇ مراجعة الارتباط: لا يقابله نشاط في خطة الإصلاح، غير أنه يقع موضوعياً ضمن البرنامج الثاني، وأقرب الأنشطة إليه النشاط (٢.٧) «مراجعة العلاقة الإدارية والإجرائية… بهدف تقليل البيروقراطية ومنح صلاحيات أوسع للهيئات المحلية». ويحتفظ الملف بارتباطه بالنتيجة (٣.١). التوصية: إدراج نشاط صريح لتعديل أنظمة الشراء العام ضمن البرنامج الثاني.",
+    "proposed": {
+     "progs": [
+      "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+     ],
+     "intervs": [],
+     "inds": []
+    }
+   },
+   "decision": {
+    "issued": true,
+    "title": "قرار تكليف: م. مؤيد شحادة / مدير عام الإدارة العامة للمشاريع – ممثل الوزارة في مجلس الشراء الأعلى — مقترح تعديلات على أنظمة قانون الشراء",
+    "source": "قرارات تشكيل الفرق – ص٣",
+    "date": "غير مؤرَّخ في النسخة المتاحة",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "م. مؤيد شحادة – مدير عام الإدارة العامة للمشاريع (تكليف فردي)",
+    "rapporteur": "لا ينطبق – تكليف فردي لا فريق",
+    "members": "لم يُشكَّل فريق؛ التكليف فردي مع إلزام بالنقاش مع جهات الاختصاص بالوزارة والاتحاد",
+    "tasks": [
+     "١. تقديم ورقة عمل تحدد بها التعديلات اللازمة على التشريعات السارية بشأن الشراء العام بحيث تعطي مساحة ومرونة أوسع لصالح الهيئات المحلية.",
+     "٢. أن تُشكّل الورقة، بعد نقاشها مع جهات الاختصاص بالوزارة والاتحاد الفلسطيني للهيئات المحلية، موقفاً واضحاً للوزارة يُرفع إلى الجهات المعنية.",
+     "٣. أن توضح الورقة أي تعارضات بين القوانين والأنظمة الخاصة بالوزارة وتلك الخاصة بقانون الشراء.",
+     "٤. أن تُرفع الورقة إلى عطوفة الوكيل خلال شهر من تاريخه."
+    ],
+    "deadline": "خلال شهر من تاريخ القرار — والقرار غير مؤرَّخ، ما يجعل المدة غير محددة عملياً.",
+    "reporting": "لم تُحدَّد آلية تقارير دورية؛ المخرج ورقة عمل واحدة تُرفع للوكيل.",
+    "next": [
+     "١. تثبيت تاريخ القرار لتحديد سقف الشهر.",
+     "٢. عقد جلسات النقاش مع جهات الاختصاص بالوزارة ومع الاتحاد الفلسطيني للهيئات المحلية قبل الصياغة النهائية.",
+     "٣. البند (٣) يغطي عملياً ورقة الموقف المطلوبة بشأن تعارض قانون الشراء مع النظام المالي للهيئات المحلية — التنسيق مع الإدارة العامة للرقابة والتوجيه لتفادي ازدواج الجهد.",
+     "٤. استناد الورقة إلى مخرجات دراسة اللامركزية والتجربة العملية لتطبيق قانون الشراء العام، وفق ما نصّ عليه القرار."
+    ],
+    "note": "القرار يستند صراحةً إلى «مخرجات دراسة اللامركزية والتجربة العملية لتطبيق قانون الشراء العام بالأنظمة الصادرة بموجبه»، ويؤكد صفة المكلَّف كممثل للوزارة في مجلس الشراء الأعلى.",
+    "linkage": "خارطة طريق اللامركزية ٢٠٢٦: البند (٩) الشراء العام | خطة الإصلاح ٢٠٢٥–٢٠٢٦: لا يوجد نشاط مطابق | الاستراتيجية القطاعية: النتيجة ٣.١",
+    "scope": "full",
+    "coordinator": "مؤيد شحادة – الإدارة العامة للمشاريع",
+    "mode": "issued"
+   },
+   "outside": false
+  },
+  {
+   "id": 9,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتحديث النظام المالي للهيئات المحلية",
+   "short": "تحديث النظام المالي للهيئات المحلية",
+   "origIds": [
+    "20"
+   ],
+   "planNums": [
+    "—"
+   ],
+   "theme": "المركز المالي للهيئات المحلية",
+   "problem": "النظام المالي الحالي غير فعال ولا يراعي تصنيفات الهيئات المحلية",
+   "activities": [
+    "تحديث النظام المالي للهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "جهاد مشاقي – الإدارة العامة للرقابة والتوجيه والموازنات – رئيساً",
+     "body": "جهاد مشاقي – الإدارة العامة للرقابة والتوجيه والموازنات",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "جهاد مشاقي"
+     ],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه",
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "مؤيد شحادة – الإدارة العامة للمشاريع – عضواً",
+     "body": "مؤيد شحادة – الإدارة العامة للمشاريع",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "مؤيد شحادة"
+     ],
+     "depts": [
+      "الإدارة العامة للمشاريع"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للتوجيه والرقابة – عضواً",
+     "body": "ممثل عن الإدارة العامة للتوجيه والرقابة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للموازنات – عضواً",
+     "body": "ممثل عن الإدارة العامة للموازنات",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للشؤون القانونية – عضواً",
+     "body": "ممثل عن الإدارة العامة للشؤون القانونية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "وتتم المتابعة من خلال مكتب وكيل الوزارة",
+     "body": "وتتم المتابعة من خلال مكتب وكيل الوزارة",
+     "roles": [],
+     "people": [],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "إعداد ورقة موقف مشتركة بين الإدارة العامة للرقابة والتوجيه والإدارة العامة للمشاريع حول تعارض قانون الشراء العام مع النظام المالي للهيئات المحلية، لفهم الخطوات التالية وتحديد الأولويات، باعتبارها الخطوة المطلوبة قبل أي تعديل.",
+    "وضع التعديلات اللازمة على النظام المالي بما يتوافق مع وظائف أصناف الهيئات المحلية.",
+    "التنسيق مع الفريق الوطني لمراجعة وتحديث نظام تصنيف الهيئات المحلية لضمان اتساق المخرجات.",
+    "معالجة الاشتراط المسجّل على هذا الملف والمتعلق بتعديل قانون الشراء المركزي، بالتنسيق مع فريق مراجعة قانون ونظام الشراء العام.",
+    "البناء على مخرجات الفريق الوطني لتصنيف الهيئات المحلية، إذ لا يستقيم ضبط النظام المالي دون اعتماد التصنيف الوظيفي مرجعيةً له.",
+    "الإشراف على أعمال الشركة الاستشارية المتعاقد معها ومراجعة مخرجاتها واعتمادها."
+   ],
+   "target": "رفع التعديلات لوزير الحكم المحلي وإقرارها من مجلس الوزراء ونفاذها.",
+   "partners": "اتحاد الهيئات المحلية، صندوق تطوير وإقراض الهيئات المحلية، وزارة المالية والتخطيط، الفريق الوطني لتصنيف الهيئات المحلية.",
+   "orgs": "وزارة الحكم المحلي واتحاد الهيئات المحلية وصندوق تطوير واقراض الهيئات المحلية بالتعاون من خلال التعاقد مع شركة استشارية",
+   "funding": "التعاون الألماني",
+   "update": "متطلباته تعديل قانون الشراء المركزي. \nالمراجعة مع اسلام وجهاد والوكيل",
+   "status": "يحتاج تحديث",
+   "statusRaw": "يحتاج تحديث",
+   "roles": {
+    "جهاد مشاقي": [
+     "رئيس"
+    ],
+    "مؤيد شحادة": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للرقابة والتوجيه": [
+     "رئيس",
+     "عضو"
+    ],
+    "الإدارة العامة للموازنات": [
+     "رئيس",
+     "عضو"
+    ],
+    "الإدارة العامة للمشاريع": [
+     "عضو"
+    ],
+    "الإدارة العامة للشؤون القانونية": [
+     "عضو"
+    ],
+    "مكتب وكيل الوزارة": [
+     "مشارك"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "1.1"
+    ],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "النتيجة 1.1: تحسن الإدارة المالية في الهيئات المحلية والمجالس المشتركة\n مثال على المؤشرات: معدل نسبة زيادة الإيرادات السنوية؛ عدد الهيئات المحلية التي تقوم بجباية ضريبة الأملاك؛ معدل نسبة دقة البيانات المالية للهيئات المحلية.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": false,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": false,
+    "title": "",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "إعداد ورقة الموقف المشتركة بين الرقابة والتوجيه والمشاريع بشأن تعارض قانون الشراء العام مع النظام المالي.",
+     "إصدار قرار التكليف الرسمي."
+    ],
+    "note": "يغطي البند (٣) من قرار تكليف مؤيد شحادة جزءاً من ورقة الموقف المطلوبة.",
+    "linkage": "",
+    "scope": "",
+    "mode": "pending"
+   },
+   "outside": false
+  },
+  {
+   "id": 10,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتحديث نظام الشراكة بين الهيئات المحلية والقطاع الخاص",
+   "short": "تحديث نظام الشراكة بين الهيئات المحلية والقطاع الخاص",
+   "origIds": [
+    "13"
+   ],
+   "planNums": [
+    "12"
+   ],
+   "theme": "الشراكة مع القطاع الخاص",
+   "problem": "النظام غير واضح ببعض جوانبه وبحاجه الى تطوير",
+   "activities": [
+    "نظام متطور وواضح التطبيق"
+   ],
+   "composition": [
+    {
+     "raw": "الإدارة العامة للتنمية والاستثمار – سلوى شبيطة",
+     "body": "الإدارة العامة للتنمية والاستثمار – سلوى شبيطة",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "سلوى شبيطة"
+     ],
+     "depts": [
+      "الإدارة العامة للتنمية والاستثمار"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للتوجيه والرقابة – عضواً",
+     "body": "ممثل عن الإدارة العامة للتوجيه والرقابة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للموازنات – عضواً",
+     "body": "ممثل عن الإدارة العامة للموازنات",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للشؤون القانونية – عضواً",
+     "body": "ممثل عن الإدارة العامة للشؤون القانونية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للمشاريع – عضواً",
+     "body": "ممثل عن الإدارة العامة للمشاريع",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للمشاريع"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "متابعة المسودة المرفوعة إلى مجلس الوزراء بتاريخ ٣٠/٦/٢٠٢٦ عبر الدائرة القانونية، والردّ على الملاحظات حتى صدور المصادقة، وتستمر المتابعة من خلال الإدارة العامة للتنمية والاستثمار والإدارة العامة للشؤون القانونية.",
+    "إعداد التعليمات والنماذج التنفيذية اللازمة للتطبيق فور إقرار النظام، بحيث لا تفصل فجوة زمنية بين الإقرار والتطبيق.",
+    "بناء قدرات الهيئات المحلية على إعداد مشاريع الشراكة وتقييمها وإدارة عقودها.",
+    "وضع آلية لرصد عدد مشاريع الشراكة والاتفاقيات الموقّعة خدمةً لمؤشرات النتيجة ١.٣.",
+    "التنسيق مع فريق معايير المصادقة على الاقتراض ودليل الاقتراض ضمن المسار المدمج لملفات التمويل والاستثمار."
+   ],
+   "target": "صدور مصادقة مجلس الوزراء على النظام والبدء بتطبيقه",
+   "partners": "الأمانة العامة لمجلس الوزراء، اتحاد الهيئات المحلية، صندوق تطوير وإقراض الهيئات المحلية، ممثلو القطاع الخاص.",
+   "orgs": "الوزارة واتحاد البلديات وصندوق البلديات وممثلوا القطاع الخاص",
+   "funding": "التعاون الدنماركي",
+   "update": "اكتملت المسودة الاولى ورفعها لمجلس الوزراء. ٣٠-٦-٢٠٢٦ تم الارسال من الدائرة القانونية لمجلس الوزراء، والان بمرحلة انتظار الموافقة",
+   "status": "قيد التنفيذ",
+   "statusRaw": "قيد التنفيذ، متابعة مع مجلس الوزراء",
+   "roles": {
+    "سلوى شبيطة": [
+     "رئيس"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للتنمية والاستثمار": [
+     "رئيس"
+    ],
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ],
+    "الإدارة العامة للموازنات": [
+     "عضو"
+    ],
+    "الإدارة العامة للشؤون القانونية": [
+     "عضو"
+    ],
+    "الإدارة العامة للمشاريع": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "1.3"
+    ],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "النتيجة 1.3: بيئة ممكنة تشجع الاستثمارات في قطاع الحكم المحلي\n مثال على المؤشرات: عدد مشاريع الشراكة بين الهيئات المحلية والقطاع الخاص؛ عدد اتفاقيات المشاريع الاستثمارية الموقعة.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": false,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "تكليف سابق بقرار رسمي",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "متابعة مصادقة مجلس الوزراء على النظام المرفوع بتاريخ ٣٠/٦/٢٠٢٦."
+    ],
+    "note": "",
+    "linkage": "",
+    "scope": "",
+    "mode": "prior",
+    "priorNote": "كُلِّف هذا الملف سابقاً بقرار رسمي؛ ولا يلزم إصدار قرار تكليف جديد. النظام مرفوع إلى مجلس الوزراء بتاريخ ٣٠/٦/٢٠٢٦ والمتابعة جارية عبر الإدارة العامة للتنمية والاستثمار والدائرة القانونية."
+   },
+   "outside": false
+  },
+  {
+   "id": 11,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتحديث نظام الأبنية والتنظيم رقم (٦) لسنة ٢٠١١",
+   "short": "تحديث نظام الأبنية والتنظيم رقم (٦) لسنة ٢٠١١",
+   "origIds": [
+    "18"
+   ],
+   "planNums": [
+    "—"
+   ],
+   "theme": "الإدارة المحلية",
+   "problem": "نظام الأبنية والتنظيم في الهيئات المحلية لا يواكب المستجدات في احكام التنظيم ورسوم رخص التعمير",
+   "activities": [
+    "تعديل النظام لشمول مستجدات مدنية ومعمارية ولتحديد رسوم اكثر عدالة"
+   ],
+   "composition": [
+    {
+     "raw": "سونيا الزبيدي – الإدارة العامة للتخطيط والتنظيم العمراني – رئيساً",
+     "body": "سونيا الزبيدي – الإدارة العامة للتخطيط والتنظيم العمراني",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "سونيا الزبيدي"
+     ],
+     "depts": [
+      "الإدارة العامة للتخطيط والتنظيم العمراني"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للتخطيط والتنظيم العمراني – مقرراً",
+     "body": "ممثل عن الإدارة العامة للتخطيط والتنظيم العمراني",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للتخطيط والتنظيم العمراني"
+     ],
+     "note": false
+    },
+    {
+     "raw": "إسلام أبو زياد – الوكيل المساعد للشؤون والإدارات المساندة والمستشار القانوني للوزارة – عضواً",
+     "body": "إسلام أبو زياد – الوكيل المساعد للشؤون والإدارات المساندة والمستشار القانوني للوزارة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "إسلام أبو زياد"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد للشؤون والإدارات المساندة",
+      "الإدارة العامة للشؤون القانونية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن مكتب وكيل الوزارة – عضواً",
+     "body": "ممثل عن مكتب وكيل الوزارة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "مراجعة أحكام النظام لشمول المستجدات المدنية والمعمارية في التخطيط والترخيص.",
+    "إعادة النظر في رسوم رخص التعمير بما يحقق العدالة ويحسن إيرادات الهيئات المحلية.",
+    "إنجاز الصياغة القانونية للتعديلات المقترحة من اللجنة المختصة بمراجعة النظام.",
+    "التشاور مع نقابة المهندسين واتحاد الهيئات المحلية قبل رفع الصيغة النهائية.",
+    "رفع التوصيات لوزير الحكم المحلي تمهيداً لمصادقة مجلس الوزراء، وربط متابعة التنفيذ بمؤشر انخفاض مخالفات البناء على مستوى المديرية."
+   ],
+   "target": "إنجاز الصياغة القانونية للتعديلات ورفع التوصيات لوزير الحكم المحلي تمهيداً لمصادقة مجلس الوزراء.",
+   "partners": "نقابة المهندسين، اتحاد الهيئات المحلية، مديريات الوزارة في المحافظات.",
+   "orgs": "الحكم المحلي بالتعاون مع نقابة المهندسين واتحاد الهيئات المحلية",
+   "funding": "—",
+   "update": "سونيا الزبيدي واسلام، يجب المتابعة معهم",
+   "status": "يحتاج تحديث",
+   "statusRaw": "يحتاج تحديث",
+   "roles": {
+    "سونيا الزبيدي": [
+     "رئيس"
+    ],
+    "إسلام أبو زياد": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للتخطيط والتنظيم العمراني": [
+     "رئيس",
+     "مقرر"
+    ],
+    "مكتب الوكيل المساعد للشؤون والإدارات المساندة": [
+     "عضو"
+    ],
+    "الإدارة العامة للشؤون القانونية": [
+     "عضو"
+    ],
+    "مكتب وكيل الوزارة": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [
+     "2.2"
+    ],
+    "intervs": [
+     "2.12"
+    ],
+    "intervText": "تحديث نظام الابنية والتنظيم رقم (6) لعام 2011",
+    "indicatorText": "النتيجة 2.2: أعمال ترخيص البناء والتفتيش تم ضبطها\n مؤشر: نسبة انخفاض مخالفات البناء على مستوى المحافظة (المديرية).",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "تكليف سابق بقرار رسمي",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "استكمال الصياغة القانونية للتعديلات ورفع التوصيات لمعالي الوزير."
+    ],
+    "note": "",
+    "linkage": "",
+    "scope": "",
+    "mode": "prior",
+    "priorNote": "كُلِّف هذا الملف سابقاً بقرار رسمي؛ ولا يلزم إصدار قرار تكليف جديد. العمل قائم على استكمال الصياغة القانونية للتعديلات المقترحة من اللجنة المختصة."
+   },
+   "outside": false
+  },
+  {
+   "id": 12,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لإعادة النظر في التعليمات الصادرة عن الوزارة بما يتناسب مع خطة اللامركزية",
+   "short": "إعادة النظر في التعليمات الصادرة عن الوزارة بما يتناسب مع خطة اللامركزية",
+   "origIds": [
+    "6"
+   ],
+   "planNums": [
+    "—"
+   ],
+   "theme": "اللامركزية لقطاع الحكم المحلي",
+   "problem": "وجود تعليمات من وزارة الحكم المحلي التي لا أساس قانوني لها",
+   "activities": [
+    "إلغاء التعليمات الصادرة من وزارة الحكم المحلي التي لا أساس قانوني لها"
+   ],
+   "composition": [
+    {
+     "raw": "خالد اشتية – الوكيل المساعد لشؤون الهيئات المحلية — المكلَّف",
+     "body": "خالد اشتية – الوكيل المساعد لشؤون الهيئات المحلية",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "خالد اشتيه"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "القرار تكليف فردي ولم يُشكَّل فريق؛ وتُناقش المقترحات مع الدائرة القانونية قبل رفعها.",
+     "body": "القرار تكليف فردي ولم يُشكَّل فريق؛ وتُناقش المقترحات مع الدائرة القانونية قبل رفعها.",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "تحضير مقترح للحزمة الثانية من التسهيلات الإدارية للهيئات المحلية.",
+    "أن تركّز هذه التسهيلات على الإجراءات التي تسهّل أعمال الهيئات المحلية والتي لا تتعارض صراحةً مع القانون.",
+    "أن تُناقش هذه الاقتراحات مع الدائرة القانونية قبل رفعها.",
+    "أن تُرفع المقترحات إلى معالي الوزير وعطوفة الوكيل في موعد لا يتعدى الشهر من تاريخه."
+   ],
+   "target": "",
+   "partners": "اتحاد الهيئات المحلية، مديريات الوزارة في المحافظات.",
+   "orgs": "وزارة الحكم المحلي",
+   "funding": "—",
+   "update": "تعليمات اول حزمة من السنة الماضية. يلزم تحديث بخصوص الحزمة الجديدة من خالد اشتيه\nقائمة كلها فيها ٨٧ او ٨٨ اجراء والدائرة القانونية",
+   "status": "يحتاج تحديث",
+   "statusRaw": "يحتاج تحديث",
+   "roles": {
+    "خالد اشتيه": [
+     "رئيس"
+    ]
+   },
+   "depts": {
+    "مكتب الوكيل المساعد لشؤون الهيئات المحلية": [
+     "رئيس"
+    ]
+   },
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [],
+    "intervs": [
+     "2.7"
+    ],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "لا يوجد مؤشر محدد ضمن الاستراتيجية القطاعية 2025-2027",
+    "gap": "إلغاء التعليمات غير المستندة لأساس قانوني إجراء إداري داخلي لا يقابله نشاط في خطة العمل أو مؤشر في الاستراتيجية.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": false,
+    "review": "◇ مراجعة الارتباط: لا يقابله نشاط ولا مؤشر. موضوعياً هو جوهر النشاط (٢.٧) ذاته. أما المؤشر فلا يصلح له مؤشر النتيجة (٣.١) لأنه يَعُدّ القوانين والأنظمة، وهذا الملف يُنفَّذ بقرار وزاري لا بنظام. التوصية: استحداث مؤشر يقيس عدد الإجراءات المُلغاة أو المبسّطة.",
+    "proposed": {
+     "progs": [
+      "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+     ],
+     "intervs": [
+      "2.7"
+     ],
+     "inds": []
+    },
+    "needsIndicator": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "قرار تكليف: خالد اشتية – الوكيل المساعد للهيئات المحلية — الحزمة الثانية من تفويض الصلاحيات الإدارية للهيئات المحلية",
+    "source": "قرارات تشكيل الفرق – ص٤",
+    "date": "غير مؤرَّخ في النسخة المتاحة",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "خالد اشتية – الوكيل المساعد للهيئات المحلية (تكليف فردي)",
+    "rapporteur": "لا ينطبق – تكليف فردي لا فريق",
+    "members": "لم يُشكَّل فريق؛ القرار يُلزم بمناقشة المقترحات مع الدائرة القانونية قبل رفعها",
+    "tasks": [
+     "١. تحضير مقترح للحزمة الثانية من التسهيلات الإدارية للهيئات المحلية.",
+     "٢. أن تركز هذه التسهيلات على الإجراءات التي تسهّل أعمال الهيئات المحلية والتي لا تتعارض صراحةً مع القانون.",
+     "٣. أن تُناقش هذه الاقتراحات مع الدائرة القانونية قبل رفعها.",
+     "٤. أن تُرفع هذه المقترحات إلى معالي الوزير وعطوفة الوكيل في موعد لا يتعدى الشهر من تاريخه."
+    ],
+    "deadline": "خلال شهر من تاريخ القرار — والقرار غير مؤرَّخ، ما يجعل المدة غير محددة عملياً.",
+    "reporting": "لم تُحدَّد آلية تقارير دورية؛ المخرج مقترح واحد يُرفع للوزير والوكيل.",
+    "next": [
+     "١. تثبيت تاريخ القرار لتحديد سقف الشهر.",
+     "٢. استكمال مراجعة قائمة الإجراءات (نحو ٨٧–٨٨ إجراءً) وتصنيفها بين ما يُلغى وما يُعدَّل وما يُبقى.",
+     "٣. عرض الحزمة على الإدارة العامة للشؤون القانونية قبل الرفع، وفق البند (٣).",
+     "٤. تعميم الحزمة بعد إقرارها على الهيئات المحلية ومديريات الوزارة لضمان النفاذ الفعلي."
+    ],
+    "note": "القرار يصف الملف بأنه «تفويض صلاحيات إدارية» لا مجرد إلغاء تعليمات — وهو تأطير أوسع من عنوان الفريق في المذكرة.",
+    "linkage": "خارطة طريق اللامركزية ٢٠٢٦: البند (٦) التعليمات | خطة الإصلاح ٢٠٢٥–٢٠٢٦: النشاط ٢.٧ | الاستراتيجية القطاعية: لا يوجد مؤشر مخصّص",
+    "scope": "full",
+    "coordinator": "خالد اشتيه – الوكيل المساعد لشؤون الهيئات المحلية",
+    "mode": "issued"
+   },
+   "outside": false
+  },
+  {
+   "id": 13,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لإيجاد شرطة البلديات",
+   "short": "إيجاد شرطة البلديات",
+   "origIds": [
+    "7"
+   ],
+   "planNums": [
+    "—"
+   ],
+   "theme": "اللامركزية لقطاع الحكم المحلي",
+   "problem": "نقل تدريجي لخدمة شرطة البلديات",
+   "activities": [
+    "إيجاد شرطة للبلديات"
+   ],
+   "composition": [
+    {
+     "raw": "شادي بدارين – رئيساً",
+     "body": "شادي بدارين",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "شادي بدارين"
+     ],
+     "depts": [],
+     "note": false
+    },
+    {
+     "raw": "يستكمل رئيس الفريق تشكيله بترشيحات الإدارات العامة ذات العلاقة",
+     "body": "يستكمل رئيس الفريق تشكيله بترشيحات الإدارات العامة ذات العلاقة",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "استكمال إنشاء المحاكم الثلاث المتبقية بعد إنشاء اثنتي عشرة محكمة، وربطها بمنظومة إنفاذ التشريعات المحلية.",
+    "إعداد تصور أولي للإطار القانوني والتنظيمي لشرطة البلديات وتحديد مهامها وحدود صلاحياتها، تمهيداً لعرضه عند إعادة النظر في الملف عام ٢٠٢٧.",
+    "التنسيق التمهيدي مع وزارة الداخلية بشأن متطلبات التجربة الريادية."
+   ],
+   "target": "أُرجئ البتّ في هذا الملف إلى عام ٢٠٢٧؛ ويقتصر المستهدف خلال ٢٠٢٦ على استكمال الأعمال التحضيرية.",
+   "partners": "وزارة الداخلية، اتحاد الهيئات المحلية، الشرطة، البلديات المشمولة بالتجربة الريادية.",
+   "orgs": "وزارة الحكم المحلي ووزارة الداخلية",
+   "funding": "التعاون الألماني",
+   "update": "لم يعد الملف منطبقاً بصيغته الحالية؛ جرى تحديث التوجّه بحيث تتولى الهيئات المحلية إطلاق شرطة البلديات، ولم يعد مساراً يستوجب قراراً من الوزارة.",
+   "status": "ملغى",
+   "statusRaw": "لم يعد منطبقاً بصيغته الحالية",
+   "roles": {
+    "شادي بدارين": [
+     "رئيس"
+    ]
+   },
+   "depts": {},
+   "link": {
+    "programs": [
+     "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+    ],
+    "indicators": [],
+    "intervs": [
+     "2.10"
+    ],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "لا يوجد مؤشر محدد ضمن الاستراتيجية القطاعية 2025-2027",
+    "gap": "شرطة البلديات مبادرة جديدة لا تظهر في خطة العمل 2025-2026 ولا يقابلها مؤشر في الاستراتيجية القطاعية الحالية.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": false,
+    "review": "◇ مراجعة الارتباط: صُنِّف بلا نشاط ولا مؤشر، غير أن الإنجاز المسجَّل على هذا الملف هو إنشاء محاكم البلديات (اثنتا عشرة محكمة وثلاث متبقية) — وهو مضمون النشاط (٢.١٠) «تفعيل قانون محاكم البلديات واستحداث محكمة الهيئات المحلية والتنظيمية». التوصية: ربط الملف بالنشاط (٢.١٠) بدل تركه بلا برنامج.",
+    "proposed": {
+     "progs": [
+      "2 - الحوكمة الرشيدة وإصلاح منظومة قطاع الحكم المحلي"
+     ],
+     "intervs": [
+      "2.10"
+     ],
+     "inds": []
+    },
+    "needsIndicator": true
+   },
+   "decision": {
+    "issued": false,
+    "title": "",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "تثبيت التوجّه المحدَّث خطياً وإخراج الملف من قائمة الملفات المنتظرة للقرار."
+    ],
+    "note": "",
+    "linkage": "",
+    "scope": "",
+    "mode": "obsolete",
+    "revision": "✕ لم يعد هذا الملف منطبقاً بصيغته الواردة في الخطة؛ جرى تحديث التوجّه بحيث تتولى الهيئات المحلية إطلاق شرطة البلديات. ولا يلزم إصدار قرار تكليف بشأنه."
+   },
+   "outside": false
+  },
+  {
+   "id": 14,
+   "kind": "team",
+   "title": "فريق العمل الداخلي لتنفيذ حزمة تدريبات الكوادر المالية في الهيئات المحلية",
+   "short": "تنفيذ حزمة تدريبات الكوادر المالية في الهيئات المحلية",
+   "origIds": [
+    "12"
+   ],
+   "planNums": [
+    "12"
+   ],
+   "theme": "المركز المالي للهيئات المحلية",
+   "problem": "ضعف الكادر الفني المالي في الهيئات المحلية",
+   "activities": [
+    "تنفيذ حزمة تدريبات للكوادر المالية في الهيئات المحلية من خلال تطبيق برامج التدريب التي قدمتها المهمة الاستشارية حول تقييم معرفة ومهارة وممارسة الماليين في الهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "زياد العلي – الإدارة العامة للرقابة والتوجيه – رئيساً",
+     "body": "زياد العلي – الإدارة العامة للرقابة والتوجيه",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "زياد العلي"
+     ],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ابتسام أبو رمضان – الإدارة العامة للرقابة والتوجيه والموازنات – مقرراً",
+     "body": "ابتسام أبو رمضان – الإدارة العامة للرقابة والتوجيه والموازنات",
+     "roles": [
+      "مقرر"
+     ],
+     "people": [
+      "ابتسام أبو رمضان"
+     ],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه",
+      "الإدارة العامة للموازنات"
+     ],
+     "note": false
+    },
+    {
+     "raw": "ممثل عن الإدارة العامة للشؤون الإدارية / دائرة التدريب – عضواً",
+     "body": "ممثل عن الإدارة العامة للشؤون الإدارية / دائرة التدريب",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للشؤون الإدارية"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "استلام واعتماد مخرجات المهمة الاستشارية حول تقييم معرفة ومهارة وممارسة الماليين في الهيئات المحلية.",
+    "وضع برنامج تدريبي متكامل للكوادر المالية استناداً إلى تلك المخرجات، والبدء بتنفيذه والاستمرار فيه.",
+    "ربط البرنامج التدريبي بالملفات المالية الأخرى، ضريبة الأملاك، النظام المالي، الإطار المرجعي لتحميل التكاليف — بحيث تصل كوادر الهيئات المحلية جاهزة لتطبيق الأنظمة الجديدة عند نفاذها."
+   ],
+   "target": "",
+   "partners": "اتحاد الهيئات المحلية، صندوق تطوير وإقراض الهيئات المحلية،",
+   "orgs": "وزارة الحكم المحلي واتحاد الهيئات المحلية وصندوق تطوير واقراض الهيئات المحلية",
+   "funding": "—",
+   "update": "البرنامج قيد التنفيذ بالتنسيق مع التعاون الألماني (GIZ)؛ ولا يلزم إصدار قرار تكليف جديد.",
+   "status": "قيد التنفيذ",
+   "statusRaw": "قيد التنفيذ",
+   "roles": {
+    "زياد العلي": [
+     "رئيس"
+    ],
+    "ابتسام أبو رمضان": [
+     "مقرر"
+    ]
+   },
+   "depts": {
+    "الإدارة العامة للرقابة والتوجيه": [
+     "رئيس",
+     "مقرر"
+    ],
+    "الإدارة العامة للموازنات": [
+     "مقرر"
+    ],
+    "الإدارة العامة للشؤون الإدارية": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "1 - تنفيذ سياسات الحكومة في تصفية صافي الإقراض"
+    ],
+    "indicators": [
+     "3.4"
+    ],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "النتيجة 3.4: بيئة عمل مؤسسية كفؤة ومستجيبة لمتطلبات العمل\n مؤشر: عدد المستفيدين من الدورات التدريبية التخصصية المنفذة سنوياً.",
+    "gap": "مرتبط بالكامل — لا توجد فجوة",
+    "aligned": true,
+    "hasProg": true,
+    "hasInterv": false,
+    "hasInd": true
+   },
+   "decision": {
+    "issued": true,
+    "title": "تكليف سابق بقرار رسمي",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "الاستمرار في تنفيذ البرنامج التدريبي وتوثيق عدد المستفيدين سنوياً."
+    ],
+    "note": "",
+    "linkage": "",
+    "scope": "",
+    "mode": "prior",
+    "priorNote": "كُلِّف هذا الملف سابقاً بقرار رسمي؛ ولا يلزم إصدار قرار تكليف جديد. البرنامج قيد التنفيذ فعلياً بالتنسيق مع التعاون الألماني (GIZ)."
+   },
+   "outside": false
+  },
+  {
+   "id": 16,
+   "kind": "unassigned",
+   "title": "الإطار المرجعي لتحميل التكاليف في خدمات الهيئات المحلية",
+   "short": "الإطار المرجعي لتحميل التكاليف (بلا فريق مخصّص)",
+   "origIds": [
+    "11"
+   ],
+   "planNums": [
+    "11"
+   ],
+   "theme": "المركز المالي للهيئات المحلية",
+   "problem": "ضعف الإيرادات مقابل الخدمات المطلوب تقديمها",
+   "activities": [
+    "تنفيذ دراسة لاعداد اطار مرجعي لتحميل التكاليف في الخدمات في الهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "لم يُشكَّل له فريق عمل داخلي بموجب القرار — يُذكر ضمن مهام فريق حزمة التدريبات المالية فقط",
+     "body": "",
+     "roles": [],
+     "people": [],
+     "depts": [],
+     "note": true
+    }
+   ],
+   "tasks": [
+    "يظهر هذا الملف في القرار فقط ضمن مهمة ربط البرنامج التدريبي بالملفات المالية الأخرى، دون فريق عمل مخصّص.",
+    "يُوصى بتحديد إدارة عامة مسؤولة وإصدار تكليف رسمي بشأنه."
+   ],
+   "target": "—",
+   "partners": "وزارة الحكم المحلي واتحاد الهيئات المحلية ووصندوق البلديات",
+   "orgs": "وزارة الحكم المحلي واتحاد الهيئات المحلية ووصندوق البلديات",
+   "funding": "التعاون الألماني",
+   "update": "—",
+   "status": "قيد التنفيذ",
+   "statusRaw": "قيد التنفيذ",
+   "roles": {},
+   "depts": {},
+   "link": {
+    "programs": [
+     "1 - تنفيذ سياسات الحكومة في تصفية صافي الإقراض"
+    ],
+    "indicators": [
+     "1.1"
+    ],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق بنفس الصياغة في تقرير إنجاز مبادرة الوزارة",
+    "indicatorText": "النتيجة 1.1: تحسن الإدارة المالية في الهيئات المحلية والمجالس المشتركة\n مثال على المؤشرات: معدل نسبة زيادة الإيرادات السنوية؛ عدد الهيئات المحلية التي تقوم بجباية ضريبة الأملاك؛ معدل نسبة دقة البيانات المالية للهيئات المحلية.",
+    "gap": "دراسة استرداد التكاليف لا يقابلها مؤشر محدد في جدول مؤشرات الاستراتيجية.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": false,
+    "hasInd": true,
+    "review": "◇ مراجعة الارتباط: صُنِّف بلا مؤشر، غير أن غايته زيادة إيرادات الهيئات المحلية عبر استرداد كلفة الخدمات — وهو ما يقيسه مؤشر النتيجة (١.١) «معدل نسبة زيادة الإيرادات السنوية». التوصية: ربطه بالنتيجة (١.١).",
+    "proposed": {
+     "progs": [],
+     "intervs": [],
+     "inds": [
+      "1.1"
+     ]
+    }
+   },
+   "decision": {
+    "issued": false,
+    "title": "",
+    "source": "",
+    "date": "",
+    "signer": "",
+    "chair": "",
+    "rapporteur": "",
+    "members": "",
+    "tasks": [],
+    "deadline": "",
+    "reporting": "",
+    "next": [
+     "مراجعة الدراسات السابقة المنجزة مع التعاون الألماني قبل الشروع في دراسة جديدة.",
+     "إصدار قرار التكليف وتسمية الفريق."
+    ],
+    "note": "لا يوجد فريق مخصّص لهذا الملف في مذكرة التشكيل.",
+    "linkage": "",
+    "scope": "",
+    "mode": "pending"
+   },
+   "outside": false
+  },
+  {
+   "id": 17,
+   "kind": "outside",
+   "outside": true,
+   "title": "لجنة دراسة إجراءات حل مجالس الهيئات المحلية",
+   "short": "دراسة إجراءات حل مجالس الهيئات المحلية (خارج خطة اللامركزية)",
+   "origIds": [
+    "N/A"
+   ],
+   "planNums": [
+    "—"
+   ],
+   "theme": "الإدارة المحلية",
+   "problem": "غياب معايير وإجراءات واضحة لتنسيب الوزير إلى مجلس الوزراء بحل مجلس الهيئة المحلية.",
+   "activities": [
+    "دراسة إجراءات حل مجالس الهيئات المحلية استناداً إلى المادة (١٢ مكرر) لسنة ٢٠٠٨"
+   ],
+   "composition": [
+    {
+     "raw": "رائد مقبل – وكيل الوزارة – رئيساً",
+     "body": "رائد مقبل – وكيل الوزارة",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "رائد مقبل"
+     ],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "إسلام أبو زياد – الوكيل المساعد والمستشار القانوني – عضواً",
+     "body": "إسلام أبو زياد – الوكيل المساعد والمستشار القانوني",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "إسلام أبو زياد"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد للشؤون والإدارات المساندة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "خالد اشتية – الوكيل المساعد للهيئات المحلية – عضواً",
+     "body": "خالد اشتية – الوكيل المساعد للهيئات المحلية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "خالد اشتيه"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "رشيد عوض – الوكيل المساعد للشؤون الهندسية – عضواً",
+     "body": "رشيد عوض – الوكيل المساعد للشؤون الهندسية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "رشيد عوض"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع"
+     ],
+     "note": false
+    },
+    {
+     "raw": "جهاد مشاقي – مدير عام الإدارة العامة للرقابة والتوجيه – عضواً",
+     "body": "جهاد مشاقي – مدير عام الإدارة العامة للرقابة والتوجيه",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "جهاد مشاقي"
+     ],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "شادي بدارين – مدير عام الإدارة العامة للتشكيلات والانتخابات – عضواً",
+     "body": "شادي بدارين – مدير عام الإدارة العامة للتشكيلات والانتخابات",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "شادي بدارين"
+     ],
+     "depts": [
+      "الإدارة العامة للتشكيلات والانتخابات"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "تطوير معايير وشروط واضحة تحدد موجبات قرار الوزير بالتنسيب لمجلس الوزراء بحل مجلس الهيئة المحلية، والإجراءات اللازمة للوصول إلى قرار الحل.",
+    "تحديد المعززات والمستندات القانونية التي يجب إرفاقها إلى مجلس الوزراء عند التوصية بالحل.",
+    "تحديد دور وعلاقة كل من ديوان الرقابة المالية والإدارية وهيئة مكافحة الفساد ضمن إجراءات الحل."
+   ],
+   "target": "تقديم مقترح التطوير لمعالي الوزير بموعد أقصاه نهاية عام ٢٠٢٦.",
+   "partners": "ديوان الرقابة المالية والإدارية، هيئة مكافحة الفساد، الأمانة العامة لمجلس الوزراء.",
+   "orgs": "وزارة الحكم المحلي",
+   "funding": "—",
+   "update": "جُمّد الملف. جهة المتابعة: عطوفة الوكيل (أبو فريد).",
+   "status": "مجمّد",
+   "statusRaw": "مجمّد — أُوقف العمل بالملف",
+   "roles": {
+    "رائد مقبل": [
+     "رئيس"
+    ],
+    "إسلام أبو زياد": [
+     "عضو"
+    ],
+    "خالد اشتيه": [
+     "عضو"
+    ],
+    "رشيد عوض": [
+     "عضو"
+    ],
+    "جهاد مشاقي": [
+     "عضو"
+    ],
+    "شادي بدارين": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "مكتب وكيل الوزارة": [
+     "رئيس"
+    ],
+    "مكتب الوكيل المساعد للشؤون والإدارات المساندة": [
+     "عضو"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهيئات المحلية": [
+     "عضو"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع": [
+     "عضو"
+    ],
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ],
+    "الإدارة العامة للتشكيلات والانتخابات": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [],
+    "indicators": [],
+    "intervs": [],
+    "intervText": "لا يوجد نشاط مطابق ضمن الأنشطة الـ٦٨ في خطة الإصلاح ٢٠٢٥–٢٠٢٦",
+    "indicatorText": "لا يوجد مؤشر في الاستراتيجية القطاعية ٢٠٢٥–٢٠٢٧",
+    "gap": "⚠ غير مرتبط بأجندة اللامركزية ولا بخطة الإصلاح — مبادرة مستجدة. أقرب الأنشطة موضوعاً هو ٢.٧ (مراجعة العلاقة الإدارية بهدف منح صلاحيات أوسع للهيئات) وهو معاكس في الاتجاه.",
+    "aligned": false,
+    "hasProg": false,
+    "hasInterv": false,
+    "hasInd": false,
+    "review": "◇ مراجعة الارتباط: مؤكَّد — لا يقابله بند في خارطة اللامركزية ولا نشاط في خطة الإصلاح ولا مؤشر في الاستراتيجية. وأقرب الأنشطة (٢.٧) معاكس في الاتجاه. التوصية: إدراجه كنشاط مستقل ضمن البرنامج الثاني بمؤشر يخدم النتيجة (٣.١)، أو إبقاؤه خارج أطر المتابعة بعلم الجميع."
+   },
+   "decision": {
+    "issued": true,
+    "title": "قرار بشأن تشكيل لجنة لدراسة إجراءات حل مجالس الهيئات المحلية",
+    "source": "ملف مستقل – صفحة واحدة",
+    "date": "غير مؤرَّخ في النسخة المتاحة (توجد تعليقات بخط اليد على الهامش)",
+    "signer": "د.م. سامي الحجاوي – وزير الحكم المحلي",
+    "chair": "رائد مقبل – وكيل الوزارة – رئيساً",
+    "rapporteur": "لم يُسمَّ مقرر",
+    "members": "إسلام أبو زياد – الوكيل المساعد والمستشار القانوني – عضواً؛ خالد اشتية – الوكيل المساعد للهيئات المحلية – عضواً؛ رشيد عوض – الوكيل المساعد للشؤون الهندسية – عضواً؛ جهاد مشاقي – مدير عام الإدارة العامة للرقابة والتوجيه – عضواً؛ شادي بدارين – مدير عام الإدارة العامة للتشكيلات والانتخابات – عضواً",
+    "tasks": [
+     "• تطوير معايير وشروط واضحة تحدد موجبات قرار الوزير بالتنسيب لمجلس الوزراء بحل مجلس الهيئة المحلية، والإجراءات اللازمة للوصول إلى قرار الحل.",
+     "• تحديد المعززات والمستندات القانونية التي يجب إرفاقها إلى مجلس الوزراء عند التوصية بالحل.",
+     "• تحديد دور وعلاقة كل من ديوان الرقابة المالية والإدارية وهيئة مكافحة الفساد ضمن إجراءات الحل."
+    ],
+    "deadline": "تقديم مقترح التطوير لمعالي الوزير بموعد أقصاه نهاية عام ٢٠٢٦.",
+    "reporting": "لم تُحدَّد آلية تقارير دورية في القرار.",
+    "next": [
+     "الملف مجمّد حالياً؛ يُعاد النظر فيه بقرار من عطوفة الوكيل."
+    ],
+    "note": "أُخرج هذا القرار من الفريق (٦) في المذكرة: الفريق (٦) يخصّ «مصادقة الوزير على قرارات الهيئات المحلية» (الإقالة وتسيير الأعمال والتعيينات) وهو إجراء يحدّ من سلطة المركز ويوسّع استقلالية الهيئات، بينما ينظّم هذا القرار صلاحية الوزير بالتنسيب لمجلس الوزراء بحل المجلس وفق المادة (١٢ مكرر) — أي سلطة تدخّل مركزية. وعليه أُعيد الفريق (٦) إلى حالة «لم يصدر قرار بعد».\n\nالتوصية: إمّا إدراج هذا الملف كنشاط مستقل ضمن البرنامج الثاني من خطة الإصلاح مع مؤشر يخدم النتيجة ٣.١، أو إبقاؤه خارج أطر المتابعة مع العلم بأنه لن يَرِد في أي تقرير دوري.",
+    "linkage": "⚠ غير مرتبط بأجندة اللامركزية ولا بخطة الإصلاح.\n\n• خارطة طريق اللامركزية ٢٠٢٦: لا يقابله أي بند من البنود العشرين.\n• خطة الإصلاح والتطوير ٢٠٢٥–٢٠٢٦: لا يقابله أي نشاط من الأنشطة الثمانية والستين عبر البرامج السبعة؛ وبرنامج الحوكمة الرشيدة (الأنشطة ٢.١ – ٢.١٢) لا يتضمن حل المجالس.\n• الاستراتيجية القطاعية ٢٠٢٥–٢٠٢٧: لا يقابله مؤشر.\n• لا ترد المادة (١٢ مكرر) في أي من وثائق التخطيط الثلاث.\n\nأقرب الأنشطة موضوعاً هو النشاط ٢.٧ «مراجعة العلاقة الإدارية والإجرائية بين الوزارة ومديرياتها من جهة والهيئات المحلية من جهة أخرى، بهدف تقليل البيروقراطية ومنح صلاحيات أوسع للهيئات المحلية» — وهو معاكس في الاتجاه: تفويض صلاحيات للهيئات، لا تنظيم لتدخّل المركز فيها.\n\nملاحظة: ديباجة القرار تستند إلى «برنامج إصلاح وتطوير قطاع الحكم المحلي» و«سياسات الحكومة التاسعة عشرة» على مستوى التأطير العام فقط، دون نشاط أو مؤشر أو بند يقابله.",
+    "scope": "outside",
+    "frozen": true,
+    "coordinator": "عطوفة الوكيل — أبو فريد",
+    "mode": "frozen"
+   }
+  },
+  {
+   "id": 18,
+   "kind": "outside",
+   "outside": true,
+   "title": "فريق داخلي لمتابعة ملفي المياه والكهرباء في الهيئات المحلية",
+   "short": "متابعة ملفي المياه والكهرباء (خارج خارطة اللامركزية)",
+   "origIds": [
+    "N/A"
+   ],
+   "planNums": [
+    "—"
+   ],
+   "theme": "الإدارة المحلية",
+   "problem": "هيكلة خدمات الماء والكهرباء في الهيئات المحلية ومعالجة تراكم صافي الإقراض.",
+   "activities": [
+    "متابعة تنفيذ برنامج الحكومة الخاص بهيكلة خدمات الماء والكهرباء في الهيئات المحلية"
+   ],
+   "composition": [
+    {
+     "raw": "رائد مقبل – وكيل الوزارة – رئيساً",
+     "body": "رائد مقبل – وكيل الوزارة",
+     "roles": [
+      "رئيس"
+     ],
+     "people": [
+      "رائد مقبل"
+     ],
+     "depts": [
+      "مكتب وكيل الوزارة"
+     ],
+     "note": false
+    },
+    {
+     "raw": "خالد اشتية – الوكيل المساعد للهيئات المحلية – عضواً",
+     "body": "خالد اشتية – الوكيل المساعد للهيئات المحلية",
+     "roles": [
+      "عضو"
+     ],
+     "people": [
+      "خالد اشتيه"
+     ],
+     "depts": [
+      "مكتب الوكيل المساعد لشؤون الهيئات المحلية"
+     ],
+     "note": false
+    },
+    {
+     "raw": "الإدارة العامة للرقابة والتوجيه – عضواً",
+     "body": "الإدارة العامة للرقابة والتوجيه",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للرقابة والتوجيه"
+     ],
+     "note": false
+    },
+    {
+     "raw": "وحدة صافي الإقراض – عضواً",
+     "body": "وحدة صافي الإقراض",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "وحدة صافي الإقراض"
+     ],
+     "note": false
+    },
+    {
+     "raw": "الإدارة العامة للتنمية والاستثمار – عضواً",
+     "body": "الإدارة العامة للتنمية والاستثمار",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للتنمية والاستثمار"
+     ],
+     "note": false
+    },
+    {
+     "raw": "الإدارة العامة للمشاريع – عضواً",
+     "body": "الإدارة العامة للمشاريع",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للمشاريع"
+     ],
+     "note": false
+    },
+    {
+     "raw": "الإدارة العامة للمجالس المشتركة – عضواً",
+     "body": "الإدارة العامة للمجالس المشتركة",
+     "roles": [
+      "عضو"
+     ],
+     "people": [],
+     "depts": [
+      "الإدارة العامة للمجالس المشتركة"
+     ],
+     "note": false
+    }
+   ],
+   "tasks": [
+    "وضع الخطط لتنفيذ برنامج الحكومة الخاص بهيكلة خدمات الماء والكهرباء في الهيئات المحلية.",
+    "تقديم الدعم والتوصيات لمندوبي الوزارة في مجلس تنظيم قطاع الكهرباء وشركة النقل الوطنية ومجلس تنظيم قطاع المياه.",
+    "تنفيذ المسؤوليات الخاصة بالوزارة الصادرة عن قرارات الحكومة أو الهيئات الحكومية المختصة.",
+    "وضع سياسات الطاقة المتجددة للهيئات المحلية.",
+    "تقديم الدعم لوحدة صافي الإقراض ومتابعة دفع فواتير الماء والكهرباء.",
+    "التنسيق مع الجهات المختصة في تشكيل شركات الكهرباء أو مرافق المياه.",
+    "معالجة أي قضايا طارئة، وعلى كافة الدوائر التعاون مع الفريق.",
+    "تقديم تقرير شهري إلى معالي الوزير حول التقدم بالعمل."
+   ],
+   "target": "—",
+   "partners": "مجلس تنظيم قطاع الكهرباء، شركة النقل الوطنية، مجلس تنظيم قطاع المياه.",
+   "orgs": "وزارة الحكم المحلي",
+   "funding": "—",
+   "update": "جُمّد الملف.",
+   "status": "مجمّد",
+   "statusRaw": "مجمّد — أُوقف العمل بالملف",
+   "roles": {
+    "رائد مقبل": [
+     "رئيس"
+    ],
+    "خالد اشتيه": [
+     "عضو"
+    ]
+   },
+   "depts": {
+    "مكتب وكيل الوزارة": [
+     "رئيس"
+    ],
+    "مكتب الوكيل المساعد لشؤون الهيئات المحلية": [
+     "عضو"
+    ],
+    "الإدارة العامة للرقابة والتوجيه": [
+     "عضو"
+    ],
+    "وحدة صافي الإقراض": [
+     "عضو"
+    ],
+    "الإدارة العامة للتنمية والاستثمار": [
+     "عضو"
+    ],
+    "الإدارة العامة للمشاريع": [
+     "عضو"
+    ],
+    "الإدارة العامة للمجالس المشتركة": [
+     "عضو"
+    ]
+   },
+   "link": {
+    "programs": [
+     "1 - تنفيذ سياسات الحكومة في تصفية صافي الإقراض"
+    ],
+    "indicators": [
+     "1.1"
+    ],
+    "intervs": [
+     "1.4",
+     "1.5",
+     "1.6"
+    ],
+    "intervText": "نقل المسؤولية الكاملة لتقديم خدمتي الكهرباء والمياه من الهيئات المحلية إلى شركات/مرافق مستقلة",
+    "indicatorText": "النتيجة 1.1: تحسن الإدارة المالية في الهيئات المحلية والمجالس المشتركة\n مثال على المؤشرات: معدل نسبة زيادة الإيرادات السنوية؛ عدد الهيئات المحلية التي تقوم بجباية ضريبة الأملاك؛ معدل نسبة دقة البيانات المالية للهيئات المحلية.",
+    "gap": "⚠ مرتبط بخطة الإصلاح (البرنامج الأول) وغير وارد في خارطة طريق اللامركزية ٢٠٢٦ — لا ذكر للمياه أو الكهرباء في أي من بنودها العشرين.",
+    "aligned": false,
+    "hasProg": true,
+    "hasInterv": true,
+    "hasInd": true,
+    "review": "◇ مراجعة الارتباط: مرتبط بالبرنامج الأول (الأنشطة ١.٤ و١.٥ و١.٦) وبلا مؤشر. وأثره المباشر تحسين المركز المالي للهيئات المحلية عبر تسوية المديونية وفصل حسابات الخدمتين — وهو ما تقيسه النتيجة (١.١). التوصية: ربطه بالنتيجة (١.١).",
+    "proposed": {
+     "progs": [],
+     "intervs": [],
+     "inds": [
+      "1.1"
+     ]
+    }
+   },
+   "decision": {
+    "issued": true,
+    "scope": "outside",
+    "title": "فريق داخلي قائم — لم تُرفق نسخة قرار التشكيل",
+    "source": "ورقة «decentralization appointees» في متتبّع الإصلاح",
+    "date": "غير متوفر",
+    "signer": "—",
+    "chair": "رائد مقبل – وكيل الوزارة – رئيساً",
+    "rapporteur": "لم يُسمَّ مقرر",
+    "members": "خالد اشتية؛ الرقابة والتوجيه؛ وحدة صافي الإقراض؛ التنمية والاستثمار؛ المشاريع؛ المجالس المشتركة",
+    "tasks": [],
+    "deadline": "لم يُحدَّد",
+    "reporting": "تقرير شهري إلى معالي الوزير",
+    "next": [
+     "الملف مجمّد حالياً؛ يُعاد النظر فيه بقرار من عطوفة الوكيل."
+    ],
+    "note": "فريق قائم فعلياً غير أن نسخة القرار غير متوفرة ضمن الوثائق المتاحة.",
+    "linkage": "مرتبط بخطة الإصلاح فقط",
+    "frozen": true,
+    "mode": "frozen"
+   }
+  }
+ ],
+ "profiles": {
+  "سامي حجاوي": {
+   "role": "وزير الحكم المحلي",
+   "dept": "مكتب الوزير",
+   "kind": "person"
+  },
+  "رائد مقبل": {
+   "role": "وكيل الوزارة",
+   "dept": "مكتب وكيل الوزارة",
+   "kind": "person"
+  },
+  "خالد اشتيه": {
+   "role": "الوكيل المساعد لشؤون الهيئات المحلية",
+   "dept": "مكتب الوكيل المساعد لشؤون الهيئات المحلية",
+   "kind": "person"
+  },
+  "إسلام أبو زياد": {
+   "role": "الوكيل المساعد للشؤون والإدارات المساندة",
+   "dept": "مكتب الوكيل المساعد للشؤون والإدارات المساندة",
+   "kind": "person"
+  },
+  "رشيد عوض": {
+   "role": "الوكيل المساعد لشؤون الهندسة والمشاريع",
+   "dept": "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع",
+   "kind": "person"
+  },
+  "بشير البرغوثي": {
+   "role": "مستشار الوزير للسياسات والتخطيط",
+   "dept": "مكتب مستشار الوزير للسياسات والتخطيط",
+   "kind": "person"
+  },
+  "جهاد مشاقي": {
+   "role": "الإدارة العامة للرقابة والتوجيه",
+   "dept": "الإدارة العامة للرقابة والتوجيه",
+   "kind": "person"
+  },
+  "زياد العلي": {
+   "role": "الإدارة العامة للرقابة والتوجيه",
+   "dept": "الإدارة العامة للرقابة والتوجيه",
+   "kind": "person"
+  },
+  "ابتسام أبو رمضان": {
+   "role": "الإدارة العامة للرقابة والتوجيه والموازنات",
+   "dept": "الإدارة العامة للرقابة والتوجيه والموازنات",
+   "kind": "person"
+  },
+  "سلوى شبيطة": {
+   "role": "الإدارة العامة للتنمية والاستثمار",
+   "dept": "الإدارة العامة للتنمية والاستثمار",
+   "kind": "person"
+  },
+  "مؤيد شحادة": {
+   "role": "الإدارة العامة للمشاريع",
+   "dept": "الإدارة العامة للمشاريع",
+   "kind": "person"
+  },
+  "سونيا الزبيدي": {
+   "role": "الإدارة العامة للتخطيط والتنظيم العمراني",
+   "dept": "الإدارة العامة للتخطيط والتنظيم العمراني",
+   "kind": "person"
+  },
+  "ربى ميزار": {
+   "role": "الإدارة العامة للتخطيط والتنظيم العمراني",
+   "dept": "الإدارة العامة للتخطيط والتنظيم العمراني",
+   "kind": "person"
+  },
+  "شادي بدارين": {
+   "role": "مدير عام الإدارة العامة للتشكيلات والانتخابات",
+   "dept": "الإدارة العامة للتشكيلات والانتخابات",
+   "kind": "person"
+  },
+  "جهاد عابد": {
+   "role": "الإدارة العامة للشؤون القانونية",
+   "dept": "الإدارة العامة للشؤون القانونية"
+  },
+  "رامي العلام": {
+   "role": "وحدة التخطيط والسياسات",
+   "dept": "وحدة التخطيط والسياسات"
+  },
+  "سهى الشيخ": {
+   "role": "الإدارة العامة للشؤون المالية",
+   "dept": "الإدارة العامة للشؤون المالية"
+  },
+  "سنابل بريك": {
+   "role": "الإدارة العامة للشؤون القانونية",
+   "dept": "الإدارة العامة للشؤون القانونية"
+  },
+  "ضحى عاكف": {
+   "role": "الإدارة العامة للرقابة والتوجيه",
+   "dept": "الإدارة العامة للرقابة والتوجيه"
+  },
+  "محمود زبيدي": {
+   "role": "الإدارة العامة للموازنات",
+   "dept": "الإدارة العامة للموازنات"
+  },
+  "محمد الرمحي": {
+   "role": "مدير عام صندوق تطوير وإقراض الهيئات المحلية",
+   "dept": "صندوق تطوير وإقراض الهيئات المحلية"
+  }
+ },
+ "departments": [
+  "مكتب وكيل الوزارة",
+  "مكتب الوكيل المساعد لشؤون الهيئات المحلية",
+  "مكتب الوكيل المساعد للشؤون والإدارات المساندة",
+  "مكتب الوكيل المساعد لشؤون الهندسة والمشاريع",
+  "مكتب مستشار الوزير",
+  "الإدارة العامة للتشكيلات والانتخابات",
+  "الإدارة العامة للرقابة والتوجيه",
+  "الإدارة العامة للموازنات",
+  "الإدارة العامة للشؤون القانونية",
+  "الإدارة العامة للتنمية والاستثمار",
+  "الإدارة العامة للمشاريع",
+  "الإدارة العامة للتخطيط والتنظيم العمراني",
+  "وحدة التخطيط والسياسات",
+  "دائرة GeoMOLG",
+  "الإدارة العامة للشؤون الإدارية"
+ ],
+ "general": [
+  "تعمل الفرق ضمن الإشراف العام لوزير الحكم المحلي، وتحت المتابعة المباشرة لمكتب وكيل الوزارة.",
+  "يتولى رئيس كل فريق دعوة الفريق للانعقاد وإقرار خطة عمله وجدولها الزمني خلال ثلاثين يوماً من تاريخ هذا القرار.",
+  "يتولى رئيس كل فريق بتعيين مقرر (منسق) والذي يقوم بمسؤوليته بتوثيق الاجتماعات ومتابعة تنفيذ القرارات ورفع تقرير شهري إلى وحدة التخطيط والسياسات.",
+  "تتولى وحدة التخطيط والسياسات التنسيق العام بين الفرق وإعداد تقرير موحد ربعي يُرفع إلى معالي الوزير.",
+  "حيثما اقتضت طبيعة الملف تشكيل فريق وطني أو مشترك مع جهات خارج الوزارة، يتولى فريق العمل الداخلي المعني إعداد التصور اللازم لذلك والتنسيق مع الجهات الشريكة لتشكيله أو تفعيله، ورفع التوصية بذلك إلى معالي الوزير.",
+  "لكل فريق أن يستعين بمن يراه مناسباً من الخبراء والأكاديميين وممثلي الهيئات المحلية، وأن يعقد جلسات تشاور مع الفاعلين في القطاع.",
+  "تلتزم الفرق بوضع شروط مرجعية للمستشارين والشركات الاستشارية المكلفة بالدراسات، والإشراف على مخرجاتها واعتمادها.",
+  "تنسّق الفرق فيما بينها ومع الفريق الوطني المشار إليه في البند «ثالثاً» من هذا القرار، بما يضمن اتساق المخرجات مع نظام التصنيف الوظيفي للهيئات المحلية.",
+  "يتم التنسيق مع شركاء التنمية عبر القنوات الرسمية للوزارة وبالتنسيق مع وزارة المالية والتخطيط.",
+  "على كافة الإدارات العامة والمديريات في الوزارة التعاون مع فرق العمل المشكّلة بموجب هذا القرار، وتزويدها بما تطلبه من بيانات ووثائق وآراء فنية ضمن اختصاصها، وتسمية من يلزم من كوادرها للمشاركة في أعمالها كلما اقتضت الحاجة.",
+  "ترفع الفرق مخرجاتها النهائية إلى وزير الحكم المحلي تمهيداً لاستكمال الإجراءات القانونية اللازمة لإقرارها."
+ ],
+ "national": "يبقى العمل جارياً بالقرار رقم (٢٣٢٤) الصادر بتاريخ ١٥/٤/٢٠٢٦ والقاضي بتشكيل «فريق وطني لمراجعة وتحديث نظام تصنيف الهيئات المحلية»، ولا يمس هذا القرار تشكيله أو مهامه. وتلتزم فرق العمل المشكّلة بموجب هذا القرار، وعلى وجه الخصوص فريق تحديث النظام المالي للهيئات المحلية وفريق مراجعة نظام التشكيلات وموظفي الهيئات المحلية، بالتنسيق المستمر مع الفريق الوطني المذكور وبناء مخرجاتها على نظام التصنيف الوظيفي المنبثق عنه.",
+ "nominations": "حيثما ورد في التشكيلات أعلاه «ممثل عن ...»، يتولى مدير عام الإدارة العامة المعنية تسمية ممثلها خطياً بالاسم والمسمى الوظيفي، وتزويد وحدة التخطيط والسياسات بذلك بموعد أقصاه نهاية دوام يوم الخميس الموافق ٢٧/٨/٢٠٢٦. ويراعى في الترشيح الإلمام الفني بالملف والقدرة على الالتزام باجتماعات الفريق ومخرجاته، على أن يكون الممثل المسمى هو ذاته الحاضر للاجتماعات دون تغيير إلا لضرورة وبإشعار خطي مسبق.",
+ "effective": "خامساً: يُعمل بهذا القرار اعتباراً من تاريخ صدوره، وعلى الجهات المختصة كافة تنفيذ مقتضياته.",
+ "decisionsNote": "حُدّثت اللوحة وفق قرارات التكليف الرسمية الصادرة عن معالي الوزير. خمسة من القرارات غير مؤرَّخة في النسخ المتاحة؛ والموعد الوحيد المحدد صراحةً بتاريخ هو ٣١/١٢/٢٠٢٦.",
+ "updates": [
+  {
+   "date": "١٤/١٠/٢٠٢٦",
+   "kind": "متابعة",
+   "tid": 7,
+   "title": "رفع التصور الأولي وخطة العمل التنفيذية لتعليمات التسهيلات البنكية وتأجير الأملاك",
+   "text": "كتاب من مدير عام التنمية والاستثمار سلوى شبيطة إلى عطوفة وكيل الوزارة يتضمن أربعة محاور عمل وخطة تنفيذية من خمس مراحل بمخرجات وحالة لكل مرحلة. أُنجزت الاجتماعات التنسيقية مع الشؤون القانونية (٨/١٠) والتوجيه والرقابة (١١/١٠) والموازنات (١٣/١٠)، والمرحلة الأولى جارية بانتظار رد الموازنات."
+  },
+  {
+   "date": "١٩/١٠/٢٠٢٦",
+   "kind": "مراسلة",
+   "tid": 1,
+   "title": "مقترح تشكيل فريق وطني مشترك بين وزارتي الحكم المحلي والمالية",
+   "text": "كتاب الوزارة رقم (٦٦٥٤-٢٠٢٦-١) إلى معالي وزير المالية والتخطيط، يتضمن خمسة أهداف للفريق المشترك وتسمية أربعة ممثلين عن وزارة الحكم المحلي، وطلب الموافقة وتسمية ممثلي وزارة المالية."
+  },
+  {
+   "date": "٠١/١٠/٢٠٢٦",
+   "kind": "تصحيح",
+   "tid": 7,
+   "title": "تصحيح حالة ملف الاقتراض والتسهيلات المصرفية",
+   "text": "الملف صادر بشأنه قرار تكليف كامل يشمل دليل الاقتراض؛ وقد صُحِّحت حالته من «عالق — يغطي جزءاً من الملف» إلى «قيد التنفيذ — صدر قرار تكليف رسمي»، ومُنسِّقته سلوى شبيطة."
+  },
+  {
+   "date": "٠١/١٠/٢٠٢٦",
+   "kind": "مراجعة",
+   "tid": 1,
+   "title": "دمج ملف رخص المهن مع ضريبة الأملاك",
+   "text": "أُدمج «نقل صلاحية جباية رخص المهن» ضمن بند ضريبة الأملاك ويُنفَّذ بموجب القرار ذاته — استناداً إلى البند (٣) من قرار تشكيل الفريق المشترك مع الإدارة العامة لضريبة الأملاك."
+  },
+  {
+   "date": "٠١/١٠/٢٠٢٦",
+   "kind": "مراجعة",
+   "tid": 2,
+   "title": "تخفيض أولوية توحيد قانوني الحرف والصناعات",
+   "text": "بعد نقل شقّ رخص المهن إلى ملف ضريبة الأملاك، بقي الملف مقتصراً على توحيد قانوني الحرف والصناعات، وقد خُفِّضت أولويته ولن يُنفَّذ خلال العام الحالي."
+  },
+  {
+   "date": "٠١/١٠/٢٠٢٦",
+   "kind": "مراجعة",
+   "tid": 13,
+   "title": "شرطة البلديات لم تعد منطبقة بصيغتها الحالية",
+   "text": "جرى تحديث التوجّه بحيث تتولى الهيئات المحلية إطلاق شرطة البلديات؛ ولم يعد الملف يستوجب قراراً من الوزارة."
+  },
+  {
+   "date": "٠١/١٠/٢٠٢٦",
+   "kind": "مراجعة",
+   "tid": null,
+   "title": "أربعة ملفات لا تلزمها قرارات تكليف جديدة",
+   "text": "التحويلات المالية الحكومية · الشراكة مع القطاع الخاص · نظام الأبنية والتنظيم · تدريبات الكوادر المالية — جميعها مكلّفة سابقاً بقرارات رسمية، والأخير قيد التنفيذ بالتنسيق مع التعاون الألماني (GIZ)."
+  },
+  {
+   "date": "٣٠/٠٩/٢٠٢٦",
+   "kind": "تجميد",
+   "tid": 17,
+   "title": "تجميد ملف دراسة إجراءات حل مجالس الهيئات المحلية",
+   "text": "أُوقف العمل بالملف. جهة المتابعة: عطوفة الوكيل (أبو فريد)."
+  },
+  {
+   "date": "٣٠/٠٩/٢٠٢٦",
+   "kind": "تجميد",
+   "tid": 18,
+   "title": "تجميد ملف متابعة المياه والكهرباء",
+   "text": "أُوقف العمل بفريق متابعة ملفي المياه والكهرباء."
+  },
+  {
+   "date": "٢٤/٠٩/٢٠٢٦",
+   "kind": "اجتماع",
+   "tid": 15,
+   "title": "الاجتماع الدوري الثاني للفريق الوطني لنظام التصنيفات",
+   "text": "عُقد يوم الخميس ٢٤/٩/٢٠٢٦. المطلوب: تحضير محضر الاجتماع من قِبل شادي بدارين، منسق الفريق."
+  },
+  {
+   "date": "١٩/٠٩/٢٠٢٦",
+   "kind": "متابعة",
+   "tid": 1,
+   "title": "متابعة يومية لملف ضريبة الأملاك",
+   "text": "أفاد جهاد مشاقي بأن الموضوع يُتابع يومياً مع جميع الجهات، وأن الموافقة الشفهية من وزارة المالية حاصلة قبل مخاطبة مجلس الوزراء، ويجري الإسراع بصدور الموافقة الخطية."
+  },
+  {
+   "date": "١٥/٠٩/٢٠٢٦",
+   "kind": "مراسلة",
+   "tid": 1,
+   "title": "إحالة الطلب من الأمانة العامة إلى وزارة المالية",
+   "text": "كتاب الأمانة العامة لمجلس الوزراء رقم ١٨٣٩/٢٠٢٦ إلى معالي وزير المالية والتخطيط لدراسة منح صلاحيات التحصيل لبلديات ميثلون والطيبة وبتير ويعبد وإفادة الأمانة — وارد الوزارة رقم ١٨٧٧."
+  },
+  {
+   "date": "٠٩/٠٩/٢٠٢٦",
+   "kind": "مراسلة",
+   "tid": 1,
+   "title": "طلب إدراج بند على جدول أعمال مجلس الوزراء",
+   "text": "كتاب الوزارة رقم (٦٦٨) إلى أمين عام مجلس الوزراء بشأن منح صلاحيات تحصيل ضريبة الأملاك وغرامات التخلف عنها لأربع بلديات، مع طلب تضمين القرار حق سحب التفويض عند الحاجة وفقاً لتوصيات الوزارة."
+  },
+  {
+   "date": "بلا تاريخ مثبَّت",
+   "kind": "قرار",
+   "tid": null,
+   "title": "صدور خمسة كتب تكليف رسمية",
+   "text": "صدرت عن معالي الوزير خمسة كتب تكليف تغطي: نقل جباية ضريبة الأملاك · مراجعة نظام موظفي الهيئات المحلية · معايير المصادقة على الاقتراض والتسهيلات المصرفية والتصرف بالأملاك · مراجعة أنظمة الشراء العام · الحزمة الثانية من تفويض الصلاحيات الإدارية. وخانتا الرقم والتاريخ غير معبّأتين في النسخ المتاحة."
+  },
+  {
+   "date": "١٤/٠٤/٢٠٢٦",
+   "kind": "قرار",
+   "tid": 15,
+   "title": "اعتماد القرار رقم (٢٣٢٤)",
+   "text": "تشكيل الفريق الوطني لمراجعة وتحديث نظام تصنيف الهيئات المحلية برئاسة وكيل الوزارة رائد مقبل وتنسيق شادي بدارين."
+  }
+ ],
+ "officialLetters": 5,
+ "asOf": "٢٢ تشرين الأول ٢٠٢٦"
+};
+const T = DATA.teams, PROF = DATA.profiles;
+const SK={"قيد التنفيذ":"run","عالق":"stuck","يحتاج تحديث":"upd","مجمّد":"frz","مؤجّل":"dfr","ملغى":"obs"};
+const SICON={"قيد التنفيذ":"🟢","عالق":"🔴","يحتاج تحديث":"🟠","مجمّد":"⏸","مؤجّل":"⤓","ملغى":"✕"};
+const NODEPT="غير مُعيّن", NOPROG="بلا برنامج إصلاحي", NOIND="بلا مؤشر استراتيجي";
+let state={view:"teams",status:"الكل",person:null,dept:null,q:"",dec:null};
+let LSTATE={focus:null,only:null};
+
+const el=s=>document.querySelector(s);
+const esc=s=>(s||"").replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials=(nm,unit)=>{const w=(nm||"").trim().split(/\s+/).filter(Boolean);
+  if(unit||(PROF[nm]&&PROF[nm].kind==='unit')||!w.length) return '🏛';
+  return w[0][0]+(w[1]?w[1][0]:'');};
+
+/* indices */
+const PEOPLE={};
+T.forEach(t=>Object.entries(t.roles).forEach(([nm,rs])=>{
+  const p=PEOPLE[nm]||(PEOPLE[nm]={name:nm,role:(PROF[nm]||{}).role||"",dept:(PROF[nm]||{}).dept||"",teams:[],roles:new Set()});
+  p.teams.push({t,rs}); rs.forEach(r=>p.roles.add(r));}));
+const RANK={"رئيس":0,"مقرر":1,"عضو":2,"مشارك":3};
+const PLIST=Object.values(PEOPLE).sort((a,b)=>{
+  const ra=Math.min(...[...a.roles].map(r=>RANK[r]??9)), rb=Math.min(...[...b.roles].map(r=>RANK[r]??9));
+  return ra-rb||b.teams.length-a.teams.length;});
+const DEPTS_ALL=(()=>{const m=new Map();
+  T.forEach(t=>{const ks=Object.keys(t.depts); if(!ks.length) m.set(NODEPT,(m.get(NODEPT)||0)+1); ks.forEach(d=>m.set(d,(m.get(d)||0)+1));});
+  return [...m.entries()].filter(([,c])=>c>0).sort((x,y)=>(x[0]===NODEPT)-(y[0]===NODEPT)||y[1]-x[1]);})();
+const inDept=(t,d)=>!d?true:(d===NODEPT?!Object.keys(t.depts).length:!!t.depts[d]);
+const progOf=t=>t.link.hasProg&&t.link.programs.length?t.link.programs:[NOPROG];
+const indOf =t=>t.link.hasInd &&t.link.indicators.length?t.link.indicators:[NOIND];
+const PROGS=(()=>{const m=new Map(); T.forEach(t=>progOf(t).forEach(p=>m.set(p,(m.get(p)||0)+1)));
+  return [...m.entries()].sort((x,y)=>(x[0]===NOPROG)-(y[0]===NOPROG)||y[1]-x[1]);})();
+const INDS=(()=>{const m=new Map(); T.forEach(t=>indOf(t).forEach(i=>m.set(i,(m.get(i)||0)+1)));
+  return [...m.entries()].sort((x,y)=>(x[0]===NOIND)-(y[0]===NOIND)||x[0].localeCompare(y[0]));})();
+const INDTXT=(()=>{const m={}; T.forEach(t=>t.link.indicators.forEach((i,k)=>{ if(!m[i]) m[i]=(t.link.indicatorText||"").split(" | ")[k]||t.link.indicatorText;})); return m;})();
+const shortProg=p=>p===NOPROG?p:p.replace(/^\d+\s*-\s*/,"");
+const progNo=p=>(p.match(/^(\d+)/)||["","•"])[1];
+const isProp=(t,k,v)=>!!(t.link.proposed&&(t.link.proposed[k]||[]).includes(v));
+const shortInd=t=>(t||"").split("\n")[0].replace(/^النتيجة\s*[\d.]+:\s*/,"").trim();
+const chairOf=t=>t.composition.filter(c=>c.roles.includes("رئيس")).map(c=>c.body||c.raw);
+const coordOf=t=>t.composition.filter(c=>c.roles.includes("مقرر")).map(c=>c.body||c.raw);
+const pending=t=>t.kind==="team"&&!chairOf(t).length;
+const MODE=t=>(t.decision&&t.decision.mode)||((t.decision&&t.decision.issued)?"issued":"pending");
+const DEC_OK=t=>MODE(t)==="issued";
+const NO_NEED=t=>MODE(t)==="prior";
+const FROZEN=t=>MODE(t)==="frozen";
+const AWAIT=t=>MODE(t)==="pending";
+const MODELBL={issued:["d-yes","✅ صدر قرار تكليف رسمي"],prior:["d-prior","◇ لا يلزم قرار جديد — مكلّف بقرار سابق"],
+  pending:["d-no","⏳ لم يصدر قرار تكليف بعد"],frozen:["d-frz","⏸ قرار مجمّد"],
+  deprioritised:["d-dfr","⤓ خُفِّضت أولويته — مؤجّل"],obsolete:["d-obs","✕ لم يعد منطبقاً"]};
+const upItem=u=>{const t=u.tid?T.find(x=>x.id===u.tid):null;
+  return `<div class="upitem" ${t?`data-id="${t.id}"`:""}>
+    <div class="ud"><b>${esc(u.date)}</b><span class="ukind u-${esc(u.kind)}">${esc(u.kind)}</span></div>
+    <div class="ub"><div class="ut">${esc(u.title)}</div><div class="ux">${esc(u.text)}</div>
+      ${t?`<div class="pmeta" style="margin-top:6px"><span class="tag">📋 ${esc(t.short)}</span></div>`:""}</div></div>`;};
+const decBadge=t=>{const d=t.decision||{},m=MODE(t);
+  if(m==="frozen") return `<span class="dbadge" style="background:var(--frz-bg);color:var(--frz);border:1px solid #cfd8e3">⏸ قرار مجمّد</span>`;
+  if(m==="issued"&&d.scope==="outside") return `<span class="dbadge d-out">⚠ قرار صادر خارج خطة اللامركزية</span>`;
+  if(m==="issued"&&d.scope==="partial") return `<span class="dbadge d-part">◑ صدر قرار — يغطي جزءاً من الملف</span>`;
+  const [c,l]=MODELBL[m]||MODELBL.pending;
+  return `<span class="dbadge ${c}">${l}</span>`
+    +(d.nationalRequest?`<span class="dbadge d-req">✉ طُلب تشكيل فريق وطني مشترك</span>`:"")
+    +(d.first?`<span class="firstbadge">🥇 أول قرار صادر</span>`:"");};
+
+/* filtering */
+function matchQ(t){ if(!state.q) return true; const s=state.q.trim();
+  return [t.title,t.short,t.theme,t.problem,t.target,t.partners,t.orgs,t.funding,t.update,t.statusRaw,
+    ...t.activities,...t.tasks,...t.composition.map(c=>c.raw),...t.origIds,...t.planNums,
+    ...Object.keys(t.roles),...Object.keys(t.depts)].join(" ").includes(s);}
+const visible=()=>T.filter(t=>(state.status==="الكل"||t.status===state.status)&&
+  (!state.dec||(state.dec==="صدر"?DEC_OK(t):state.dec==="لايلزم"?NO_NEED(t):AWAIT(t)))&&
+  (!state.person||t.roles[state.person])&&inDept(t,state.dept)&&matchQ(t));
+
+/* header + kpi */
+function kpis(){
+  const c={"قيد التنفيذ":0,"عالق":0,"يحتاج تحديث":0,"مجمّد":0,"مؤجّل":0,"ملغى":0}; T.forEach(t=>c[t.status]++);
+  const N=T.length;
+  el("#k-all").textContent=N; el("#k-run").textContent=c["قيد التنفيذ"];
+  el("#k-stuck").textContent=c["عالق"]; el("#k-upd").textContent=c["يحتاج تحديث"];
+  el("#b-run").style.width=c["قيد التنفيذ"]/N*100+"%";
+  el("#b-stuck").style.width=c["عالق"]/N*100+"%";
+  el("#b-upd").style.width=c["يحتاج تحديث"]/N*100+"%";
+  el("#k-frz").textContent=c["مجمّد"]; el("#b-frz").style.width=c["مجمّد"]/N*100+"%";
+  el("#hm-teams").textContent=T.filter(t=>t.kind==="team").length;
+  el("#hm-tasks").textContent=T.reduce((s,t)=>s+t.tasks.length,0);
+  el("#hm-people").textContent=Object.keys(PEOPLE).length;
+  el("#hm-depts").textContent=DEPTS_ALL.filter(([d])=>d!==NODEPT).length;
+  const ND=T.filter(DEC_OK).length, NPR=T.filter(NO_NEED).length, NP=T.filter(AWAIT).length;
+  el("#k-prior").textContent=NPR; el("#b-prior").style.width=NPR/N*100+"%";
+  el("#k-dec").textContent=ND; el("#k-pend").textContent=NP;
+  el("#b-dec").style.width=ND/N*100+"%"; el("#b-pend").style.width=NP/N*100+"%";
+  el("#efftext").textContent=DATA.effective;
+  el("#dept").innerHTML=`<option value="">🏛 كل الإدارات والدوائر</option>`+
+    DEPTS_ALL.map(([d,c])=>`<option value="${esc(d)}">${esc(d)} (${c})</option>`).join("");
+}
+
+/* pieces */
+const idsHtml=t=>t.origIds.map(i=>`<span class="oid">ID ${esc(i)}</span>`).join("");
+function tcard(t){
+  return `<div class="tcard s-${SK[t.status]} k-${t.kind}" data-id="${t.id}">
+    <div class="tc-top"><div class="tnum">${t.kind==="team"?t.id:(t.kind==="national"?"🇵🇸":"⚠")}</div>
+      <div class="tc-title">${esc(t.short)}</div></div>
+    <div class="tc-ids">${idsHtml(t)}<span class="pill p-${SK[t.status]}">${esc(t.status)}</span>
+      ${pending(t)?`<span class="pill p-stuck">⏳ بانتظار تكليف الرئيس</span>`:""}</div>
+    <div class="tc-ids">${decBadge(t)}${t.decision.issued&&t.decision.date?`<span class="tag">🗓 ${esc(t.decision.date.slice(0,34))}</span>`:""}</div>
+    <div class="who2">
+      <div class="r"><span class="rb${pending(t)?" pend":""}">رئيس</span><span>${esc(chairOf(t)[0]||"يصدر بكتاب من معالي الوزير")}</span></div>
+      ${t.decision&&t.decision.coordinator?`<div class="r"><span class="rb co">منسق</span><span>${esc(t.decision.coordinator)}</span></div>`:(coordOf(t).length?`<div class="r"><span class="rb co">مقرر</span><span>${esc(coordOf(t)[0])}</span></div>`:"")}
+    </div>
+    ${t.update&&t.update!=="—"?`<div class="lastup"><b>🕐 آخر مستجد</b>${esc(t.update)}</div>`:""}
+    ${t.target&&t.target!=="—"?`<div class="tgt"><b>المستهدف حتى نهاية 2026</b>${esc(t.target)}</div>`:""}
+    <div class="tc-foot"><span class="tag">✅ ${t.tasks.length} مهمة</span>
+      <span class="tag">👥 ${t.composition.filter(c=>!c.note).length} عضواً</span>
+      ${t.link.hasInd?`<span class="tag coord">📈 ${t.link.indicators.join(" · ")}</span>`:`<span class="tag">📈 بلا مؤشر</span>`}
+      ${Object.keys(t.depts).slice(0,2).map(d=>`<span class="dchip">🏛 ${esc(d.replace("الإدارة العامة لل","").replace("مكتب ",""))}</span>`).join("")}
+      ${Object.keys(t.depts).length>2?`<span class="dchip">+${Object.keys(t.depts).length-2}</span>`:""}
+    </div></div>`;
+}
+function trow(t,note){
+  return `<div class="act s-${SK[t.status]}" data-id="${t.id}">
+    <div class="anum">${t.kind==="team"?t.id:(t.kind==="national"?"🇵🇸":"⚠")}</div>
+    <div class="abody"><div class="atitle">${esc(t.short)}</div>
+      <div class="asub">${idsHtml(t)}<span>🗂 ${esc(t.theme)}</span><span>👤 ${esc(chairOf(t)[0]||"بانتظار تكليف")}</span>${note?`<span>🎯 ${esc(note)}</span>`:""}</div>
+      <div class="asub" style="margin-top:4px">${decBadge(t)}</div></div>
+    <div class="aside"><span class="pill p-${SK[t.status]}">${esc(t.status)}</span><span class="arrow">‹</span></div></div>`;
+}
+function pcard(p,list){
+  const vis=list?p.teams.filter(x=>list.includes(x.t)):p.teams; const N=vis.length||1;
+  const st=k=>vis.filter(x=>x.t.status===k).length;
+  const rs=[...p.roles].sort((a,b)=>(RANK[a]??9)-(RANK[b]??9));
+  return `<div class="pcard" data-p="${esc(p.name)}">
+    <div class="ptop"><div class="av">${initials(p.name)}</div>
+      <div style="min-width:0"><div class="pname">${esc(p.name)}</div><div class="prole">${esc(p.role)}</div></div>
+      <div class="ptot"><b>${vis.length}</b><i>فريق</i></div></div>
+    <div class="pbar"><i style="width:${st("قيد التنفيذ")/N*100}%;background:var(--run)"></i><i style="width:${st("عالق")/N*100}%;background:var(--stuck)"></i><i style="width:${st("يحتاج تحديث")/N*100}%;background:var(--upd)"></i></div>
+    <div class="pmeta">${rs.map(r=>`<span class="tag ${r==='رئيس'?'chair':r==='مقرر'?'coord':''}">${r}</span>`).join("")}
+      ${st("قيد التنفيذ")?`<span class="tag">🟢 ${st("قيد التنفيذ")}</span>`:""}
+      ${st("عالق")?`<span class="tag">🔴 ${st("عالق")}</span>`:""}
+      ${st("يحتاج تحديث")?`<span class="tag">🟠 ${st("يحتاج تحديث")}</span>`:""}
+      ${p.dept&&p.dept!=="غير محدد"?`<span class="dchip">🏛 ${esc(p.dept)}</span>`:""}</div></div>`;
+}
+
+/* render */
+function render(){
+  document.querySelectorAll(".kpi[data-st]").forEach(k=>k.classList.toggle("active",k.dataset.st===state.status));
+  document.querySelectorAll(".kpi[data-dec]").forEach(k=>k.classList.toggle("active",k.dataset.dec===state.dec));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.v===state.view));
+  const af=[];
+  if(state.dept) af.push(`<span class="afchip">🏛 ${esc(state.dept)}<button data-clr="dept">✕</button></span>`);
+  if(state.status!=="الكل") af.push(`<span class="afchip">${SICON[state.status]||""} ${esc(state.status)}<button data-clr="status">✕</button></span>`);
+  if(state.dec) af.push(`<span class="afchip">${state.dec==="صدر"?"✅ صدر قرار تكليف":state.dec==="لايلزم"?"◇ لا يلزم قرار جديد":"⏳ لم يصدر قرار بعد"}<button data-clr="dec">✕</button></span>`);
+  if(state.person) af.push(`<span class="afchip">👤 ${esc(state.person)}<button data-clr="person">✕</button></span>`);
+  if(state.q) af.push(`<span class="afchip">🔍 ${esc(state.q)}<button data-clr="q">✕</button></span>`);
+  el("#filterbar").innerHTML=(af.length?`<div class="activefilters">${af.join("")}</div>`:"")+
+    (state.person?`<div class="sec-h"><h2>👤 ${esc(state.person)}</h2><span class="hint">${esc((PROF[state.person]||{}).role||"")} · ${esc((PROF[state.person]||{}).dept||"")}</span><div class="rule"></div></div>`:"");
+  el("#dwrap").classList.toggle("on",!!state.dept); el("#dept").value=state.dept||"";
+
+  const list=visible(), v=el("#view");
+  if(state.view==="news") return renderNews();
+  if(state.view==="dec") return renderDec(list);
+  if(state.view==="link") return renderLink(list);
+  if(state.view==="status"){
+    v.innerHTML=`<div class="kb">${["قيد التنفيذ","عالق","يحتاج تحديث","مجمّد","مؤجّل","ملغى"].map(c=>{
+      const its=list.filter(t=>t.status===c);
+      return `<div class="col"><h3><span class="dot" style="background:var(--${SK[c]})"></span>${c}<span class="cnt">${its.length}</span></h3>
+        <div class="acts">${its.map(t=>trow(t)).join("")||'<div class="empty" style="padding:20px;font-size:12.5px">لا يوجد</div>'}</div></div>`;}).join("")}</div>`;
+    return;}
+  if(state.view==="theme"){
+    const th={}; list.forEach(t=>(th[t.theme]=th[t.theme]||[]).push(t));
+    v.innerHTML=Object.entries(th).map(([k,its],i)=>`<div class="tgroup ${i===0?'open':''}">
+      <div class="thead"><span class="caret">▸</span><h3>${esc(k)}</h3>
+        <div class="tmini">${its.map(t=>`<i style="background:var(--${SK[t.status]})"></i>`).join("")}</div>
+        <span class="tag">${its.length} ملف</span></div>
+      <div class="tbody"><div class="acts">${its.map(t=>trow(t)).join("")}</div></div></div>`).join("")||'<div class="empty">لا توجد نتائج</div>';
+    return;}
+  if(state.view==="people"){
+    if(state.person){ const p=PEOPLE[state.person];
+      v.innerHTML=`<div class="acts">${p.teams.filter(x=>list.includes(x.t)).map(x=>trow(x.t,x.rs.join(" · "))).join("")||'<div class="empty">لا توجد نتائج</div>'}</div>`;
+      return;}
+    v.innerHTML=`<div class="sec-h"><h2>المكلّفون بالاسم</h2><span class="hint">${PLIST.length} شخصاً · اضغط على أي بطاقة لعرض فرقه</span><div class="rule"></div></div>
+      <div class="people">${PLIST.filter(p=>p.teams.some(x=>list.includes(x.t))).map(p=>pcard(p,list)).join("")||'<div class="empty">لا توجد نتائج</div>'}</div>
+      <div class="sec-h"><h2>كل الملفات</h2><span class="hint">${list.length}</span><div class="rule"></div></div>
+      <div class="acts">${list.map(t=>trow(t)).join("")}</div>`;
+    return;}
+  /* teams view */
+  const dcards=DEPTS_ALL.map(([dn])=>{
+    const its=T.filter(t=>inDept(t,dn)&&(state.status==="الكل"||t.status===state.status)&&matchQ(t));
+    if(!its.length) return "";
+    const s=k=>its.filter(t=>t.status===k).length/its.length*100;
+    return `<div class="dcard ${state.dept===dn?'on':''}" data-dept="${esc(dn)}"><div class="ic">${dn===NODEPT?'❔':'🏛'}</div>
+      <div style="flex:1;min-width:0"><div class="dn">${esc(dn)}</div>
+        <div class="dbar"><i style="width:${s("قيد التنفيذ")}%;background:var(--run)"></i><i style="width:${s("عالق")}%;background:var(--stuck)"></i><i style="width:${s("يحتاج تحديث")}%;background:var(--upd)"></i></div></div>
+      <div class="dc">${its.length}</div></div>`;}).join("");
+  const teams=list.filter(t=>t.kind==="team"), other=list.filter(t=>t.kind!=="team");
+  v.innerHTML=`<div class="sec-h"><h2>🏛 الإدارات والدوائر</h2><span class="hint">اضغط على أي إدارة لتصفية اللوحة كاملة</span><div class="rule"></div></div>
+    <div class="dgrid">${dcards}</div>
+    <div class="sec-h"><h2>📋 فرق العمل الداخلية</h2><span class="hint">${teams.length} فريق · اضغط على أي بطاقة لعرض المهام والتشكيل الكامل</span><div class="rule"></div></div>
+    <div class="tgrid">${teams.map(tcard).join("")||'<div class="empty">لا توجد نتائج</div>'}</div>
+    ${other.length?`<div class="sec-h"><h2>خارج فرق العمل الداخلية</h2><span class="hint">فريق وطني قائم · ملف بلا فريق مخصّص · قرارات صادرة خارج خطة اللامركزية</span><div class="rule"></div></div>
+      <div class="tgrid">${other.map(tcard).join("")}</div>`:""}
+    <div class="sec-h"><h2>⚖️ أحكام عامة (البند ثانياً)</h2><div class="rule"></div></div>
+    <div class="prov"><div class="ph"><span class="caret">▸</span><h3>الأحكام السارية على جميع الفرق</h3><span class="tag">${DATA.general.length} بنداً</span></div>
+      <div class="pb"><ol class="tasklist">${DATA.general.map(g=>`<li>${esc(g)}</li>`).join("")}</ol>
+      <div class="callout" style="margin-top:14px"><b>◆ البند ثالثاً — الفريق الوطني القائم</b><p>${esc(DATA.national)}</p></div></div></div>`;
+}
+
+function decPanel(t){
+  const d=t.decision||{issued:false,next:[]}; const m=MODE(t);
+  if(m==="prior") return "";
+  if(m==="deprioritised"||m==="obsolete") return d.next&&d.next.length?
+    `<div class="decbox"><div class="dh"><b>الخطوات التالية</b></div><ol class="tasklist">${d.next.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:"";
+  if(m!=="issued"&&m!=="frozen") return `<div class="decbox no">
+    <div class="dh"><b>⏳ لم يصدر قرار تكليف رسمي بعد</b><span class="dbadge d-no">قيد الانتظار</span></div>
+    <p>لم يُرصد قرار تكليف صادر عن معالي الوزير بشأن هذا الملف ضمن الوثائق المتاحة، والتشكيل المبيّن أدناه هو المقترح في مذكرة تشكيل فرق العمل الداخلية ولم يُعتمد رسمياً بعد.</p>
+    ${d.next&&d.next.length?`<b style="display:block;margin-top:9px;font-size:12.5px">الخطوات التالية:</b><ol class="tasklist">${d.next.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`:""}
+    ${d.note?`<div class="decnote">${esc(d.note)}</div>`:""}</div>`;
+  const cls=d.scope==="outside"?"out":(d.scope==="partial"?"":"yes");
+  return `<div class="decbox ${cls}">
+    <div class="dh"><b>📜 قرار التكليف الرسمي</b>${decBadge(t)}</div>
+    <p style="font-weight:600">${esc(d.title)}</p>
+    <div class="decgrid">
+      <div class="c"><b>تاريخ التكليف</b><span>${esc(d.date||"—")}</span></div>
+      <div class="c"><b>الموقِّع</b><span>${esc(d.signer||"—")}</span></div>
+      <div class="c"><b>مصدر الوثيقة</b><span>${esc(d.source||"—")}</span></div>
+      <div class="c"><b>الموعد النهائي</b><span>${esc(d.deadline||"—")}</span></div>
+      <div class="c"><b>آلية التقارير</b><span>${esc(d.reporting||"—")}</span></div>
+      <div class="c"><b>الرئيس / المكلَّف</b><span>${esc(d.chair||"—")}</span></div>
+      <div class="c"><b>المقرر / المنسق</b><span>${esc(d.rapporteur||"—")}</span></div>
+      ${d.coordinator?`<div class="c"><b>منسق الملف</b><span>${esc(d.coordinator)}</span></div>`:""}
+      ${d.number?`<div class="c"><b>رقم القرار</b><span>${esc(d.number)}</span></div>`:""}
+      <div class="c"><b>الأعضاء حسب القرار</b><span>${esc(d.members||"—")}</span></div>
+    </div>
+    ${d.tasks&&d.tasks.length?`<b style="display:block;margin-top:11px;font-size:12.5px">المهام كما وردت في القرار:</b><ol class="tasklist">${d.tasks.map(x=>`<li>${esc(x.replace(/^[•\u0660-\u0669\.\s]+/,""))}</li>`).join("")}</ol>`:""}
+    ${d.next&&d.next.length?`<b style="display:block;margin-top:11px;font-size:12.5px">الخطوات التالية:</b><ol class="tasklist">${d.next.map(x=>`<li>${esc(x.replace(/^[\u0660-\u0669\.\s]+/,""))}</li>`).join("")}</ol>`:""}
+    ${d.scopeNote?`<div class="decnote">${esc(d.scopeNote)}</div>`:""}
+    ${d.trail&&d.trail.length?`<b style="display:block;margin-top:13px;font-size:12.5px">مسار الإقرار:</b>
+      <div class="trail">${d.trail.map(x=>`<div class="ti"><div class="td">${esc(x.date)}</div><div class="tr2">${esc(x.ref)}</div><div class="tx">${esc(x.text)}</div></div>`).join("")}</div>`:""}
+    ${d.note?`<div class="decnote">${esc(d.note)}</div>`:""}
+    ${d.linkage?`<div class="decnote" style="border-inline-start-color:#c2703a;color:#8a3f10">${esc(d.linkage)}</div>`:""}</div>`;
+}
+
+function reqPanel(t){
+  const r=(t.decision||{}).nationalRequest; if(!r) return "";
+  return `<div class="reqbox">
+    <div class="rh"><b>✉ طلب تشكيل فريق وطني مشترك</b><span class="dbadge d-req">${esc(r.state)}</span></div>
+    <p><b>${esc(r.ref)}</b> — بتاريخ ${esc(r.date)}</p>
+    <p>من: ${esc(r.from)} · إلى: ${esc(r.to)}</p>
+    <p style="margin-top:5px">${esc(r.host)}</p>
+    <b style="display:block;margin-top:10px;font-size:12.5px">أهداف الفريق المشترك:</b>
+    <ol class="tasklist">${r.objectives.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
+    <b style="display:block;margin-top:10px;font-size:12.5px">ممثلو وزارة الحكم المحلي:</b>
+    <ul class="complist">${r.molgMembers.map(x=>`<li><span class="rb">عضو</span><span>${esc(x)}</span></li>`).join("")}</ul>
+    <div class="decnote" style="border-inline-start-color:#5b3fb5;color:#43308a">المطلوب: ${esc(r.ask)}</div></div>`;
+}
+
+function planPanel(t){
+  const p=(t.decision||{}).plan; if(!p) return "";
+  return `<div class="planbox">
+    <div class="rh"><b>📄 التصور الأولي وخطة العمل التنفيذية</b><span class="dbadge d-plan">مرفوع بتاريخ ${esc(p.date)}</span></div>
+    <p style="font-weight:600">${esc(p.title)}</p>
+    <p>من: ${esc(p.from)} · إلى: ${esc(p.to)}</p>
+    <b class="ph2">محاور العمل الرئيسية</b><ol class="tasklist">${p.axes.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
+    <b class="ph2">ما أُنجز حتى تاريخه</b><ul class="complist">${p.done.map(x=>`<li><span class="rb co">✓</span><span>${esc(x)}</span></li>`).join("")}</ul>
+    <b class="ph2">مراحل خطة العمل</b>
+    <div class="phases">${p.phases.map((x,k)=>`<div class="phase"><div class="pn">${k+1}</div><div class="pb2">
+      <div class="pt">${esc(x.n)} — ${esc(x.t)}</div>
+      <div class="po"><b>المخرج:</b> ${esc(x.out)}</div>
+      <div class="ps"><b>الحالة:</b> ${esc(x.st)}</div></div></div>`).join("")}</div>
+    <b class="ph2">توسيع نطاق التنسيق المقترح</b><ul class="complist">${p.expand.map(x=>`<li><span class="rb">◦</span><span>${esc(x)}</span></li>`).join("")}</ul>
+    <b class="ph2">الاحتياجات اللازمة لتنفيذ المهمة</b><ol class="tasklist">${p.needs.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
+    <b class="ph2">المعوقات المتوقعة وآليات التعامل معها</b><ol class="tasklist">${p.risks.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
+    <b class="ph2">المخرجات النهائية المستهدفة</b><ol class="tasklist">${p.outputs.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`;
+}
+
+/* modal */
+function openT(id){
+  const t=T.find(x=>x.id===id);
+  el("#modal").innerHTML=`<div class="mhead"><button class="close" id="x">✕</button>
+    <span class="badge">${t.kind==="team"?`فريق رقم ${t.id}`:(t.kind==="national"?"فريق وطني قائم":"ملف بلا فريق")} · ${esc(t.theme)} · 🔖 المعرّفات الأصلية: ${esc(t.origIds.join("، "))}</span>
+    <h2>${esc(t.title)}</h2>
+    <div class="mst" style="color:var(--${SK[t.status]})">${SICON[t.status]} ${esc(t.statusRaw||t.status)}</div></div>
+  <div class="mbody">
+    ${t.update&&t.update!=="—"?`<div class="callout" style="background:#f7fafd;border-color:#cfe0ee"><b>🕐 آخر مستجد</b><p>${esc(t.update)}</p></div>`:""}
+    ${t.decision&&t.decision.revision?`<div class="revbox ${MODE(t)==="obsolete"?"obs":""}">${esc(t.decision.revision)}</div>`:""}
+    ${t.decision&&t.decision.priorNote?`<div class="decbox" style="background:#eef3f9;border-color:#c9d8e8"><div class="dh"><b>◇ لا يلزم قرار تكليف جديد</b>${decBadge(t)}</div><p>${esc(t.decision.priorNote)}</p>
+      ${t.decision.next&&t.decision.next.length?`<b style="display:block;margin-top:9px;font-size:12.5px">الخطوات التالية:</b><ol class="tasklist">${t.decision.next.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`:""}</div>`:""}
+    ${planPanel(t)}
+    ${reqPanel(t)}
+    ${decPanel(t)}
+    ${t.target&&t.target!=="—"?`<div class="callout"><b>◆ المستهدف حتى نهاية ٢٠٢٦</b><p>${esc(t.target)}</p></div>`:""}
+    <div class="grid2">
+      <div class="fld full"><b>👥 التشكيل</b><ul class="complist">${t.composition.map(c=>{
+        const r=c.roles[0]||(c.note?"ملاحظة":"مشارك");
+        const cls=r==="رئيس"?"ch":r==="مقرر"?"co":c.note?"nt":"";
+        return `<li><span class="rb ${cls}">${esc(c.roles.join("/")||(c.note?"ملاحظة":"مشارك"))}</span><span>${esc(c.body||c.raw)}</span></li>`;}).join("")}</ul></div>
+      <div class="fld full"><b>✅ المهام والمسؤوليات (${t.tasks.length})</b><ol class="tasklist">${t.tasks.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
+      <div class="fld full"><b>🏛 الإدارات/الدوائر المعنية</b><div class="pmeta" style="margin-top:5px">${Object.entries(t.depts).map(([d,rs])=>`<span class="tag ${rs.includes('رئيس')?'chair':rs.includes('مقرر')?'coord':''}">${esc(d)} · ${rs.join("/")}</span>`).join("")||'<span class="mini">لم تُحدَّد بعد</span>'}</div></div>
+      <div class="fld full"><b>🤝 الجهات الشريكة للتنسيق والتشاور</b><p>${esc(t.partners||"—")}</p></div>
+      <div class="fld full"><b>📌 النشاط/الأنشطة في أجندة الإصلاح</b><ul class="complist">${t.activities.map((a,i)=>`<li><span class="rb">ID ${esc(t.origIds[i]||"")}</span><span>${esc(a)}</span></li>`).join("")}</ul></div>
+      <div class="fld full"><b>🕐 آخر تحديث مسجَّل</b><p>${esc(t.update)}</p></div>
+      <div class="fld"><b>الجهات المسؤولة</b><p>${esc(t.orgs)}</p></div>
+      <div class="fld"><b>التمويل المحتمل</b><p>${esc(t.funding)}</p></div>
+    </div>
+    <div class="sec-h" style="margin:20px 0 12px"><h2>🔗 الربط بخطة الإصلاح والاستراتيجية القطاعية</h2><div class="rule"></div>
+      <span class="gapbadge ${t.link.aligned?'g-ok':'g-no'}">${t.link.aligned?'✓ مرتبط بالكامل':'⚠ فجوة'}</span></div>
+    <div class="grid2">
+      <div class="fld full"><b>T · البرنامج/البرامج الإصلاحية (خطة عمل 2025-2026)</b>${t.link.hasProg?`<ul class="complist">${t.link.programs.map(p=>`<li><span class="rb ch">${progNo(p)}</span><span>${esc(shortProg(p))}</span></li>`).join("")}</ul>`:'<p style="color:var(--muted)">لا يوجد نشاط مطابق في خطة العمل</p>'}</div>
+      <div class="fld"><b>U · رقم التدخل (تقرير إنجاز المبادرة)</b><p>${t.link.hasInterv?t.link.intervs.map(i=>`<span class="code g" style="font-size:14px">${esc(i)}</span>`).join(" "):'<span class="code x">لا يوجد</span>'}</p></div>
+      <div class="fld"><b>W · المؤشر (الاستراتيجية 2025-2027)</b><p>${t.link.hasInd?t.link.indicators.map(i=>`<span class="code" style="font-size:14px">${esc(i)}</span>`).join(" "):'<span class="code x">لا يوجد</span>'}</p></div>
+      <div class="fld full"><b>V · نص التدخل كما ورد في تقرير المبادرة</b><p>${esc(t.link.intervText)}</p></div>
+      <div class="fld full"><b>X · وصف المؤشر المرتبط</b><p>${esc(t.link.indicatorText)}</p></div>
+      <div class="fld full" style="background:${t.link.aligned?'var(--run-bg)':'var(--upd-bg)'};border-color:transparent"><b>Y · ملاحظة الفجوة</b><p>${esc(t.link.gap||"—")}</p>
+        ${t.link.review?`<p style="margin-top:9px;padding-top:9px;border-top:1px dashed #cbd5e1;color:#43308a">${esc(t.link.review)}</p>`:""}</div>
+    </div></div>`;
+  el("#ov").classList.add("show"); document.body.style.overflow="hidden";
+  el("#x").onclick=closeM;
+}
+function closeM(){ el("#ov").classList.remove("show"); document.body.style.overflow=""; }
+
+/* ============ updates view ============ */
+function renderNews(){
+  const U=DATA.updates||[];
+  const frz=T.filter(FROZEN);
+  el("#view").innerHTML=`
+  <div class="notice" style="margin-top:4px"><span style="font-size:18px">🆕</span><div>
+    <b>آخر المستجدات — بتاريخ ${esc(DATA.asOf||"")}:</b> ${U.length} مستجدّاً مسجَّلاً · ${DATA.officialLetters||0} كتب تكليف رسمية صادرة · ${frz.length} ملفان مجمّدان.</div></div>
+  ${frz.length?`<div class="sec-h"><h2>⏸ ملفات مجمّدة</h2><span class="hint">أُوقف العمل بها</span><div class="rule"></div></div>
+    <div class="acts">${frz.map(t=>trow(t)).join("")}</div>`:""}
+  <div class="sec-h"><h2>🗓 سجل المستجدات</h2><span class="hint">الأحدث أولاً · اضغط على أي مستجدّ لفتح ملفه</span><div class="rule"></div></div>
+  <div class="upfeed">${U.map(upItem).join("")}</div>
+  <div class="sec-h"><h2>📜 المهام والمسؤوليات كما وردت في كتب التكليف الرسمية</h2><span class="hint">${DATA.officialLetters||0} كتب</span><div class="rule"></div></div>
+  ${T.filter(t=>MODE(t)==="issued"&&t.decision.tasks&&t.decision.tasks.length).map(t=>`
+    <div class="prov open" style="margin-bottom:12px"><div class="ph"><span class="caret">▸</span>
+      <h3>${esc(t.short)}</h3>${decBadge(t)}
+      ${t.decision.coordinator?`<span class="tag coord">منسق: ${esc(t.decision.coordinator)}</span>`:""}
+      <span class="tag">${t.decision.tasks.length} مهمة</span></div>
+      <div class="pb"><p style="font-size:12.5px;color:var(--muted);margin-bottom:8px">${esc(t.decision.title)}</p>
+        <ol class="tasklist">${t.decision.tasks.map(x=>`<li>${esc(x.replace(/^[•\u0660-\u0669\.\s]+/,""))}</li>`).join("")}</ol>
+        <div class="pmeta" style="margin-top:10px">
+          <span class="tag">🗓 ${esc(t.decision.date||"—")}</span>
+          <span class="tag">⏱ ${esc((t.decision.deadline||"—").slice(0,70))}</span></div></div></div>`).join("")}`;
+}
+
+/* ============ decisions view ============ */
+function renderDec(list){
+  const inPlan=list.filter(t=>!t.outside);
+  const yes=inPlan.filter(DEC_OK), pri=inPlan.filter(NO_NEED), no=inPlan.filter(AWAIT),
+        out=list.filter(t=>t.outside||MODE(t)==="deprioritised"||MODE(t)==="obsolete");
+  const N=inPlan.length||1;
+  el("#view").innerHTML=`
+  <div class="alk">
+    <div class="box clickbox ${state.dec==="صدر"?'on':''}" data-dec="صدر"><b style="color:var(--run)">${yes.length}<span style="font-size:14px;color:var(--muted)">/${inPlan.length}</span></b><small>ملف صدر بشأنه قرار تكليف رسمي</small><div class="ring"><i style="width:${yes.length/N*100}%;background:var(--run)"></i></div></div>
+    <div class="box clickbox ${state.dec==="بانتظار"?'on':''}" data-dec="بانتظار"><b style="color:var(--stuck)">${no.length}<span style="font-size:14px;color:var(--muted)">/${inPlan.length}</span></b><small>ملف لم يصدر بشأنه قرار بعد</small><div class="ring"><i style="width:${no.length/N*100}%;background:var(--stuck)"></i></div></div>
+    <div class="box clickbox ${state.dec==="لايلزم"?'on':''}" data-dec="لايلزم"><b style="color:var(--navy2)">${pri.length}</b><small>ملف لا يلزمه قرار جديد</small><div class="ring"><i style="width:${pri.length/N*100}%;background:var(--navy2)"></i></div></div>
+    <div class="box"><b style="color:#c2703a">${out.length}</b><small>مجمّد أو مؤجّل أو خارج الخطة</small><div class="ring"><i style="width:100%;background:#c2703a"></i></div></div>
+    <div class="box"><b style="color:var(--upd)">${list.filter(t=>DEC_OK(t)&&(t.decision.date||"").indexOf("غير مؤرَّخ")===0).length}</b><small>قرار صادر بلا تاريخ مثبَّت</small><div class="ring"><i style="width:100%;background:var(--upd)"></i></div></div>
+  </div>
+  <div class="notice" style="margin-top:16px"><span style="font-size:18px">📜</span><div><b>حالة التكليف:</b> ${esc(DATA.decisionsNote||"")}</div></div>
+  <div class="kb" style="margin-top:18px">
+    <div class="col"><h3><span class="dot" style="background:var(--run)"></span>صدر قرار تكليف رسمي<span class="cnt">${yes.length}</span></h3>
+      <div class="acts">${yes.map(t=>trow(t)).join("")||'<div class="empty" style="padding:20px;font-size:12.5px">لا يوجد</div>'}</div></div>
+    <div class="col"><h3><span class="dot" style="background:var(--navy2)"></span>لا يلزم قرار جديد<span class="cnt">${pri.length}</span></h3>
+      <div class="acts">${pri.map(t=>trow(t)).join("")||'<div class="empty" style="padding:20px;font-size:12.5px">لا يوجد</div>'}</div></div>
+    <div class="col"><h3><span class="dot" style="background:var(--stuck)"></span>لم يصدر قرار بعد<span class="cnt">${no.length}</span></h3>
+      <div class="acts">${no.map(t=>trow(t)).join("")||'<div class="empty" style="padding:20px;font-size:12.5px">لا يوجد</div>'}</div></div>
+    <div class="col"><h3><span class="dot" style="background:#c2703a"></span>مجمّد / مؤجّل / خارج الخطة<span class="cnt">${out.length}</span></h3>
+      <div class="acts">${out.map(t=>trow(t)).join("")||'<div class="empty" style="padding:20px;font-size:12.5px">لا يوجد</div>'}</div></div>
+  </div>
+  <div class="sec-h"><h2>📑 جدول قرارات التكليف</h2><span class="hint">${list.length} ملف · اضغط على أي صف لعرض نص القرار كاملاً</span><div class="rule"></div></div>
+  <div class="trace"><table class="tr"><thead><tr>
+    <th class="k">الملف</th><th>حالة التكليف</th><th>عنوان القرار</th><th>تاريخ التكليف</th>
+    <th>الرئيس / المكلَّف</th><th>المقرر</th><th>الموعد النهائي</th><th>الخطوة التالية</th></tr></thead><tbody>
+    ${list.map(t=>{const d=t.decision||{};return `<tr data-id="${t.id}">
+      <td style="min-width:190px"><b>${esc(t.short)}</b><div class="mini">${t.origIds.map(x=>`<span class="code act">${esc(x)}</span>`).join(" ")}</div></td>
+      <td>${decBadge(t)}</td>
+      <td class="cellclip">${esc(d.title||"—")}</td>
+      <td>${d.issued?esc(d.date||"—"):'<span class="code x">لم يصدر</span>'}</td>
+      <td class="cellclip">${esc(d.issued?(d.chair||"—"):(chairOf(t)[0]||"بانتظار التكليف"))}</td>
+      <td class="cellclip">${esc(d.issued?(d.rapporteur||"—"):(coordOf(t)[0]||"—"))}</td>
+      <td class="cellclip">${esc(d.deadline||"—")}</td>
+      <td class="cellclip">${esc((d.next&&d.next[0])||"—")}</td></tr>`;}).join("")}
+  </tbody></table></div>`;
+}
+
+/* ============ linkage view ============ */
+function renderLink(list){
+  const N=T.length,g=k=>T.filter(t=>!t.link[k]).length;
+  const boxes=[[g("hasProg"),"ملف بلا برنامج إصلاحي","var(--stuck)","noprog"],[g("hasInterv"),"ملف بلا تدخل في تقرير المبادرة","var(--gold)","nointerv"],
+    [g("hasInd"),"ملف بلا مؤشر استراتيجي","var(--upd)","noind"],[T.filter(t=>!t.link.aligned).length,"فجوة مواءمة مسجّلة","var(--navy2)","gap"]];
+  const chips=[["all","الكل",null],["gap","⚠ فيها فجوة","gap"],["noprog","بلا برنامج إصلاحي","noprog"],["nointerv","بلا تدخل في تقرير المبادرة","nointerv"],["noind","بلا مؤشر استراتيجي","noind"]];
+  let L=list.slice();
+  if(LSTATE.only==='gap') L=L.filter(t=>!t.link.aligned);
+  if(LSTATE.only==='noprog') L=L.filter(t=>!t.link.hasProg);
+  if(LSTATE.only==='noind') L=L.filter(t=>!t.link.hasInd);
+  if(LSTATE.only==='nointerv') L=L.filter(t=>!t.link.hasInterv);
+  window.__L=L;
+  el("#view").innerHTML=`
+  <div class="alk">${boxes.map(([v,l,c,k])=>`<div class="box clickbox ${LSTATE.only===k?'on':''}" data-only="${k}"><b style="color:${c}">${v}<span style="font-size:14px;color:var(--muted)">/${N}</span></b><small>${l}</small><div class="ring"><i style="width:${v/N*100}%;background:${c}"></i></div></div>`).join("")}</div>
+  <div class="sec-h"><h2>🔗 خريطة الربط</h2><span class="hint">اضغط على أي برنامج أو فريق أو مؤشر لتتبّع خيوط الارتباط</span><div class="rule"></div></div>
+  <div class="linkfilters">${chips.map(([k,l,v])=>`<button class="fchip ${LSTATE.only===v?'on':''}" data-only="${k}">${l}</button>`).join("")}</div>
+  <div class="flowwrap"><div class="flowbar">
+    <span class="lg"><i style="background:var(--run)"></i>قيد التنفيذ</span>
+    <span class="lg"><i style="background:var(--stuck)"></i>عالق</span>
+    <span class="lg"><i style="background:var(--upd)"></i>يحتاج تحديث</span>
+    <span class="lg" style="border:1px dashed #5b3fb5;color:#5b3fb5;border-radius:6px;padding:1px 7px">◇ ارتباط مقترح</span>
+    <span style="margin-inline-start:auto">◂ خطة العمل 2025-2026 · فرق العمل · الاستراتيجية القطاعية 2025-2027 ▸</span></div>
+    <div class="flow" id="flow"><svg id="fsvg"></svg>
+      <div class="fcol side"><h4>البرامج الإصلاحية (T)</h4>${PROGS.map(([p])=>{
+        const c=L.filter(t=>progOf(t).includes(p)).length;
+        return `<div class="node prog ${p===NOPROG?'none':''}" data-n="P:${esc(p)}" style="${c?'':'display:none'}"><span class="cnt">${c}</span><span class="nm">${p===NOPROG?'—':'برنامج '+progNo(p)}</span><span class="ns">${esc(shortProg(p))}</span></div>`;}).join("")}</div>
+      <div class="fcol"><h4>فرق العمل (${L.length})</h4>${L.map(t=>`<div class="node act s-${SK[t.status]}" data-n="A:${t.id}" data-id="${t.id}">
+        <span class="gapdot" style="background:var(--${t.link.aligned?'run':'upd'})"></span>
+        <span class="nm">${t.origIds.map(i=>`<span class="oid">ID ${esc(i)}</span>`).join("")} ${esc(t.short)}</span>
+        <span class="ns">${esc(t.theme)}${t.link.hasInterv?` · تدخل ${esc(t.link.intervs.join("، "))}`:""}</span></div>`).join("")||'<div class="empty">لا توجد نتائج</div>'}</div>
+      <div class="fcol side"><h4>مؤشرات الاستراتيجية (W)</h4>${INDS.map(([i])=>{
+        const c=L.filter(t=>indOf(t).includes(i)).length;
+        return `<div class="node ind ${i===NOIND?'none':''}" data-n="I:${esc(i)}" style="${c?'':'display:none'}"><span class="cnt">${c}</span><span class="nm">${i===NOIND?'—':'النتيجة '+i}</span><span class="ns">${esc(i===NOIND?'لا يقابله مؤشر':shortInd(INDTXT[i]))}</span></div>`;}).join("")}</div>
+    </div></div>
+  <div class="sec-h"><h2>📑 جدول التتبّع (T → Y)</h2><span class="hint">${L.length} ملف · اضغط على أي صف لعرض التفاصيل</span><div class="rule"></div></div>
+  <div class="trace"><table class="tr"><thead><tr>
+    <th class="k">المعرّف<br><span class="mini" style="color:#a9c2da">Original ID</span></th><th class="k">فريق العمل</th>
+    <th>T · البرنامج الإصلاحي</th><th>U · رقم التدخل</th><th>V · نص التدخل</th>
+    <th>W · المؤشر</th><th>X · وصف المؤشر</th><th>Y · ملاحظة الفجوة</th></tr></thead><tbody>
+    ${L.map(t=>`<tr data-id="${t.id}">
+      <td>${t.origIds.map(i=>`<span class="code act">${esc(i)}</span>`).join(" ")}<div class="mini">${t.kind==="team"?"فريق "+t.id:(t.kind==="national"?"وطني":"بلا فريق")}</div></td>
+      <td style="min-width:200px"><b>${esc(t.short)}</b><div class="mini">🏛 ${esc(Object.keys(t.depts).join(" · ")||"غير مُعيّن")}</div></td>
+      <td>${t.link.hasProg?t.link.programs.map(p=>`<span class="code${isProp(t,'progs',p)?' prop':''}" data-jump="P:${esc(p)}">${isProp(t,'progs',p)?'◇ ':''}برنامج ${progNo(p)}</span>`).join(" "):'<span class="code x">لا يوجد</span>'}</td>
+      <td>${t.link.hasInterv?t.link.intervs.map(i=>`<span class="code g${isProp(t,'intervs',i)?' prop':''}">${isProp(t,'intervs',i)?'◇ ':''}${esc(i)}</span>`).join(" "):'<span class="code x">لا يوجد</span>'}</td>
+      <td class="cellclip">${esc(t.link.intervText)}</td>
+      <td>${t.link.hasInd?t.link.indicators.map(i=>`<span class="code${isProp(t,'inds',i)?' prop':''}" data-jump="I:${esc(i)}">${isProp(t,'inds',i)?'◇ ':''}${esc(i)}</span>`).join(" "):'<span class="code x">لا يوجد</span>'}</td>${''}
+      <td class="cellclip">${esc(t.link.indicatorText)}</td>
+      <td><span class="gapbadge ${t.link.aligned?'g-ok':'g-no'}">${t.link.aligned?'✓ مرتبط':'⚠ فجوة'}</span><div class="mini" style="margin-top:4px">${esc(t.link.aligned?'':t.link.gap)}</div>
+      ${t.link.review?`<div class="mini" style="margin-top:5px;color:#5b3fb5;font-weight:600">◇ يوجد ارتباط مقترح — افتح الملف</div>`:""}</td></tr>`).join("")}
+  </tbody></table></div>`;
+  requestAnimationFrame(()=>{drawFlow(); applyFocus();});
+}
+let EDGES=[];
+function drawFlow(){
+  const flow=el("#flow"),svg=el("#fsvg"); if(!flow||!svg) return;
+  const R=flow.getBoundingClientRect();
+  svg.setAttribute("viewBox",`0 0 ${R.width} ${R.height}`); svg.setAttribute("width",R.width); svg.setAttribute("height",R.height);
+  const pos=n=>{const e=flow.querySelector(`[data-n="${CSS.escape(n)}"]`); if(!e||e.style.display==='none') return null;
+    const b=e.getBoundingClientRect(); return {L:{x:b.left-R.left,y:b.top-R.top+b.height/2},Rr:{x:b.right-R.left,y:b.top-R.top+b.height/2}};};
+  EDGES=[];
+  (window.__L||[]).forEach(t=>{const A=pos("A:"+t.id); if(!A) return; const col="var(--"+SK[t.status]+")";
+    progOf(t).forEach(p=>{const P=pos("P:"+p); if(P) EDGES.push({from:"P:"+p,to:"A:"+t.id,a:P.L,b:A.Rr,col});});
+    indOf(t).forEach(i=>{const I=pos("I:"+i); if(I) EDGES.push({from:"A:"+t.id,to:"I:"+i,a:A.L,b:I.Rr,col});});});
+  svg.innerHTML=EDGES.map((e,k)=>{const mx=(e.a.x+e.b.x)/2;
+    return `<path id="e${k}" d="M${e.a.x},${e.a.y} C${mx},${e.a.y} ${mx},${e.b.y} ${e.b.x},${e.b.y}" fill="none" stroke="${e.col}" stroke-width="1.6" opacity=".28" stroke-linecap="round"/>`;}).join("");
+}
+function applyFocus(){
+  const flow=el("#flow"); if(!flow) return; const f=LSTATE.focus;
+  flow.classList.toggle("focused",!!f);
+  flow.querySelectorAll(".node").forEach(n=>n.classList.remove("hi","pick"));
+  EDGES.forEach((e,k)=>{const p=el("#e"+k); if(p){p.setAttribute("opacity",f?(e.from===f||e.to===f?".95":".05"):".28");
+    p.setAttribute("stroke-width",f&&(e.from===f||e.to===f)?"2.6":"1.6");}});
+  if(!f) return;
+  const pick=flow.querySelector(`[data-n="${CSS.escape(f)}"]`); if(pick) pick.classList.add("pick");
+  EDGES.forEach(e=>{ if(e.from===f||e.to===f) [e.from,e.to].filter(x=>x!==f).forEach(x=>{
+    const n=flow.querySelector(`[data-n="${CSS.escape(x)}"]`); if(n) n.classList.add("hi");});});
+}
+window.addEventListener("resize",()=>{ if(state.view==="link"){drawFlow();applyFocus();} });
+
+/* events */
+document.addEventListener("click",e=>{
+  const clr=e.target.closest("[data-clr]");
+  if(clr){const k=clr.dataset.clr; if(k==="status") state.status="الكل"; else if(k==="q"){state.q="";el("#q").value="";} else state[k]=null; LSTATE.focus=null; render(); return;}
+  const jm=e.target.closest("[data-jump]");
+  if(jm){e.stopPropagation(); LSTATE.focus=jm.dataset.jump; render(); const fl=el("#flow"); if(fl&&fl.scrollIntoView) fl.scrollIntoView({behavior:"smooth",block:"center"}); return;}
+  const oc=e.target.closest("[data-only]");
+  if(oc){LSTATE.only=oc.dataset.only==="all"?null:oc.dataset.only; LSTATE.focus=null; render(); return;}
+  const dc=e.target.closest("[data-dept]");
+  if(dc){state.dept=state.dept===dc.dataset.dept?null:dc.dataset.dept; state.person=null; LSTATE.focus=null; render(); return;}
+  const nd=e.target.closest(".node");
+  if(nd){const k=nd.dataset.n; if(k.startsWith("A:")&&LSTATE.focus===k) return openT(+nd.dataset.id);
+         LSTATE.focus=LSTATE.focus===k?null:k; applyFocus(); return;}
+  const tr=e.target.closest("table.tr tr[data-id]"); if(tr) return openT(+tr.dataset.id);
+  if(e.target.closest(".flowwrap")&&!e.target.closest(".node")){LSTATE.focus=null; applyFocus(); return;}
+  const card=e.target.closest(".tcard,.act,.upitem[data-id]"); if(card) return openT(+card.dataset.id);
+  const pc=e.target.closest(".pcard"); if(pc){state.person=pc.dataset.p; state.view="people"; render(); try{window.scrollTo({top:280,behavior:"smooth"});}catch(_){} return;}
+  const ph=e.target.closest(".ph,.thead"); if(ph) return ph.parentElement.classList.toggle("open");
+  const bx=e.target.closest(".box[data-dec]");
+  if(bx){ state.dec=state.dec===bx.dataset.dec?null:bx.dataset.dec; LSTATE.focus=null; render(); return;}
+  const kp=e.target.closest(".kpi");
+  if(kp){ if(kp.dataset.dec){ state.dec=state.dec===kp.dataset.dec?null:kp.dataset.dec; }
+          else { state.status=kp.dataset.st; state.dec=null; }
+          LSTATE.focus=null; render(); return;}
+  const tb=e.target.closest(".tab"); if(tb){state.view=tb.dataset.v; LSTATE.focus=null; render(); return;}
+  if(e.target.id==="ov") closeM();
+});
+el("#q").addEventListener("input",e=>{state.q=e.target.value; render();});
+el("#dept").addEventListener("change",e=>{state.dept=e.target.value||null; LSTATE.focus=null; render();});
+el("#reset").onclick=()=>{state={view:state.view,status:"الكل",person:null,dept:null,q:"",dec:null}; LSTATE={focus:null,only:null}; el("#q").value=""; el("#dept").value=""; render();};
+document.addEventListener("keydown",e=>{if(e.key==="Escape") closeM();});
+kpis(); render();
+
+</script>
+</body>
+</html>
